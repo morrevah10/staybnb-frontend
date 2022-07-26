@@ -1,11 +1,11 @@
 <template>
   <section class="user-modal-active">
     <div class="user-option">
-      <div class="small-line">
-        <p>Sing up</p>
-        <p>Log in</p>
-      </div>
-      <div class="small-line">
+        <div class="small-line">
+            <p>Sign up</p>
+            <p>Log in</p>
+        </div>
+        <div class="small-line">
         <p>Host your home</p>
         <p>Dashboard</p>
         <p>Trips</p>

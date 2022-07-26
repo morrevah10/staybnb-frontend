@@ -46,10 +46,10 @@ import mainFilterLarge from "./main-filter-large.cmp.vue";
 import userModal from "./user-modal.vue";
 export default {
   props: [],
-  components: {
-    mainFilterLarge,
-    stayFilter,
+  component: {
     userModal,
+    stayFilter,
+    mainFilterLarge,
   },
   data() {
     return {
