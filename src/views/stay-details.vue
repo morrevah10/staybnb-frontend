@@ -17,7 +17,7 @@
         <section class="flex">
           <img class="star" src="../styles/icons/star.svg" />
           <h5 class="reviews-rating">4.7 ·</h5>
-          <h5 class="reviews-number">{{ stay.numOfReviews}} reviews</h5>
+          <h5 class="reviews-number">{{ stay.numOfReviews }} reviews</h5>
           <pre> .</pre>
           <h5 class="location">
             {{ stay.address.city }},
@@ -59,12 +59,12 @@
             <h2 class="host-name">
               {{ stay.propertyType }} Hosted by {{ stay.host.fullname }}
             </h2>
-            <p class="host-details">{{ stay.beds }} bedroom</p>
+            <p class="host-details">
+              {{ stay.bedrooms }} bedroom · {{ stay.beds }} beds ·
+              {{ stay.bathrooms }} baths
+            </p>
           </div>
-          <img
-            class="host-img"
-            v-bind:src="`../../public/user-img/${stay.host.pictureUrl}`"
-          />
+          <img class="host-img" v-bind:src="`${stay.host.pictureUrl}`" />
         </section>
         <section class="stay-feature-container">
           <div class="feature-block flex">
@@ -158,7 +158,7 @@
                 :src="`/staybnb/src/styles/icons/details-icons/${amenities.imgUrl}`"
                 class="amenitie-img"
               />
-              {{ amenities.name }}
+              {{ amenities }}
             </li>
           </ul>
         </div>
@@ -308,10 +308,7 @@
           >
             <section class="review-details">
               <div class="review-details-header flex">
-                <img
-                  :src="`/staybnb/public/user-img/${review.by.imgUrl}`"
-                  class="review-img"
-                />
+                <img :src="`${review.by.imgUrl}`" class="review-img" />
                 <div class="review-preview-details">
                   <h4 class="review-name">{{ review.by.fullname }}</h4>
                   <h5 class="review-time">{{ review.at }}</h5>

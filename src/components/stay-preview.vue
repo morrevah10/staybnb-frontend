@@ -19,8 +19,8 @@
               {{ stay.address.city }}, {{ stay.address.country }}
             </p>
           </div>
-          <p class="stay-type-preview">{{ stay.type }}</p>
-          <p class="beds-num-preview">{{ stay.numOfBeds }} beds</p>
+          <p class="stay-type-preview">{{ stay.roomType }}</p>
+          <p class="beds-num-preview">{{ stay.beds }} beds</p>
           <p class="stay-price-preview">
             <span class="bold">${{ stay.price }} </span> night
           </p>
@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-  name: 'stay preview',
+  name: "stay preview",
   props: {
     stay: Object,
   },
