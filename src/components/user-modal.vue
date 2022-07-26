@@ -2,21 +2,13 @@
   <section class="user-modal-active">
     <div class="user-option">
       <div class="small-line">
-        <router-link to="/login">
-          <p>Sign up</p>
-          <p>Log in</p>
-        </router-link>
+        <p>Sign up</p>
+        <p>Log in</p>
       </div>
       <div class="small-line">
-        <router-link to="/host">
-          <p>Host your home</p>
-        </router-link>
-        <router-link to="/dashboard">
-          <p>Dashboard</p>
-        </router-link>
-        <router-link to="/trips">
-          <p>Trips</p>
-        </router-link>
+        <p>Host your home</p>
+        <p>Dashboard</p>
+        <p>Trips</p>
       </div>
       <p>About</p>
       <p>Logout</p>

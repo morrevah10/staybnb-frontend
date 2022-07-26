@@ -1,11 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import stayApp from "../views/stay-app.vue";
-// import stayEdit from "../views/stay-edit.vue";
 import stayDetails from "../views/stay-details.vue";
-import hostPage from "../views/becom-host.vue";
+import hostPage from "../views/become-host.vue";
 import loginPage from "../views/login-page.vue";
+import signupPage from "../views/signup-page.vue";
 // import dashboardPage from "../views/stay-details.vue";
-import tripsPage from "../views/trip-page.vue";
+// import tripsPage from "../views/trip-page.vue";
+// import stayEdit from "../views/stay-edit.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -20,11 +21,6 @@ const router = createRouter({
       name: "stay-details",
       component: stayDetails,
     },
-    // {
-    //   path: "/edit/:stayId?",
-    //   name: "stay-edit",
-    //   component: stayEdit,
-    // },
     {
       path: "/host",
       name: "host",
@@ -35,16 +31,26 @@ const router = createRouter({
       name: "login",
       component: loginPage,
     },
+    {
+      path: "/signup",
+      name: "signup",
+      component: signupPage,
+    },
     // {
     //   path: "/dashboard",
     //   name: "dashboard",
     //   component: dashboardPage,
     // },
-    {
-      path: "/trips",
-      name: "trips",
-      component: tripsPage,
-    },
+    // {
+    //   path: "/trips",
+    //   name: "trips",
+    //   component: tripsPage,
+    // },
+    // {
+    //   path: "/edit/:stayId?",
+    //   name: "stay-edit",
+    //   component: stayEdit,
+    // },
   ],
 });
 

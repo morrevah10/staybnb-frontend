@@ -7,9 +7,9 @@
             <img class="carousel-img" :src="`../../img/${img}`" />
           </el-carousel-item>
         </el-carousel>
-        <button class="btn like-btn" @click.stop="LikeStay()">
+        <!-- <button class="btn like-btn" @click.stop="LikeStay()">
           <img src="../styles/icons/save-icon.svg" alt="" />
-        </button>
+        </button> -->
       </div>
       <div>
         <div class="card-details">

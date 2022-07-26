@@ -9,7 +9,9 @@
     <div class="space"></div>
     <section class="user-actions flex align-items space-between">
       <div class="">
-        <router-link :to="'/'" class="host-header link">Become a Host</router-link>
+        <router-link :to="'/'" class="host-header link"
+          >Become a Host</router-link
+        >
       </div>
       <!-- <button class="btn ">
         <img src="/footer-imgs/lan.png" alt="" />
@@ -26,20 +28,20 @@
   </main>
 </template>
 <script>
-import stayFilter from "./stay-filter.vue"
+import stayFilter from "./stay-filter.vue";
 export default {
-  name: 'app-header-large',
+  name: "app-header-large",
   props: [],
   template: ``,
   components: {
     stayFilter,
   },
   data() {
-    return {}
+    return {};
   },
   methods: {},
   computed: {},
-  created() { },
-  unmounted() { },
-}
+  created() {},
+  unmounted() {},
+};
 </script>

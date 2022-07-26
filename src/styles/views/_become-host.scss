@@ -1,0 +1,47 @@
+.become-host {
+  grid-template-columns: 80px 1fr 80px;
+  margin: 0;
+  display: flex;
+  background-color: #222;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.become-host-img {
+  width: 50%;
+  object-fit: cover;
+  height: 80vh;
+}
+
+.become-host-info {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.become-host h1 {
+  text-align: center;
+  line-height: 70px;
+  color: #e7e7e7;
+}
+
+.become-host button {
+  width: 150px;
+  font-weight: 500;
+  align-self: center;
+  border: none;
+  font-size: 1rem;
+  background-color: #e7e7e7;
+  cursor: pointer;
+  border-radius: 1000px;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+}
+
+.become-host button h3 {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-family: inherit;
+}

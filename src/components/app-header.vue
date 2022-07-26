@@ -13,7 +13,7 @@
     />
     <section class="user-actions flex align-items space-between">
       <div class="host">
-        <router-link :to="'/'" class="host-header link"
+        <router-link :to="'/host'" class="host-header link"
           >Become a Host</router-link
         >
       </div>

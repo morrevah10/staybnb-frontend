@@ -1,0 +1,78 @@
+.login-container {
+  margin-top: 100px;
+  height: 63vh;
+}
+
+.login-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  width: 30vw;
+  border: 1px solid #dbdbdb;
+  border-radius: 13px;
+  box-shadow: 0 0 0 #000;
+}
+
+.login-form-header {
+  text-align: center;
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+}
+
+.login-form-header h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.login-form-body {
+  flex-direction: column;
+  padding-inline: 25px;
+  padding-bottom: 15px;
+  display: flex;
+}
+
+.login-input {
+  width: 100%;
+  padding: 15px;
+  font-family: airbnb-regular, sans-serif;
+  font-size: 1rem;
+  border: 1px solid #b6b6b6;
+  border-radius: 13px;
+  margin: 5px 5px 5px 0;
+  letter-spacing: 0.3px;
+}
+
+.login-btn {
+  border: none;
+  background-color: #ff385c;
+  margin: 20px 0;
+  border-radius: 13px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 15px;
+  font-family: airbnb-regular, sans-serif;
+  font-size: 1rem;
+}
+
+.signup-move {
+  justify-content: space-between;
+  display: flex;
+}
+
+.signup-btn-move {
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: airbnb-regular, sans-serif;
+}
