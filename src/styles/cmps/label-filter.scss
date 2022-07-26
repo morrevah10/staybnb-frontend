@@ -1,0 +1,108 @@
+.labels-filter {
+  height: 96px;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 96px;
+  z-index: 2;
+  background-color: white;
+}
+
+.labels-control {
+  background-color: $clr3;
+  height: 25px;
+  width: 25px;
+  border: 0.5px solid $clr9;
+  border-radius: 50%;
+  display: inline-block;
+  color: black;
+  cursor: pointer;
+  // top: calc(40%);
+  // position: absolute;
+}
+
+.labels-filter-btn {
+  height: 48px;
+  width: 76px;
+  padding: 7px 0;
+  margin: 0;
+  border-radius: 15%;
+  border: 0.5px solid $clr9;
+  align-items: center;
+  justify-content: space-evenly;
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.labels-container {
+  display: flex;
+  height: 48px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// .labels-list {
+//   width: 90%;
+//   display: flex;
+//   justify-content: space-evenly;
+//   color: $clr5;
+
+//   & .label-img {
+//     // aspect-ratio: 1 / 1;
+//     height: 25px;
+//     width: 25px;
+//     filter: invert(47%) sepia(7%) saturate(12%) hue-rotate(355deg)
+//       brightness(92%) contrast(93%);
+//     & :hover {
+//       filter: invert(0%) sepia(0%) saturate(7484%) hue-rotate(327deg)
+//         brightness(99%) contrast(106%);
+//     }
+//   }
+
+//   & .label-name {
+//     font-size: 12px;
+//     & :hover {
+//       color: black;
+//     }
+//   }
+// }
+
+.labels-list {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.labels-container:hover {
+  border-bottom: 1px solid $clr5;
+
+  .label-name {
+    color: black;
+  }
+  .label-img {
+    filter: invert(0%) sepia(18%) saturate(3285%) hue-rotate(260deg)
+      brightness(100%) contrast(109%);
+  }
+}
+
+.label-img {
+  height: 25px;
+  width: 25px;
+  filter: invert(47%) sepia(7%) saturate(12%) hue-rotate(355deg) brightness(92%)
+    contrast(93%);
+}
+
+.label-name {
+  font-size: 12px;
+  color: $clr5;
+}
+
+
+.mor{
+  height: 96px;
+}

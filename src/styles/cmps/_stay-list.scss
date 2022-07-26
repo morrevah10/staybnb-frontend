@@ -1,0 +1,27 @@
+.stay-list {
+  display: grid;
+  // grid-template-rows: rep;
+  grid-template-columns: repeat($capacity-phone, minmax(0px, 1fr));
+  gap: rem(25px);
+}
+@media (min-width: 550px) {
+  .stay-list {
+    grid-template-columns: repeat($capacity-tablet, minmax(0px, 1fr));
+  }
+}
+@media (min-width: 950px) {
+  .stay-list {
+    grid-template-columns: repeat($capacity-normal, minmax(0px, 1fr));
+  }
+}
+
+@media (min-width: 1125px) {
+  .stay-list {
+    grid-template-columns: repeat($capacity-larg, minmax(0px, 1fr));
+  }
+}
+@media (min-width: 1605px) {
+  .stay-list {
+    grid-template-columns: repeat($capacity-wide, minmax(0px, 1fr));
+  }
+}

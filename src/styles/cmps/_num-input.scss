@@ -1,0 +1,60 @@
+.num-input-cmp{
+    text-align: start;
+    display: flex ; 
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem; 
+    
+    .item-label{
+        padding-inline-end: 4rem;
+        .title{
+           
+            color: $clr8;
+            font-size:rem(14px);
+            line-height: 1.43;
+        }
+        .sub-title{
+           
+            color: $clr5;
+            font-weight: 400;
+            font-size:rem(14px);
+        }
+
+    } 
+    .plus-minus-btn{
+        display: flex;
+        button{
+            display: flex;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            // text-align: center;
+            border: 1px solid $clr5;
+            color: $clr5;
+            border-radius: 50%; 
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                border: 1px solid $clr2;
+                color: $clr2;
+            }
+            &:disabled{
+                border: 1px solid $clr7;
+                color: $clr7;
+                background-color: $clr3;
+            }
+        }
+    }
+    background-color: transparent;
+    input{
+        width: 2rem;
+        height: 2rem;
+        border: hidden;
+        // -webkit-appearance: none;
+        text-align: center;
+        &:focus{outline:none;}
+    }
+}
+
+
+

@@ -1,0 +1,92 @@
+.stay-header {
+  margin-top: 11px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.stay-price-preview {
+  font-size: 0.95rem;
+  margin-top: 7px;
+}
+
+.stay-name-preview {
+  font-size: 0.95rem;
+}
+
+.beds-num-preview {
+  color: gray;
+  font-size: 0.95rem;
+}
+
+.stay-type-preview {
+  color: gray;
+  font-size: 0.95rem;
+}
+
+.stay-preview-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  .el-carousel__button {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+  }
+  .el-carousel__arrow {
+    background-color: $clr3;
+    opacity: 90%;
+    color: $clr10;
+    font-size: 1rem;
+    border-radius: 50%;
+    transition: font-size 1s opacity 1s;
+    &:hover {
+      opacity: 100%;
+      box-shadow: 0 0 4px $clr3;
+      background-color: $clr3;
+      color: $clr2;
+    }
+  }
+}
+
+.stay-name-preview {
+  margin: 0;
+}
+
+el-carousel-item {
+  aspect-ratio: 1/1;
+}
+
+.carousel-img {
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.preview-img {
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img .like-btn {
+  position: absolute;
+  top: 5%;
+  left: 170%;
+  background: none;
+  cursor: pointer;
+}
+
+.card-img .liked {
+  position: absolute;
+  top: 5%;
+  left: 170%;
+  background: none;
+  cursor: pointer;
+}

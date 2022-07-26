@@ -1,0 +1,22 @@
+.large-search{
+    // display: none;
+    top: 20%;
+    opacity: 50%;
+    transition: opacity 1s;
+    position: absolute;
+    z-index: 0;
+  
+    background-color: $clr3;
+    // border-radius: 2rem;
+    // padding: 1rem 2rem;
+    // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.large-search-modal{
+    // display: block;
+    opacity: 100%;
+    top: 50%;
+}
+
+.open-modal{
+    position: relative;
+}
