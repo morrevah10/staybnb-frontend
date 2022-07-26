@@ -29,7 +29,6 @@ async function query(filterBy = null) {
 async function getById(stayId) {
   try {
     const res = await axios.get(_getUrl(stayId));
-    console.log("res.data", res.data);
     return res.data;
   } catch {
     console.error("Failed to get by id");

@@ -6,14 +6,18 @@
         <h1 class="logo-text">Staybnb</h1>
       </div>
     </router-link>
-    <stay-filter class="filter-header" @setFilter="setFilter"  @opem-large-modal="(isOpen)=>openLarge(isOpen)"/>
+    <stay-filter
+      class="filter-header"
+      @setFilter="setFilter"
+      @opem-large-modal="(isOpen) => openLarge(isOpen)"
+    />
     <section class="user-actions flex align-items space-between">
       <div class="host">
         <router-link :to="'/'" class="host-header link"
           >Become a Host</router-link
         >
       </div>
-      <section class="user-info flex " @click="openUserModal">
+      <section class="user-info flex" @click="openUserModal">
         <button class="menu-btn btn">
           <img class="menu-img" src="../styles/icons/menu-icon.svg" alt="" />
         </button>
@@ -24,17 +28,17 @@
     </section>
   </section>
   <section class="search-modal">
-    <div class="open-modal" > 
-  <div >
-    <main-filter-large :class="isLargeOpen ? 'large-search-modal' : 'large-search'"/>
-  </div>
-  </div>
-  <div class="open-user-modal main-layout">
-    <user-modal :class="isUserModal ? 'user-modal-active' : 'user-modal'"/>
-  </div>
+    <div class="open-modal">
+      <div>
+        <main-filter-large
+          :class="isLargeOpen ? 'large-search-modal' : 'large-search'"
+        />
+      </div>
+    </div>
+    <div class="open-user-modal main-layout">
+      <user-modal :class="isUserModal ? 'user-modal-active' : 'user-modal'" />
+    </div>
   </section>
-   
-  
 </template>
 <script>
 import stayFilter from "./stay-filter.vue"
@@ -42,22 +46,20 @@ import mainFilterLarge from "./main-filter-large.cmp.vue"
 import userModal from "./user-modal.vue";
 export default {
   props: [],
-  template: ``,
-  components: {
+  component:{
+    userModal,
     stayFilter,
     mainFilterLarge,
-    userModal,
   },
   data() {
-    return {
-      isLargeOpen:false,
-      isUserModal:false,
+    return{
+      isLargeOpen: false,
+      isUserModal: false,
     }
-  },
+    },
   methods: {
-    openLarge(isOpen){
-      console.log("from app header",isOpen)
-      this.isLargeOpen=isOpen
+    openLarge(isOpen) {
+      this.isLargeOpen = isOpen;
       // this.isLargeOpen=!this.isLargeOpen
       console.log("from header",this.isLargeOpen)
 

@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     LikeStay() {
-      console.log("likedddd");
+      console.log("liked");
     },
   },
   computed: {},

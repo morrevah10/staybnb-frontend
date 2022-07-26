@@ -1,5 +1,5 @@
 <template>
-<section class="user-modal-active">
+  <section class="user-modal-active">
     <div class="user-option">
         <div class="small-line">
             <p>Sign up</p>
@@ -9,33 +9,29 @@
         <p>Host your home</p>
         <p>Dashboard</p>
         <p>Trips</p>
-        </div>
-        <p>About</p>
-        <p>Logout</p>
+      </div>
+      <p>About</p>
+      <p>Logout</p>
     </div>
-
-</section>
-
+  </section>
 </template>
 
 <script>
-
-import horizontalLine from './horizontal-line.cmp.vue'
-
+import horizontalLine from "./horizontal-line.cmp.vue";
 
 export default {
-  props: {  },
+  props: {},
   components: {
     horizontalLine,
   },
   data() {
-    return {}
-    },
+    return {};
+  },
   methods: {},
   actions: {},
   computed: {},
   watch: {},
   created() {},
   unmounted() {},
-}
+};
 </script>

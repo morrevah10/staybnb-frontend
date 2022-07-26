@@ -1,9 +1,7 @@
 <template>
-  <main-filter-small 
-  v-if="!defaultDisplay"
-  @openLarge="openLargeFilter"/>
+  <main-filter-small v-if="!defaultDisplay" @openLarge="openLargeFilter" />
 
-  <Small-nav-bar v-else @toggelModal="openLargeFilter"/>
+  <Small-nav-bar v-else @toggelModal="openLargeFilter" />
   <!-- <div class="open-modal" > 
   <div :class="{ 'large-search-modal': defaultDisplay }">
     <main-filter-large class="large-search"/>
@@ -20,44 +18,27 @@ export default {
   components: {
     mainFilterSmall,
     smallNavBar,
-    SmallNavBar
-},
+    SmallNavBar,
+  },
 
-props: [],
-data() {
-return {
-  defaultDisplay:false
-};
-},
-created() {},
-methods: {
-  openLargeFilter(){
-    this.defaultDisplay = !this.defaultDisplay
-    let isOpen = this.defaultDisplay
-    console.log("from stay filter",isOpen)
-    this.$emit('opemLargeModal',isOpen)
-
-  }
-},
-computed: {},
-unmounted() {},
+  props: [],
+  data() {
+    return {
+      defaultDisplay: false,
+    };
+  },
+  created() {},
+  methods: {
+    openLargeFilter() {
+      this.defaultDisplay = !this.defaultDisplay;
+      let isOpen = this.defaultDisplay;
+      this.$emit("opemLargeModal", isOpen);
+    },
+  },
+  computed: {},
+  unmounted() {},
 };
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- 
 <template>
@@ -99,4 +80,3 @@ computed: {},
 unmounted() {},
 };
 </script> -->
-
