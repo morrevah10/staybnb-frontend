@@ -41,14 +41,18 @@
   </section>
 </template>
 <script>
-import stayFilter from "./stay-filter.vue"
-import mainFilterLarge from "./main-filter-large.cmp.vue"
+import stayFilter from "./stay-filter.vue";
+import mainFilterLarge from "./main-filter-large.cmp.vue";
 import userModal from "./user-modal.vue";
 export default {
   props: [],
+  components: {
+    mainFilterLarge,
+    stayFilter,
     userModal,
   },
   data() {
+    return {
       isLargeOpen: false,
       isUserModal: false,
     };
@@ -57,14 +61,12 @@ export default {
     openLarge(isOpen) {
       this.isLargeOpen = isOpen;
       // this.isLargeOpen=!this.isLargeOpen
-      console.log("from header",this.isLargeOpen)
-
-       },
-      openUserModal(){
-        this.isUserModal =!this.isUserModal
-        console.log("user modal open",this.isUserModal)
-      }
-
+      console.log("from header", this.isLargeOpen);
+    },
+    openUserModal() {
+      this.isUserModal = !this.isUserModal;
+      console.log("user modal open", this.isUserModal);
+    },
   },
   computed: {},
   created() {},

@@ -2,7 +2,10 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import stayApp from "../views/stay-app.vue";
 import stayEdit from "../views/stay-edit.vue";
 import stayDetails from "../views/stay-details.vue";
-// import explorePage from "../views/explore-page.vue";
+// import hostPage from "../views/stay-details.vue";
+// import loginPage from "../views/stay-details.vue";
+// import dashboardPage from "../views/stay-details.vue";
+// import tripsPage from "../views/stay-details.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -22,12 +25,26 @@ const router = createRouter({
       name: "stay-edit",
       component: stayEdit,
     },
-    // {
-    //   path: "/explore",
-    //   name: "stay-explore",
-    //   component: explorePage
-    // },
-
+    {
+      path: "/host",
+      name: "host",
+      component: hostPage,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: loginPage,
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: dashboardPage,
+    },
+    {
+      path: "/trips",
+      name: "trips",
+      component: tripsPage,
+    },
   ],
 });
 
