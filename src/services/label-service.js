@@ -1,22 +1,20 @@
-import { storageService } from "./storage-service.js"
-// import { utilService } from "./util-service.js"
+import { storageService } from "./storage-service.js";
 
 export const labelService = {
   query,
   getLabel,
-}
+};
 
+const Label_key = "labelDB";
 
-const Label_key = "labelDB"
-
-getLabel()
+getLabel();
 
 function query() {
-  return storageService.query(Label_key)
+  return storageService.query(Label_key);
 }
 
 function getLabel() {
-  let labels = JSON.parse(localStorage.getItem(Label_key))
+  let labels = JSON.parse(localStorage.getItem(Label_key));
   if (!labels || !labels.length) {
     labels = [
       {
@@ -39,8 +37,8 @@ function getLabel() {
         name: "creativ-spaces",
         imgUrl: "creativ-spaces.jpg",
       },
-    ]
-    localStorage.setItem(Label_key, JSON.stringify(labels))
+    ];
+    localStorage.setItem(Label_key, JSON.stringify(labels));
   }
-  return labels
+  return labels;
 }
