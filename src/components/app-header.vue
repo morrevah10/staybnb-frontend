@@ -29,6 +29,9 @@
     <main-filter-large :class="isLargeOpen ? 'large-search-modal' : 'large-search'"/>
   </div>
   </div>
+  <div class="open-user-modal main-layout">
+    <user-modal :class="isUserModal ? 'user-modal-active' : 'user-modal'"/>
+  </div>
   </section>
    
   
@@ -36,12 +39,14 @@
 <script>
 import stayFilter from "./stay-filter.vue"
 import mainFilterLarge from "./main-filter-large.cmp.vue"
+import userModal from "./user-modal.vue";
 export default {
   props: [],
   template: ``,
   components: {
     stayFilter,
     mainFilterLarge,
+    userModal,
   },
   data() {
     return {
@@ -59,7 +64,7 @@ export default {
        },
       openUserModal(){
         this.isUserModal =!this.isUserModal
-        console.log(this.isUserModal)
+        console.log("user modal open",this.isUserModal)
       }
 
   },
