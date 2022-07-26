@@ -37,7 +37,7 @@
   .star {
     height: 14px;
     width: 14px;
-    margin-top: 2px;
+    margin-top: 1px;
   }
 
   .reviews-rating {
@@ -82,6 +82,7 @@
   }
 
   .share-icon {
+    margin-bottom: 4px;
     height: 15px;
     text-decoration: none;
     vertical-align: middle;
@@ -251,6 +252,7 @@
   }
 
   .total-reviews {
+    margin-top: 1px;
     text-decoration: underline;
     font-size: 0.875rem;
     margin-left: 5px;

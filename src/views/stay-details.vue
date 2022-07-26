@@ -60,8 +60,8 @@
               {{ stay.propertyType }} Hosted by {{ stay.host.fullname }}
             </h2>
             <p class="host-details">
-              {{ stay.bedrooms }} bedroom · {{ stay.beds }} beds ·
-              {{ stay.bathrooms }} baths
+              {{ stay.capacity }} guests · {{ stay.bedrooms }} bedroom ·
+              {{ stay.beds }} beds · {{ stay.bathrooms }} baths
             </p>
           </div>
           <img class="host-img" v-bind:src="`${stay.host.pictureUrl}`" />
@@ -372,7 +372,6 @@ export default {
         this.guests.adults + this.guests.kids + this.guests.infants;
     },
     updateAdults(num) {
-      console.log(num);
       this.guests.adults = num;
       this.sumGuests();
     },
@@ -393,6 +392,9 @@ export default {
     },
   },
   computed: {
+    dateFormat() {
+      moment(review.at).format("MMMM YYYY");
+    },
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
