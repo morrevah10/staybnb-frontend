@@ -8,7 +8,7 @@
     </router-link>
     <div class="space"></div>
     <section class="user-actions flex align-items space-between">
-      <div class="host">
+      <div class="">
         <router-link :to="'/'" class="host-header link">Become a Host</router-link>
       </div>
       <!-- <button class="btn ">

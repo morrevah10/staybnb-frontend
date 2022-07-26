@@ -2,7 +2,7 @@
 <section class="user-modal-active">
     <div class="user-option">
         <div class="small-line">
-            <p>Sing up</p>
+            <p>Sign up</p>
             <p>Log in</p>
         </div>
         <div class="small-line">
