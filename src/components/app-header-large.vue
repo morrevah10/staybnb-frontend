@@ -17,10 +17,10 @@
       </button> -->
       <section class="user-info flex">
         <button class="menu-btn btn">
-          <img class="menu-img" src="../../public/footer-imgs/menu.png" alt="" />
+          <img class="menu-img" src="/footer-imgs/menu.png" alt="" />
         </button>
         <button class="user-btn btn">
-          <img class="user-img" src="../../public/footer-imgs/user.png" alt="" />
+          <img class="user-img" src="/footer-imgs/user.png" alt="" />
         </button>
       </section>
     </section>

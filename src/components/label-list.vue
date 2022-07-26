@@ -16,7 +16,7 @@
     </button>
     <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
       <img
-        src="../../public/lable-img/filter-icon.png"
+        src="/lable-img/filter-icon.png"
         alt=""
         class="filter-img"
       />Filters
@@ -37,39 +37,39 @@ export default {
       labels: [
         {
           name: "beach",
-          src : "../../public/lable-img/beach.jpg",
+          src : "/lable-img/beach.jpg",
         },
         {
           name: "castles",
-          src : "../../public/lable-img/castles.jpg",
+          src : "/lable-img/castles.jpg",
         },
         {
           name: "caves",
-          src : "../../public/lable-img/caves.jpg",
+          src : "/lable-img/caves.jpg",
         },
         {
           name: "containers",
-          src : "../../public/lable-img/containers.jpg",
+          src : "/lable-img/containers.jpg",
         },
         {
           name: "creativ-spaces",
-          src : "../../public/lable-img/creativ-spaces.jpg",
+          src : "/lable-img/creativ-spaces.jpg",
         },
         {
           name: "desert",
-          src : "../../public/lable-img/desert.jpg",
+          src : "/lable-img/desert.jpg",
         },
         {
           name: "golf",
-          src : "../../public/lable-img/golf.jpg",
+          src : "/lable-img/golf.jpg",
         },
         {
           name: "skiing",
-          src : "../../public/lable-img/skiing.jpg",
+          src : "/lable-img/skiing.jpg",
         },
         {
           name: "surfing",
-          src : "../../public/lable-img/surfing.jpg",
+          src : "/lable-img/surfing.jpg",
         },
       ],
     }

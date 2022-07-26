@@ -63,7 +63,7 @@
           </div>
           <img
             class="host-img"
-            v-bind:src="`../../public/user-img/${stay.host.pictureUrl}`"
+            v-bind:src="`/user-img/${stay.host.pictureUrl}`"
           />
         </section>
         <section class="stay-feature-container">
@@ -309,7 +309,7 @@
             <section class="review-details">
               <div class="review-details-header flex">
                 <img
-                  :src="`/staybnb/public/user-img/${review.by.imgUrl}`"
+                  :src="`/user-img/${review.by.imgUrl}`"
                   class="review-img"
                 />
                 <div class="review-preview-details">

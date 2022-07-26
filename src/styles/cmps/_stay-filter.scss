@@ -9,15 +9,15 @@
   border: 0.5px solid $clr9;
   color: var(clr1);
   height: rem(48px);
-  transition: box-shadow 2s;
+  transition: box-shadow 0.5s;
   box-shadow: none;
   &:hover {
-    box-shadow: 1px 1px 3px 1px $clr5;
+    box-shadow: 1px 1px 3px 1px $clr9;
   }
 
   .header-separator {
     color: $clr5;
-    font-weight: 100;
+    font-weight: 50;
   }
 
   button {
@@ -70,14 +70,14 @@
 .header-filter {
   display: flex;
   margin-bottom: rem(23px);
-  // margin-top: rem(23px);
+  margin-top: rem(23px);
   border: 0.5px solid $clr9;
   border-radius: 50px;
   padding-inline-start: 0;
   overflow: hidden;
   align-items: center;
   height: rem(65px);
-  // width: 600px;
+  width: 600px;
   transition: box-shadow 2s;
   justify-content: space-around;
   button {
@@ -188,7 +188,7 @@
 .calendar-modal {
   opacity: 0%;
   transition: opacity 1s;
-  margin-top: -40rem;
+  margin-top: -50rem;
 
   position: fixed;
   z-index: 1;
