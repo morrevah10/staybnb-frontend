@@ -84,5 +84,9 @@
 
 .el-carousel__container {
   height: auto !important;
-  aspect-ratio: 1/ 1;
+  aspect-ratio: 1/ 0.9;
+}
+
+.el-carousel__indicators {
+  z-index: 1 !important;
 }

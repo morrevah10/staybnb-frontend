@@ -7,7 +7,6 @@
   border: 0.5px solid $clr9;
   color: var(clr1);
   height: rem(48px);
-  transition: box-shadow 0.5s;
   box-shadow: none;
   &:hover {
     box-shadow: 1px 1px 3px 1px $clr9;
@@ -76,16 +75,16 @@
   padding-inline-start: 0;
   overflow: hidden;
   align-items: center;
-  height: rem(65px);
-  width: 600px;
-  transition: box-shadow 2s;
-  justify-content: space-around;
+  height: 64px;
+  width: 850px;
+  justify-content: space-evenly;
   button {
+    width: 100%;
     display: block;
-
+    padding-left: 24px;
+    padding-right: 24px;
     height: 100%;
     background: transparent;
-    padding: 0 0.5rem;
     text-align: start;
     border: none;
     font-size: rem(14px);
@@ -101,35 +100,40 @@
     }
   }
   .button-title {
-    color: $clr2;
-    font-size: 0.75rem;
-    font-family: Circular;
-    font-weight: 600;
+    color: rgb(34, 34, 34);
+    font-size: 12px;
+    letter-spacing: 0.48px;
     line-height: 1rem;
   }
   .button-sub {
+    font-size: 14px;
     min-width: rem(75px);
+    color: rgb(113, 113, 113);
   }
 }
 .filter-search {
+  letter-spacing: normal;
+  cursor: pointer;
+  font-family: Circular;
   margin: 7px 7px 7px 0;
-  height: 80%;
-  padding: 1.3rem;
+  height: 48px;
+  width: 48px;
+  padding: 1rem;
   justify-self: end;
   align-items: center;
   font-weight: 500;
-  font-size: 1.2rem;
-  border-radius: 3.2rem;
+  font-size: 16px;
+  border-radius: 24px;
   display: inline-flex;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: $clr1;
   span {
     padding-inline-start: 0.5rem;
   }
   img {
     margin-inline-end: 0;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .guests-btn-warper {
@@ -142,12 +146,12 @@
 }
 
 .destination-input {
+  width: 100%;
   padding-inline-start: 0;
   text-align: start;
 
   input {
     border: hidden;
-    width: 120px;
     &:focus {
       outline: none;
     }
@@ -169,7 +173,6 @@
 .guests-modal {
   margin-top: -37.25rem;
   opacity: 0%;
-  transition: opacity 1s;
   position: fixed;
   z-index: 1;
 
@@ -181,13 +184,10 @@
 
 .calendar-modal {
   opacity: 0%;
-  transition: opacity 1s;
   margin-top: -50rem;
-
   position: fixed;
   z-index: 1;
   vertical-align: middle;
-  width: inherit;
   background-color: $clr3;
   border-radius: 2rem;
   padding: 3rem 3rem;
@@ -227,18 +227,8 @@
   }
 }
 
-.date-container {
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-  border-radius: 2rem;
-  &:hover {
-    background-color: $clr7;
-    cursor: pointer;
-  }
-}
-
 .guest-container {
+  width: 100%;
   flex-direction: row;
   &:hover {
     &:hover {
@@ -250,4 +240,32 @@
   .buttom-sub-gest {
     width: 100px;
   }
+}
+
+.separator-line {
+  align-self: center;
+  flex: 0 0 0;
+  height: 32px;
+  border-right: 1px solid rgb(221, 221, 221);
+}
+
+.date-btn {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.where-btn {
+  padding-right: 85px;
+}
+
+.search-input {
+  font-size: 14px;
+  min-width: rem(75px);
+  color: rgb(113, 113, 113);
+}
+
+.guests-sum {
+  font-size: 15px;
+  min-width: rem(75px);
+  color: rgb(113, 113, 113);
 }

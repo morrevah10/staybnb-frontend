@@ -1,6 +1,5 @@
 .large-search {
   opacity: 0%;
-  // transition: opacity 1s;
   transition: top 1s;
   transition: opacity 1s;
   z-index: 10;
@@ -10,14 +9,12 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 .large-search-modal {
-  position: absolute;
+  position: fixed;
   opacity: 100%;
-  top: 90px;
+  top: 61px;
   z-index: 10;
   transition: top 1s;
   transition: opacity 1s;
-  // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
-  // transition: opacity 1s;
   background-color: white;
 }
 
@@ -32,7 +29,7 @@
   width: 350px;
   align-items: center;
   justify-content: space-evenly;
-  margin: 15px auto;
+  margin: 1.8rem auto;
   cursor: pointer;
 }
 
