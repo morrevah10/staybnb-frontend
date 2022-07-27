@@ -6,11 +6,7 @@
         <h1 class="logo-text">Staybnb</h1>
       </div>
     </router-link>
-    <stay-filter
-      class="filter-header"
-      @setFilter="setFilter"
-      @opem-large-modal="(isOpen) => openLarge(isOpen)"
-    />
+    <stay-filte class= "filter-header" @setFilter="setFilter" @opem-large-modal="(isOpen) => openLarge(isOpen)"/>
     <section class="user-actions flex align-items space-between">
       <div class="host">
         <router-link :to="'/host'" class="host-header link"
