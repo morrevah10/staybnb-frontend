@@ -14,7 +14,7 @@
     <details-header :stay="stay" />
     <section class="stay-display flex">
       <details-info :stay="stay" />
-      <details-modal :stay="stay" />
+      <details-modal :stay="stay" @makeReservation="reserve"/>
     </section>
     <details-reviews :stay="stay" />
   </section>
@@ -60,6 +60,12 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
+      reservation:{
+        stayToOrder:{
+          date:null,
+          guests:null
+        },
+      }
     };
   },
   methods: {
@@ -89,6 +95,9 @@ export default {
     dateUpdate(date) {
       this.date = date;
     },
+    reserve(){
+      this.$store.dispatch({ type: "sendReservation",stay:this.stay,reservation:this.reservation })
+    }
   },
   computed: {
     dateFormat() {

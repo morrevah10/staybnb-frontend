@@ -22,6 +22,9 @@ export default {
           console.log(err);
         });
     },
+    sendReservation({commit},{stay,reservation}){
+      console.log("from order module",stay,reservation)
+    }
   },
   mutations: {
     setOrders(state, { orders }) {

@@ -47,7 +47,7 @@
               <span class="guest-num">{{ totalGuests }}</span>
             </button>
           </div>
-          <fancy-btn class="reserve-btn">Reserve</fancy-btn>
+          <fancy-btn class="reserve-btn" @click="reservation">Reserve</fancy-btn>
         </form>
       </div>
     </div>
@@ -105,6 +105,9 @@ export default {
     dateUpdate(date) {
       this.date = date;
     },
+    reservation(){
+      this.$emit("makeReservation");
+    }
   },
   computed: {
     checkInDate() {
