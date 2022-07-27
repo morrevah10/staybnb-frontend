@@ -91,16 +91,12 @@
     <div class="stay-amenities">
       <h2 class="amenities-header">What this place offers</h2>
       <ul class="amenities-list flex">
-        <li
-          class="amenitie-container flex"
-          v-for="(amenities, idx) in stay.amenities"
-          :key="idx"
-        >
+        <li class="amenitie-container flex" v-for="amenitie in amenities">
           <img
-            :src="`/staybnb/src/styles/icons/details-icons/${amenities.imgUrl}`"
+            :src="`/staybnb/src/styles/icons/details-icons/${amenitie.imgUrl}`"
             class="amenitie-img"
           />
-          {{ amenities }}
+          {{ amenitie.name }}
         </li>
       </ul>
     </div>
@@ -114,7 +110,34 @@ export default {
   },
   components: {},
   data() {
-    return {};
+    return {
+      amenities: [
+        {
+          name: "Sea view",
+          imgUrl: "sea-view-icon.svg",
+        },
+        {
+          name: "Kitchen",
+          imgUrl: "kitchen-icon.svg",
+        },
+        {
+          name: "Beach access",
+          imgUrl: "beach-access-icon.svg",
+        },
+        {
+          name: "TV",
+          imgUrl: "tv-icon.svg",
+        },
+        {
+          name: "Backyard",
+          imgUrl: "backyard-icon.svg",
+        },
+        {
+          name: "Refrigerator",
+          imgUrl: "refrigerator-icon.svg",
+        },
+      ],
+    };
   },
   methods: {},
   computed: {},
