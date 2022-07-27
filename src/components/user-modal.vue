@@ -16,7 +16,9 @@
         <router-link :to="'/dashboard'" class="link">
           <p>Dashboard</p>
         </router-link>
-        <p>Trips</p>
+        <router-link :to="'/trips'" class="link">
+          <p>Trips</p>
+        </router-link>
       </div>
       <p>About</p>
       <p>Logout</p>
