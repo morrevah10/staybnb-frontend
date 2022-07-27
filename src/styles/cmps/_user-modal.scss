@@ -3,20 +3,27 @@
   justify-content: flex-end;
   position: relative;
 
+  .user-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+
   p {
+    font-size: 14px;
+    color: #343434;
+    padding: 15px 20px;
     display: flex;
     width: 230px;
-    height: 30px;
+    height: 40px;
     align-items: center;
     justify-content: left;
-    padding-left: 10px;
+    padding-left: 15px;
     cursor: pointer;
 
     &:hover {
-      // border-bottom: 1px solid $clr9;
-      // color: $clr9;
       background-color: #ececec;
-      border-radius: 10%;
     }
   }
 }
@@ -25,18 +32,21 @@
   position: absolute;
   background-color: $clr3;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
-  // border: 1px solid $clr9;
   border-radius: 3%;
   z-index: 5;
-  top: -40px;
+  top: -20px;
   opacity: 100%;
 }
 
 .user-modal {
+  top: -500px;
   opacity: 0%;
-  transition: opacity 1s;
 }
 
 .small-line {
   border-bottom: 00.5px solid $clr9;
+}
+
+.gray {
+  color: black !important;
 }

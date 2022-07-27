@@ -10,7 +10,7 @@
     <div class="add-container flex">
       <button
         value="guests"
-        class="search-header flex add-btn"
+        class="search-header font flex add-btn"
         @click="openSearch('guests')"
       >
         Add guests
