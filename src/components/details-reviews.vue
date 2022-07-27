@@ -83,21 +83,9 @@
     </div>
     <div class="review-list">
       <ul class="reviews-list-container clean-list">
-        <li
-          v-for="(review, idx) in stay.reviews"
-          :key="idx"
-          class="review-preview clean-list"
-        >
-          <section class="review-details">
-            <div class="review-details-header flex">
-              <img :src="`${review.by.imgUrl}`" class="review-img" />
-              <div class="review-preview-details">
-                <h4 class="review-name">{{ review.by.fullname }}</h4>
-                <h5 class="review-time">{{ review.at }}</h5>
-              </div>
-            </div>
-            <span class="review-txt">{{ review.txt }}</span>
-          </section>
+        <li v-for="(review, idx) in stay.reviews" :key="idx" class="review-preview clean-list">
+        <!-- <h2>{{review}}</h2> -->
+      <StayReviewCmp :review="review"></StayReviewCmp>
         </li>
       </ul>
     </div>
@@ -105,17 +93,23 @@
 </template>
 
 <script>
+import stayReview from './stay-review.cmp.vue'
+import StayReviewCmp from './stay-review.cmp.vue'
+
 export default {
+  components: {
+    stayReview
+  },
   props: {
     stay: Object,
   },
-  components: {},
+  components: { StayReviewCmp },
   data() {
     return {};
   },
   methods: {},
   computed: {},
-  created() {},
-  unmounted() {},
+  created() { },
+  unmounted() { },
 };
 </script>

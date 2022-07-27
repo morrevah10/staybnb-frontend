@@ -2,7 +2,7 @@
   <section class="stay-previews" v-if="stay">
     <div @click="$router.push(`/${stay._id}`)" class="stay-preview-card">
       <div class="card-img">
-        <el-carousel arrow="hover" trigger="click" interval="0">
+        <el-carousel arrow="hover" trigger="click" interval=0>
           <el-carousel-item v-for="img in stay.imgUrls">
             <img class="carousel-img" :src="`../../img/${img}`" />
           </el-carousel-item>
