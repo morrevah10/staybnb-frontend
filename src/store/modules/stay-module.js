@@ -6,7 +6,15 @@ export default {
     stays: null,
     currStay: null,
     filterBy: null,
-    stayToOrder: null
+    stayToOrder: {
+      date: {
+        start: new Date(),
+        end: new Date( Date.now()+ 86400000) 
+      },
+      guests: {
+        adults: 1
+      }
+    }
   },
   getters: {
     staysToDisplay({ txt, byAmenity, stays }) {
