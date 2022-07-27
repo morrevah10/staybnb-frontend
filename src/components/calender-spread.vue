@@ -1,6 +1,6 @@
 
 <template>
-  <button class="x-btn" @click="$emit('closeCalendar')">x</button>
+  <button class="x-btn" @click.prevent="$emit('closeCalendar')">x</button>
   <DatePicker :columns="2" v-model="date" is-range update-on-input/>
 </template>
     <script>

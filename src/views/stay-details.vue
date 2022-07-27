@@ -385,10 +385,6 @@ export default {
     },
     dateUpdate(date) {
       this.date = date;
-      console.log("yes!");
-      console.log("yes", this.date);
-      console.log("start", this.date.start);
-      console.log("end", this.date.end);
     },
   },
   computed: {
