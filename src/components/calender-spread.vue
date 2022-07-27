@@ -1,4 +1,3 @@
-
 <template>
 <div v-click-outside="onClickOutside">
   <button class="x-btn" @click.prevent="$emit('closeCalendar')">x</button>

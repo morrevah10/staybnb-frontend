@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import stayStore from './modules/stay-module'
-import labelStore from './modules/labels-module'
+import orderModal from './modules/order-module'
+// import labelStore from './modules/labels-module'
 
 const store = createStore({
   strict: true,
@@ -10,7 +11,8 @@ const store = createStore({
   actions: {},
   modules: {
     stayStore,
-    labelStore
+    orderModal
+    // labelStore
   },
 })
 

@@ -146,53 +146,21 @@ export default {
   },
   data() {
     return {
-        orders: [
-      {
-        _id: "1",
-        imgUrl: "img",
-        guestName: "yossi chen",
-        checkIn: "2016-05-01",
-        checkOut: "2016-05-03",
-        status: "panding",
-        revenue: "$100",
-        action: "aprove/decline",
-      },
-      {
-        _id: "2",
-        imgUrl: "img",
-        guestName: "mor revah",
-        checkIn: "2016-05-01",
-        checkOut: "2016-05-03",
-        status: "panding",
-        revenue: "$150",
-        action: "approve/decline",
-      },
-      {
-        _id: "3",
-        imgUrl: "img",
-        guestName: "mor revah",
-        checkIn: "2016-05-01",
-        checkOut: "2016-05-03",
-        status: "panding",
-        revenue: "$150",
-        action: "approve/decline",
-      },
-    ],
+      orders:null,
     }
   },
   methods: {},
-  computed: {},
-  created() {},
+  computed: {
+      orders() {
+      let hostOrders = this.$store.getters.getOrder;
+      console.log("dash from service ",hostOrders)
+      this.orders = hostOrders
+      console.log(this.orders)
+    },
+  },
+  created() {
+     this.$store.dispatch({ type: "loadOrders" })
+  },
   unmounted() {},
 }
 </script>
-
-      <!-- <el-table :data="orders" style="width: 100%">
-        <el-table-column prop="imgUrl" label="" width="180" />
-        <el-table-column prop="guestName" label="Guest name" width="180" />
-        <el-table-column prop="checkIn" label="Check in" />
-        <el-table-column prop="checkOut" label="Check out" />
-        <el-table-column prop="status" label="Status" />
-        <el-table-column prop="revenue" label="Revenue" />
-        <el-table-column prop="action" label="Action" />
-      </el-table> -->
