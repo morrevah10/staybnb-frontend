@@ -1,0 +1,15 @@
+.trips-line {
+  justify-content: space-between;
+  border-bottom: solid 2px gray;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 13px;
+}
+
+.trips-table-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-weight: bold;
+}

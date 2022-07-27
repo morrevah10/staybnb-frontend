@@ -4,7 +4,7 @@
     <h1 class="trips-header">My Trips</h1>
     <div class="trips-table">
       <section v-if="trips" class="trips-list">
-        <ul class="dash-table-title">
+        <ul class="trips-table-title">
           <li>Date</li>
           <li>Host</li>
           <li>Stay</li>
@@ -18,7 +18,7 @@
         </ul>
 
         <div class="trips-container" v-for="trip in trips" :key="trip._id">
-          <ul class="order-line">
+          <ul class="trips-line flex">
             <li>{{ trip.Date }}</li>
             <li>{{ trip.Host }}</li>
             <li>{{ trip.Stay }}</li>
@@ -28,7 +28,7 @@
             <li>{{ trip.Price }}</li>
             <li>{{ trip.Total }}</li>
             <li>{{ trip.Status }}</li>
-            <li>{{ trip.Actions }}</li>
+            <button>{{ trip.Actions }}</button>
           </ul>
         </div>
       </section>
@@ -48,45 +48,45 @@ export default {
   },
   data() {
     return {
-      orders: [
+      trips: [
         {
           _id: "1",
-          Date: "19/07/22",
+          Date: "25/07/22",
           Host: "David",
-          Stay: "Apartment",
-          Dates: "20/07/22 - 22/07/22",
-          Nights: "panding",
-          Guests: "$100",
-          Price: "aprove/decline",
-          Total: "",
-          Status: "",
-          Actions: "",
+          Stay: "Monte dos Burgos",
+          Dates: "26/07/22 - 27/07/22",
+          Nights: "1",
+          Guests: "4",
+          Price: "$150",
+          Total: "$150",
+          Status: "Pending",
+          Actions: "Cancel",
         },
         {
           _id: "2",
-          Date: "22/07/22",
+          Date: "23/07/22",
           Host: "Daniel",
-          Stay: "Apartment",
-          Dates: "25/07/22 - 26/07/22",
-          Nights: "panding",
-          Guests: "$100",
-          Price: "aprove/decline",
-          Total: "",
-          Status: "",
-          Actions: "",
+          Stay: "Cosy Room",
+          Dates: "24/07/22 - 25/07/22",
+          Nights: "1",
+          Guests: "2",
+          Price: "$500",
+          Total: "$100",
+          Status: "Pending",
+          Actions: "Cancel",
         },
         {
           _id: "3",
-          Date: "img",
-          Host: "yossi chen",
-          Stay: "2016-05-01",
-          Dates: "2016-05-03",
-          Nights: "panding",
-          Guests: "$100",
-          Price: "aprove/decline",
-          Total: "",
-          Status: "",
-          Actions: "",
+          Date: "19/07/22",
+          Host: "Jaki",
+          Stay: "Viva Loca",
+          Dates: "20/07/22 - 22/07/22",
+          Nights: "2",
+          Guests: "3",
+          Price: "$100",
+          Total: "$200",
+          Status: "Pending",
+          Actions: "Cancel",
         },
       ],
     };

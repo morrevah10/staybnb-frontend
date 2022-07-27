@@ -5,7 +5,7 @@ import hostPage from "../views/become-host.vue";
 import loginPage from "../views/login-page.vue";
 import signupPage from "../views/signup-page.vue";
 import dashboardPage from "../views/dashboard.vue";
-// import tripsPage from "../views/trip-page.vue";
+import tripsPage from "../views/trips-page.vue";
 // import stayEdit from "../views/stay-edit.vue";
 
 const router = createRouter({
@@ -41,11 +41,11 @@ const router = createRouter({
       name: "dashboard",
       component: dashboardPage,
     },
-    // {
-    //   path: "/trips",
-    //   name: "trips",
-    //   component: tripsPage,
-    // },
+    {
+      path: "/trips",
+      name: "trips",
+      component: tripsPage,
+    },
     // {
     //   path: "/edit/:stayId?",
     //   name: "stay-edit",
