@@ -47,7 +47,10 @@
               <span class="guest-num">{{ totalGuests }}</span>
             </button>
           </div>
-          <fancy-btn class="reserve-btn" @click="reservation">Reserve</fancy-btn>
+          <fancy-btn class="reserve-btn" @click="reservation" >Reserve</fancy-btn>
+          <!-- <div class="reserve-modal">
+      <reserve-modal :class="isUserModal ? 'reserve-modal-active' : 'reserve-modal'" />
+          </div> -->
         </form>
       </div>
     </div>
@@ -59,6 +62,7 @@ import { stayService } from "../services/stay-service";
 import calenderSpread from "../components/calender-spread.vue";
 import guestsPicker from "../components/guests-picker.cmp.vue";
 import fancyBtn from "../components/fancy-btn.cmp.vue";
+import reserveModal from "./reserve-modal.vue";
 
 export default {
   props: {
@@ -68,6 +72,7 @@ export default {
     guestsPicker,
     calenderSpread,
     fancyBtn,
+    reserveModal
   },
   data() {
     return {
@@ -83,6 +88,7 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
+      isReserveModal: false,
     };
   },
   methods: {
@@ -107,6 +113,8 @@ export default {
     },
     reservation(){
       this.$emit("makeReservation");
+      this.isReserveModal =!this.isReserveModal
+      // console.log("modal open",this.isReserveModal)
     }
   },
   computed: {

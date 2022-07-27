@@ -4,6 +4,7 @@ import {ordersService} from '../../services/order-service.js'
 export default {
   state: {
     orders:null,
+    currOrder:null,
   },
   getters: {
     getOrder({orders}) {
@@ -15,7 +16,7 @@ export default {
       ordersService
         .query()
         .then((orders) => {
-          commit({ type: "setOrders", orders });
+          commit({ type: "getOrders", orders });
           return orders;
         })
         .catch((err) => {
@@ -24,12 +25,14 @@ export default {
     },
     sendReservation({commit},{stay,reservation}){
       console.log("from order module",stay,reservation)
+      ordersService.makeOrder()
     }
   },
   mutations: {
-    setOrders(state, { orders }) {
+    getOrders(state, { orders }) {
       state.orders = orders;
     },
+    // setOrder(state,)
   },
 }
 

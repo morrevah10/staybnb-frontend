@@ -3,6 +3,7 @@ import { storageService } from "./storage-service.js";
 export const ordersService = {
   query,
   getOrders,
+  makeOrder,
 };
 
 const order_key = "orderDB";
@@ -51,3 +52,7 @@ function getOrders() {
     }
     return orders;
   }
+
+function makeOrder(stay,reservation){
+  
+}
