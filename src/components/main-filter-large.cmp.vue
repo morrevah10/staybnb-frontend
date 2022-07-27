@@ -88,7 +88,7 @@ export default {
     return {
       filterBy: {
         destination: "",
-        numOfBeds: 0,
+        numOfGuests: 0,
       },
       date: {
         start: null,
@@ -112,7 +112,7 @@ export default {
     },
     runSearch() {
       if (!this.filterBy.destination.length) return
-      if (this.guests.total === 0) this.filterBy.numOfBeds = 1
+      if (this.guests.total === 0) this.filterBy.numOfGuests = 1
       const copyFilter = JSON.parse(JSON.stringify(this.filterBy))
       this.$store.dispatch({ type: "setFilter", filterBy: copyFilter })
     },
@@ -122,7 +122,7 @@ export default {
     },
     updateGuests(NewGuests) {
       this.guests = NewGuests
-      this.filterBy.numOfBeds = this.guests.total
+      this.filterBy.numOfGuests = this.guests.total
     },
   },
   actions: {},

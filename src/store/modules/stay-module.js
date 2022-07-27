@@ -21,36 +21,6 @@ export default {
         );
       }
 
-      // if (bySort) {
-      //   const sort = bySort.split(" - ");
-
-      //   if (sort[0] === "Name") {
-      //     console.log(1);
-      //     if (sort[1] === "Increasing")
-      //       filteredStays = filteredStays.sort((t1, t2) =>
-      //         t1.name.localeCompare(t2.name)
-      //       );
-      //     else
-      //       filteredStays = filteredStays.sort((t1, t2) =>
-      //         t2.name.localeCompare(t1.name)
-      //       );
-      //   }
-
-      //   if (sort[0] === "Price") {
-      //     if (sort[1] === "Increasing")
-      //       filteredStays = filteredStays.sort((t1, t2) => t1.price - t2.price);
-      //     else
-      //       filteredStays = filteredStays.sort((t1, t2) => t2.price - t1.price);
-      //   }
-
-      //   if (sort[0] === "Type") {
-      //     if (sort[1] === "Increasing")
-      //       filteredStays = filteredStays.sort((t1, t2) => t1.type - t2.type);
-      //     else
-      //       filteredStays = filteredStays.sort((t1, t2) => t2.type - t1.type);
-      //   }
-      // }
-
       return filteredStays;
     },
   },
@@ -88,10 +58,13 @@ export default {
           console.log(err);
         });
     },
-    setFilterBy({ commit }, { filterBy }) {
-      stayService.query(filterBy).then((stays) => {
-        commit({ type: "setStays", stays });
-      });
+    async setFilter({ commit }, { filterBy }) {
+      try {
+        const stays = await stayService.query(filterBy)
+        commit({ type: "setStays", stays })
+      } catch {
+        console.log('failed to get filtered stays')
+      }
     },
   },
   mutations: {
