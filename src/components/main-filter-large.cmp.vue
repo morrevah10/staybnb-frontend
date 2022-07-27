@@ -114,6 +114,11 @@ export default {
       if (this.guests.total === 0) this.filterBy.numOfGuests = 1;
       const copyFilter = JSON.parse(JSON.stringify(this.filterBy));
       this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
+      this.$store.dispatch({
+        type: "setStayToOrder",
+        date: this.date,
+        guests: this.guests,
+      });
     },
 
     dateUpdate(newDate) {

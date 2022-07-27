@@ -13,7 +13,7 @@
     />
     <section class="user-actions flex align-items space-between">
       <div class="host">
-        <router-link :to="'/host'" class="host-header link"
+        <router-link :to="'/'" class="host-header link"
           >Become a Host</router-link
         >
       </div>
@@ -41,32 +41,35 @@
   </section>
 </template>
 <script>
-import stayFilter from "./stay-filter.vue";
-import mainFilterLarge from "./main-filter-large.cmp.vue";
+import stayFilter from "./stay-filter.vue"
+import mainFilterLarge from "./main-filter-large.cmp.vue"
 import userModal from "./user-modal.vue";
 export default {
   props: [],
-  components: {
+    components:{ 
     userModal,
     stayFilter,
-    mainFilterLarge,
+    mainFilterLarge
+
   },
-  data() {
-    return {
+  data()
+   {  return { 
       isLargeOpen: false,
       isUserModal: false,
-    };
-  },
+   }
+    },
   methods: {
     openLarge(isOpen) {
       this.isLargeOpen = isOpen;
       // this.isLargeOpen=!this.isLargeOpen
-      console.log("from header", this.isLargeOpen);
-    },
-    openUserModal() {
-      this.isUserModal = !this.isUserModal;
-      console.log("user modal open", this.isUserModal);
-    },
+      console.log("from header",this.isLargeOpen)
+
+       },
+      openUserModal(){
+        this.isUserModal =!this.isUserModal
+        console.log("user modal open",this.isUserModal)
+      }
+
   },
   computed: {},
   created() {},

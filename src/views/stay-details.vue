@@ -423,9 +423,12 @@ export default {
   },
   created() {
     const { stayId } = this.$route.params;
-    stayService.getById(stayId).then((currStay) => {
-      this.stay = currStay;
+    stayService.getById(stayId).then((displayed) => {
+    this.stay = displayed;
     });
+    let stayToOrder = this.$store.getters.getStayToOrder
+    this.date = stayToOrder.date
+    this.guests = stayToOrder.guests
   },
   unmounted() {},
 };
