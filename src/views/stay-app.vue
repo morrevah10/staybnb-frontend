@@ -46,9 +46,9 @@ export default {
       return this.$store.getters.labelToDisplay;
     }
   },
-  created() {
-    this.$store.dispatch({ type: "loadStays" }).then(() => {});
-    this.$store.dispatch({type: "loadLabels"}).then(()=>{});
+    created() {
+      this.$store.dispatch({ type: "loadStays" })
+    // this.$store.dispatch({type: "loadLabels"}).then(()=>{});
   },
   unmounted() {},
 };

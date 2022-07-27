@@ -211,7 +211,7 @@
                   <span class="guest-num">{{ totalGuests }}</span>
                 </button>
               </div>
-              <fancy-btn class="reserve-btn">Reserve</fancy-btn>
+              <fancy-btn class="reserve-btn" @click="reservOrder">Reserve</fancy-btn>
             </form>
           </div>
         </div>
@@ -429,6 +429,7 @@ export default {
     let stayToOrder = this.$store.getters.getStayToOrder
     this.date = stayToOrder.date
     this.guests = stayToOrder.guests
+    // console.log('stayToOrder from stay-details',this.stay)
   },
   unmounted() {},
 };

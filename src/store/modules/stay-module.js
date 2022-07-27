@@ -98,6 +98,7 @@ export default {
         date,
         guests
       }
+      console.log("from stor",state.stayToOrder)
      
     }
   },
