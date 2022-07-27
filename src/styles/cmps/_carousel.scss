@@ -48,7 +48,7 @@
   opacity: 1;
 }
 
-.img-preview{
+.img-preview {
   border-radius: 10px;
   aspect-ratio: 1/1;
 }
@@ -76,4 +76,13 @@
 }
 .slide-out-leave-to {
   transform: translateX(-100%);
+}
+
+.stay-preview-card .el-carousel__arrow {
+  z-index: 1 !important;
+}
+
+.el-carousel__container {
+  height: auto !important;
+  aspect-ratio: 1/ 1;
 }
