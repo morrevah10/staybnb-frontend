@@ -9,7 +9,7 @@
     <stay-filter
       class="filter-header"
       @setFilter="setFilter"
-      @opem-large-modal="(isOpen) => openLarge(isOpen)"
+      @open-large-modal="(isOpen) => openLarge(isOpen)"
     />
     <section class="user-actions flex align-items space-between">
       <div class="host">

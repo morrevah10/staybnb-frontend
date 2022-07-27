@@ -9,7 +9,7 @@ export default {
     stayToOrder: {
       date: {
         start: new Date(),
-        end: new Date( Date.now()+ 86400000) 
+        end: new Date(Date.now()+ 86400000) 
       },
       guests: {
         adults: 1

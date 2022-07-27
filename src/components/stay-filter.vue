@@ -9,18 +9,21 @@
   <!-- </main-filter-small> -->
 </template>
 <script>
+import mainFilterLarge from "./main-filter-large.cmp.vue";
 import mainFilterSmall from "./main-filter-small.cmp.vue";
 import smallNavBar from "./small-nav-bar.vue";
 import SmallNavBar from "./small-nav-bar.vue";
 
 export default {
   components: {
+    mainFilterLarge,
     mainFilterSmall,
     smallNavBar,
     SmallNavBar,
   },
 
   props: [],
+  emits: ['openLargeModal'], 
   data() {
     return {
       defaultDisplay: false,
@@ -31,7 +34,7 @@ export default {
     openLargeFilter() {
       this.defaultDisplay = !this.defaultDisplay;
       let isOpen = this.defaultDisplay;
-      this.$emit("opemLargeModal", isOpen);
+      this.$emit("openLargeModal", isOpen);
     },
   },
   computed: {},

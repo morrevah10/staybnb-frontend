@@ -163,6 +163,9 @@
           </ul>
         </div>
       </div>
+
+
+
       <div class="stay-order">
         <div class="order-modal-container">
           <div class="order-modal flex">
@@ -217,6 +220,11 @@
         </div>
       </div>
     </section>
+
+
+
+
+    
     <div class="stay-reviews">
       <h2>★ 4.7 · {{ stay.numOfReviews }} Reviews</h2>
       <div class="review-stats grid">
