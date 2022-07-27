@@ -2,10 +2,11 @@
   <div class="filter-large-modal main-layout">
     <form class="header-filter">
       <div class="destination-input btn-container">
-        <button @click.prevent="clickedButton">
+        <button where-btn @click.prevent="clickedButton">
           <label>
             <div class="button-title">Where</div>
             <input
+              class="search-input"
               v-model="filterBy.destination"
               name="destination-input"
               type="text"
@@ -14,28 +15,27 @@
           </label>
         </button>
       </div>
-
-      <span>|</span>
-
-      <div class="date-container">
-        <div class="btn-container flex">
-          <button @click.prevent="isCalendarShown = !isCalendarShown">
-            <div class="button-title">Check in</div>
-            <p class="button-sub">{{ checkInDate }}</p>
-          </button>
-        </div>
-
-        <div class="btn-container flex">
-          <button @click.prevent="isCalendarShown = !isCalendarShown">
-            <div class="button-title">Check out</div>
-            <p class="button-sub">{{ checkOutDate }}</p>
-          </button>
-        </div>
+      <span class="separator-line"></span>
+      <div class="btn-container flex">
+        <button
+          class="date-btn"
+          @click.prevent="isCalendarShown = !isCalendarShown"
+        >
+          <div class="button-title">Check in</div>
+          <p class="button-sub">{{ checkInDate }}</p>
+        </button>
       </div>
-
-      <span>|</span>
-
-
+      <span class="separator-line"></span>
+      <div class="btn-container flex">
+        <button
+          class="date-btn"
+          @click.prevent="isCalendarShown = !isCalendarShown"
+        >
+          <div class="button-title">Check out</div>
+          <p class="button-sub">{{ checkOutDate }}</p>
+        </button>
+      </div>
+      <span class="separator-line"></span>
       <div
         class="calendar-modal"
         :class="{ 'active-calendar': isCalendarShown }"
@@ -56,7 +56,6 @@
         </button>
         <div @click.prevent="runSearch" class="filter-search">
           <img src="../styles/icons/search_white.png" alt="" />
-          <span>Search</span>
         </div>
         <div
           class="guests-modal"
@@ -73,8 +72,8 @@
 </template>
 
 <script>
-import guestsPicker from "./guests-picker.cmp.vue"
-import calenderSpread from "./calender-spread.vue"
+import guestsPicker from "./guests-picker.cmp.vue";
+import calenderSpread from "./calender-spread.vue";
 
 export default {
   props: {
@@ -104,26 +103,30 @@ export default {
       isCalendarShown: false,
       isGuestModalShown: false,
       mode: "destination",
-    }
+    };
   },
   methods: {
     clickedButton() {
-      console.log("clicked")
+      console.log("clicked");
     },
     runSearch() {
-      if (!this.filterBy.destination.length) return
-      if (this.guests.total === 0) this.filterBy.numOfGuests = 1
-      const copyFilter = JSON.parse(JSON.stringify(this.filterBy))
-      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter })
-      this.$store.dispatch({type: "setStayToOrder", date: this.date , guests: this.guests})
+      if (!this.filterBy.destination.length) return;
+      if (this.guests.total === 0) this.filterBy.numOfGuests = 1;
+      const copyFilter = JSON.parse(JSON.stringify(this.filterBy));
+      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
+      this.$store.dispatch({
+        type: "setStayToOrder",
+        date: this.date,
+        guests: this.guests,
+      });
     },
 
     dateUpdate(newDate) {
-      this.date = newDate
+      this.date = newDate;
     },
     updateGuests(NewGuests) {
-      this.guests = NewGuests
-      this.filterBy.numOfGuests = this.guests.total
+      this.guests = NewGuests;
+      this.filterBy.numOfGuests = this.guests.total;
     },
   },
   actions: {},
@@ -135,7 +138,7 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add dates"
+        : "Add dates";
     },
 
     checkOutDate() {
@@ -145,23 +148,23 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add dates"
+        : "Add dates";
     },
     totalGuests() {
       switch (this.guests.total) {
         case 0:
-          return "Add guests"
-          break
+          return "Add guests";
+          break;
         case 1:
-          return "1 guest"
-          break
+          return "1 guest";
+          break;
         default:
-          return `${this.guests.total} guests`
+          return `${this.guests.total} guests`;
       }
     },
   },
   watch: {},
   created() {},
   unmounted() {},
-}
+};
 </script>

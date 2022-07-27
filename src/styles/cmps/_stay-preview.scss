@@ -1,27 +1,35 @@
 .stay-header {
-  margin-top: 11px;
+  margin-top: 12px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
 
-.stay-price-preview {
-  font-size: 0.95rem;
-  margin-top: 7px;
-}
-
 .stay-name-preview {
-  font-size: 0.95rem;
-}
-
-.beds-num-preview {
-  color: gray;
-  font-size: 0.95rem;
+  line-height: 19px;
+  font-size: 15px;
+  margin: 0;
 }
 
 .stay-type-preview {
-  color: gray;
-  font-size: 0.95rem;
+  line-height: 19px;
+  color: rgb(113, 113, 113);
+  font-size: 15px;
+}
+
+.beds-num-preview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 19px;
+  color: rgb(113, 113, 113);
+  font-size: 15px;
+}
+
+.stay-price-preview {
+  line-height: 19px;
+  font-size: 15px;
+  margin-top: 6px;
 }
 
 .stay-preview-card {
@@ -49,10 +57,6 @@
       color: $clr2;
     }
   }
-}
-
-.stay-name-preview {
-  margin: 0;
 }
 
 .carousel-img {
@@ -84,4 +88,19 @@
   left: 170%;
   background: none;
   cursor: pointer;
+}
+
+.star {
+  height: 14px;
+  width: 14px;
+  margin-top: 1px;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  height: 24px;
+  width: 24px;
 }
