@@ -18,6 +18,9 @@
 }
 
 .beds-num-preview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 19px;
   color: rgb(113, 113, 113);
   font-size: 15px;
@@ -85,4 +88,19 @@
   left: 170%;
   background: none;
   cursor: pointer;
+}
+
+.star {
+  height: 14px;
+  width: 14px;
+  margin-top: 1px;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  height: 24px;
+  width: 24px;
 }
