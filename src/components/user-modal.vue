@@ -1,13 +1,21 @@
 <template>
   <section class="user-modal-active">
-    <div class="user-option">
+    <div class="user-nav">
       <div class="small-line">
-        <p>Sign up</p>
-        <p>Log in</p>
+        <router-link :to="'/signup'" class="link">
+          <p class="gray">Sign up</p>
+        </router-link>
+        <router-link :to="'/login'" class="link">
+          <p>Log in</p>
+        </router-link>
       </div>
       <div class="small-line">
-        <p>Host your home</p>
-        <p>Dashboard</p>
+        <router-link :to="'/host'" class="link">
+          <p>Host your home</p>
+        </router-link>
+        <router-link :to="'/dashboard'" class="link">
+          <p>Dashboard</p>
+        </router-link>
         <p>Trips</p>
       </div>
       <p>About</p>

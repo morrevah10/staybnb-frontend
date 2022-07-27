@@ -1,7 +1,5 @@
-//small-filter
 .header-search {
-  margin: 1.5rem auto;
-  // font-weight: 600;
+  margin: 1rem auto;
   display: inline-flex;
   border-radius: 3.2rem;
   overflow: hidden;
@@ -23,7 +21,6 @@
   button {
     text-align: start;
     font-family: Circular;
-    // font-weight: 600;
     font-size: rem(14px);
     padding-left: 8px;
     background: transparent;
@@ -39,7 +36,6 @@
     color: $clr5;
     display: flex;
     flex-grow: 2;
-    font-weight: 400;
   }
 
   button:nth-of-type(4) {
@@ -65,7 +61,11 @@
   height: 0.85rem;
 }
 
-//large filter
+.font {
+  color: rgb(113, 113, 113) !important;
+}
+
+//LARGE FILTER
 
 .header-filter {
   display: flex;
@@ -84,11 +84,9 @@
     display: block;
 
     height: 100%;
-    // display: inline;
     background: transparent;
     padding: 0 0.5rem;
     text-align: start;
-    // align-items: center;
     border: none;
     font-size: rem(14px);
     color: $clr5;
@@ -121,7 +119,6 @@
   align-items: center;
   font-weight: 500;
   font-size: 1.2rem;
-  // justify-content: space-between;
   border-radius: 3.2rem;
   display: inline-flex;
   color: white;
@@ -140,20 +137,17 @@
     justify-content: center;
   }
   &:hover {
-    // background-color: $clr7;
     cursor: pointer;
   }
 }
 
 .destination-input {
-  // flex-grow: 1;
   padding-inline-start: 0;
   text-align: start;
 
   input {
     border: hidden;
     width: 120px;
-    // width: rem(260px);
     &:focus {
       outline: none;
     }
@@ -236,7 +230,6 @@
 .date-container {
   display: flex;
   justify-content: space-around;
-  // flex-grow: 1;
   height: 100%;
   border-radius: 2rem;
   &:hover {
