@@ -58,7 +58,7 @@ export default {
           src: "/lable-img/containers.jpg",
         },
         {
-          name: "creativ-spaces",
+          name: "creative-spaces",
           src: "/lable-img/creativ-spaces.jpg",
         },
         {

@@ -1,16 +1,16 @@
 <template>
-  <div >
-    <DatePicker :columns="2" v-model="date" is-range update-on-input />
-  </div>
+<div>
+  <button class="x-btn" @click.prevent="$emit('closeCalendar')">x</button>
+  <DatePicker :columns="2" v-model="date" is-range update-on-input />
+</div>
 </template>
 
     <script>
     import { Calendar, DatePicker } from 'v-calendar';
-   
+
     
     export default {
       name: 'calendar-spread',
-    
       components: {
         Calendar,
         DatePicker,
@@ -32,7 +32,7 @@
         }
       },
       methods: {
-    
+
       },
     }
     </script>

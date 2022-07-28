@@ -5,41 +5,66 @@
         <button where-btn @click.prevent="clickedButton">
           <label>
             <div class="button-title">Where</div>
-            <input class="search-input" v-model="filterBy.destination" name="destination-input" type="text"
-              placeholder="Search detonations" />
+            <input
+              class="search-input"
+              v-model="filterBy.destination"
+              name="destination-input"
+              type="text"
+              placeholder="Search detonations"
+            />
           </label>
         </button>
       </div>
       <span class="separator-line"></span>
       <div class="btn-container flex">
-        <button class="date-btn" @click.stop="openCalendar">
+        <button
+          class="date-btn"
+          @click.prevent="isCalendarShown = !isCalendarShown"
+        >
           <div class="button-title">Check in</div>
           <p class="button-sub">{{ checkInDate }}</p>
         </button>
       </div>
       <span class="separator-line"></span>
       <div class="btn-container flex">
-        <button class="date-btn" @click.stop="openCalendar">
+        <button
+          class="date-btn"
+          @click.prevent="isCalendarShown = !isCalendarShown"
+        >
           <div class="button-title">Check out</div>
           <p class="button-sub">{{ checkOutDate }}</p>
         </button>
       </div>
       <span class="separator-line"></span>
-      <div class="calendar-modal" :class="{ 'active-calendar': isCalendarShown }" v-click-outside.stop="closeCalendar">
-        <calender-spread @dateChange="dateUpdate" @click.prevent is-expanded />
-
+      <div
+        class="calendar-modal"
+        :class="{ 'active-calendar': isCalendarShown }"
+      >
+        <calender-spread
+          @closeCalendar="isCalendarShown = false"
+          @dateChange="dateUpdate"
+          @click.prevent
+          is-expanded
+        >
+        </calender-spread>
       </div>
 
       <div class="guest-container btn-container flex">
-        <button  @click.stop="openDatePicker" >
+        <button @click.prevent="isGuestModalShown = !isGuestModalShown">
           <div class="button-title">Who</div>
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
         <div @click.prevent="runSearch" class="filter-search">
           <img src="../styles/icons/search_white.png" alt="" />
         </div>
-        <div class="guests-modal" :class="{ 'active-guest': isGuestModalShown }">
-          <guests-picker @guestsUpdate="updateGuests" v-click-outside.stop="closeDatePicker" />
+        <div
+          class="guests-modal"
+          :class="{ 'active-guest': isGuestModalShown }"
+        >
+          <guests-picker
+            @guestsUpdate="updateGuests"
+            @closeGuestsModal="isGuestModalShown = false"
+          />
         </div>
       </div>
     </form>
@@ -51,7 +76,6 @@ import guestsPicker from "./guests-picker.cmp.vue";
 import calenderSpread from "./calender-spread.vue";
 
 export default {
-
   props: {
     mode: String,
   },
@@ -85,77 +109,45 @@ export default {
     clickedButton() {
       console.log("clicked");
     },
-    openCalendar() {
-      if (this.isCalendarShown) {
-        this.closeCalendar()
-
-      } else {
-        this.isCalendarShown = true
-      }
-
+    runSearch() {
+      if (!this.filterBy.destination.length) return;
+      if (this.guests.total === 0) this.filterBy.numOfGuests = 1;
+      const copyFilter = JSON.parse(JSON.stringify(this.filterBy));
+      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
+      this.$store.dispatch({
+        type: "setStayToOrder",
+        date: this.date,
+        guests: this.guests,
+      });
     },
-    closeCalendar() {
-      if (!this.isCalendarShown) return
-      if (this.isCalendarShown === true) {
-        this.isCalendarShown = false
-      }
+
+    dateUpdate(newDate) {
+      this.date = newDate;
     },
-    openDatePicker() {
-      if (this.isGuestModalShown) {
-        this.closeDatePicker()
-      } else {
-        this.isGuestModalShown = true
-
-      }
-
+    updateGuests(NewGuests) {
+      this.guests = NewGuests;
+      this.filterBy.numOfGuests = this.guests.total;
     },
-    closeDatePicker() {
-      if (!this.isGuestModalShown) return
-      if (this.isGuestModalShown === true) {
-        this.isGuestModalShown = false
-      }
-    }
-
   },
-  runSearch() {
-    if (!this.filterBy.destination.length) return;
-    if (this.guests.total === 0) this.filterBy.numOfGuests = 1;
-    const copyFilter = JSON.parse(JSON.stringify(this.filterBy));
-    this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
-    this.$store.dispatch({
-      type: "setStayToOrder",
-      date: this.date,
-      guests: this.guests,
-    });
-  },
-
-  dateUpdate(newDate) {
-    this.date = newDate;
-  },
-  updateGuests(NewGuests) {
-    this.guests = NewGuests;
-    this.filterBy.numOfGuests = this.guests.total;
-  },
-
   actions: {},
   computed: {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        })
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
         : "Add dates";
     },
 
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        })
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
         : "Add dates";
     },
     totalGuests() {
@@ -172,7 +164,7 @@ export default {
     },
   },
   watch: {},
-  created() { },
-  unmounted() { },
+  created() {},
+  unmounted() {},
 };
 </script>

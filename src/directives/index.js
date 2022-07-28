@@ -10,12 +10,14 @@ export const clickOutsideDirective = {
             clientY < top + height)
         ) {
           cb()
-          // console.log('outside')
-        } 
+          console.log('outside')
+        } else {
+          console.log('inside')
+        }
       }
-     
+      setTimeout(() => {
         document.addEventListener('click', el.clickOutside)
- 
+      }, 0)
     },
     unmounted(el) {
       document.removeEventListener('click', el.clickOutside)

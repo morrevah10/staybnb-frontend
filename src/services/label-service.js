@@ -34,7 +34,7 @@ function getLabel() {
         imgUrl: "containers.jpg",
       },
       {
-        name: "creativ-spaces",
+        name: "creative-spaces",
         imgUrl: "creativ-spaces.jpg",
       },
     ];

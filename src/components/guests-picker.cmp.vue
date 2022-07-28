@@ -1,6 +1,8 @@
 <template>
     <div>
-        
+        <div>
+        <button class="x-btn"  @click.prevent="$emit('closeGuestsModal')">x</button>
+        </div>
         <num-input @updateItemsNum="updateAdults" title="Adults" subtitle="Ages 13 or over" />
         <num-input @updateItemsNum="updateKids" title="Children" subtitle="Ages 2-12" />
         <num-input @updateItemsNum="updateInfants" title="Infants" subtitle="under 2" />
