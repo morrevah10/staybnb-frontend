@@ -1,13 +1,15 @@
 
 export const clickOutsideDirective = {
     mounted(el, { value: cb }) {
-      el.clickOutside = ({ clientX, clientY }) => {
+      console.log('el', el)
+      el.clickOutside = ( ev ) => {
+        ev.stopPropagation()
         const { left, top, width, height } = el.getBoundingClientRect()
         if (
-          !(clientX > left &&
-            clientX < left + width &&
-            clientY > top &&
-            clientY < top + height)
+          !(ev.clientX > left &&
+            ev.clientX < left + width &&
+            ev.clientY > top &&
+            ev.clientY < top + height)
         ) {
           cb()
           console.log('outside')

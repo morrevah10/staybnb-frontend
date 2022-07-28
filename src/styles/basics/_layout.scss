@@ -5,27 +5,27 @@
 }
 
 .details-layout {
-  max-width: 1120px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 
-  // @include padding($layoutSmallPadding);
+  @include padding($layoutSmallPadding);
 
-  // @include for-tablet-layout {
-  //   // @include layoutGTC($break-tablet, $layoutNormalPadding);
-  //   @include padding($layoutNormalPadding);
-  // }
-  // @include for-normal-layout {
-  //   // @include layoutGTC($break-normal, $layoutNormalPadding);
-  //   @include padding($layoutNormalPadding);
-  // }
-  // @include for-larg-layout {
-  //   // @include layoutGTC($break-larg, $layoutWidePadding);
-  //   @include padding($layoutWidePadding);
-  // }
-  // @include for-wide-layout {
-  //   // @include layoutGTC($break-wide, $layoutWidePadding);
-  //   @include padding($layoutWidePadding);
-  // }
+  @include for-tablet-layout {
+    // @include layoutGTC($break-tablet, $layoutNormalPadding);
+    @include padding($layoutNormalPadding);
+  }
+  @include for-normal-layout {
+    // @include layoutGTC($break-normal, $layoutNormalPadding);
+    @include padding($layoutNormalPadding);
+  }
+  @include for-larg-layout {
+    // @include layoutGTC($break-larg, $layoutWidePadding);
+    @include padding($layoutWidePadding);
+  }
+  @include for-wide-layout {
+    // @include layoutGTC($break-wide, $layoutWidePadding);
+    @include padding($layoutWidePadding);
+  }
 }
 
 .main-layout {

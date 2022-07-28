@@ -13,9 +13,6 @@
           >Become a Host</router-link
         >
       </div>
-      <!-- <button class="btn ">
-        <img src="/footer-imgs/lan.png" alt="" />
-      </button> -->
       <section class="user-info flex">
         <button class="menu-btn btn">
           <img class="menu-img" src="/footer-imgs/menu.png" alt="" />

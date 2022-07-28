@@ -1,8 +1,8 @@
 <template>
   <section class="labels-filter flex">
-    <button class="labels-control prev flex" @click.stop="$emit('prev')">
+    <!-- <button class="labels-control prev flex" @click.stop="$emit('prev')">
       &#60;
-    </button>
+    </button> -->
     <section class="labels-list">
       <div
         class="labels-container"
@@ -16,9 +16,9 @@
     </section>
     <!-- <div class="lable-container">here comes lables</div> -->
     <div class="filters-btn">
-      <button class="labels-control next flex" @click.stop="$emit('next')">
+      <!-- <button class="labels-control next flex" @click.stop="$emit('next')">
         &#62;
-      </button>
+      </button> -->
       <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
         <img
           src="/lable-img/filter-icon.png"
