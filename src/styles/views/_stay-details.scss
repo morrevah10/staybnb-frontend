@@ -564,3 +564,26 @@
     justify-content: space-between;
   }
 }
+
+
+.reserve-modal{
+  max-width: 400px;
+  padding: 3rem;
+  background-color: $clr1;
+  position: absolute;
+  color: $clr3;
+  font-family: Circular;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

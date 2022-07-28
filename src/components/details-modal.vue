@@ -20,45 +20,37 @@
         <form class="order-form">
           <div class="dates-pick flex">
             <div class="date-picker-container-left">
-              <button
-                class="check-in"
-                @click.stop="isCalendarShown = !isCalendarShown"
-              >
+              <button class="check-in" @click.stop="isCalendarShown = !isCalendarShown">
                 <div class="order-button">CHECK-IN</div>
                 <span class="calender-pick">{{ checkInDate }}</span>
               </button>
             </div>
             <div class="date-picker-container-right">
-              <button
-                class="check-out"
-                @click.stop="isCalendarShown = !isCalendarShown"
-              >
+              <button class="check-out" @click.stop="isCalendarShown = !isCalendarShown">
                 <div class="order-button">CHECKOUT</div>
                 <span class="calender-pick">{{ checkOutDate }}</span>
               </button>
             </div>
           </div>
           <div class="guest-input">
-            <button
-              @click.stop="isGuestModalShown = !isGuestModalShown"
-              class="guests"
-            >
+            <button @click.stop="isGuestModalShown = !isGuestModalShown" class="guests">
               <label class="order-button">GUESTS</label>
               <span class="guest-num">{{ totalGuests }}</span>
             </button>
           </div>
-          <fancy-btn class="reserve-btn" @click="reservation"
-            >Reserve</fancy-btn
-          >
+          <fancy-btn class="reserve-btn" @click="reservation">Reserve</fancy-btn>
           <div class="pricing">
             <p>
               <span>Total</span>
               <span>${{ stay.price }}</span>
             </p>
           </div>
-          <!-- <div class="reserve-modal">
-      <reserve-modal :class="isUserModal ? 'reserve-modal-active' : 'reserve-modal'" />
-          </div> -->
+          <Transition>
+            <div class="reserve-modal main-layout flex" v-if="isReserveModal" @click="isReserveModal = false" >
+                Order successfully placed! The order is on hold and has been sent to the
+                host for confirmation Have a nice trip!
+            </div>
+          </Transition>
         </form>
       </div>
     </div>
@@ -121,7 +113,7 @@ export default {
     },
     reservation() {
       this.$emit("makeReservation");
-      // this.isReserveModal =!this.isReserveModal
+      this.isReserveModal = true
       // console.log("modal open",this.isReserveModal)
     },
   },
@@ -129,20 +121,20 @@ export default {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
 
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
     totalGuests() {
@@ -157,6 +149,6 @@ export default {
     this.date = stayToOrder.date;
     this.guests = stayToOrder.guests;
   },
-  unmounted() {},
+  unmounted() { },
 };
 </script>
