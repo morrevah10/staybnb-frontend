@@ -1,13 +1,11 @@
 <template>
-  <div class="stay-app ">
-    <app-header class="header-layout main-layout"/>
-    <label-list :labels="labels" class="main-layout"/>
+  <div class="stay-app">
+    <app-header class="main-layout" />
+    <label-list :labels="labels" class="main-layout" />
 
-    <stay-list @removeStay="removeStay" :stays="stays"  class="main-layout"/>
-    <app-footer class="footer-layout main-layout"/>
+    <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
+    <app-footer class="footer main-layout" />
   </div>
-
-
 </template>
 
 <script>
@@ -24,8 +22,8 @@ export default {
     appHeader,
     appFooter,
     labelList,
-    horizontalLine
-},
+    horizontalLine,
+  },
   data() {
     return {};
   },
@@ -42,13 +40,13 @@ export default {
     stays() {
       return this.$store.getters.staysToDisplay;
     },
-    labels(){
+    labels() {
       return this.$store.getters.labelToDisplay;
-    }
+    },
   },
   created() {
     this.$store.dispatch({ type: "loadStays" }).then(() => {});
-    this.$store.dispatch({type: "loadLabels"}).then(()=>{});
+    this.$store.dispatch({ type: "loadLabels" }).then(() => {});
   },
   unmounted() {},
 };

@@ -1,5 +1,5 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="details-header main-layout" />
   <main class="signup-container">
     <section class="signup-section">
       <from class="signup-form">
@@ -31,7 +31,7 @@
             placeholder="Email"
             class="signup-input"
           />
-          <button type="submit" class="signup-btn">Sign Up</button>
+          <fancy-btn class="signup-btn">Sign Up</fancy-btn>
           <div class="login-move">
             <router-link :to="'/login'">
               <button type="button" class="login-btn-move">
@@ -43,16 +43,18 @@
       </from>
     </section>
   </main>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import fancyBtn from "../components/fancy-btn.cmp.vue";
 export default {
   components: {
     appHeader,
     appFooter,
+    fancyBtn,
   },
   data() {
     return {};

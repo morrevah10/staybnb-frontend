@@ -47,7 +47,15 @@
               <span class="guest-num">{{ totalGuests }}</span>
             </button>
           </div>
-          <fancy-btn class="reserve-btn" @click="reservation" >Reserve</fancy-btn>
+          <fancy-btn class="reserve-btn" @click="reservation"
+            >Reserve</fancy-btn
+          >
+          <div class="pricing">
+            <p>
+              <span>Total</span>
+              <span>${{ stay.price }}</span>
+            </p>
+          </div>
           <!-- <div class="reserve-modal">
       <reserve-modal :class="isUserModal ? 'reserve-modal-active' : 'reserve-modal'" />
           </div> -->
@@ -72,7 +80,7 @@ export default {
     guestsPicker,
     calenderSpread,
     fancyBtn,
-    reserveModal
+    reserveModal,
   },
   data() {
     return {
@@ -111,11 +119,11 @@ export default {
     dateUpdate(date) {
       this.date = date;
     },
-    reservation(){
+    reservation() {
       this.$emit("makeReservation");
-      this.isReserveModal =!this.isReserveModal
+      // this.isReserveModal =!this.isReserveModal
       // console.log("modal open",this.isReserveModal)
-    }
+    },
   },
   computed: {
     checkInDate() {

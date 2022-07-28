@@ -1,7 +1,6 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="header main-layout" />
   <section class="dash main-layout">
-
     <h1 class="dash-title">My Dashboard</h1>
 
     <div class="dash-data">
@@ -70,11 +69,9 @@
       </div>
     </div>
 
-
     <div class="dash-table">
-
       <section v-if="orders" class="order-list">
-      <ul class="dash-table-title">
+      <!-- <ul class="dash-table-title">
         <li>gest img</li>
             <li>gest name</li>
             <li>check in </li>
@@ -82,29 +79,33 @@
             <li>status </li>
             <li>revenue</li>
             <li>action </li>
-      </ul>
+      </ul> -->
       
         <div class="orders-container " v-for="order in orders" :key="order._id">
           <ul class="order-line">
-            <li>{{ order.imgUrl }}</li>
+            <li>{{ order.date }}</li>
             <li>{{ order.guestName }}</li>
+            <li>{{order.stay}}</li>
             <li>{{ order.checkIn }}</li>
             <li>{{ order.checkOut }}</li>
+            <li>{{order.nights}}</li>
+            <li>{{order.guests}}</li>
+            <li>{{order.price}}</li>
+            <li>{{ order.total }}</li>
             <li>{{ order.status }}</li>
-            <li>{{ order.revenue }}</li>
             <li>{{ order.action }}</li>
-            </ul>
-            </div>
-      <!-- </div> -->
+          </ul>
+        </div>
+        <!-- </div> -->
       </section>
     </div>
   </section>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue"
-import appFooter from "../components/app-footer.vue"
+import appHeader from "../components/app-header.vue";
+import appFooter from "../components/app-footer.vue";
 export default {
   props: {
     // orders: [
@@ -146,21 +147,17 @@ export default {
   },
   data() {
     return {
-      orders:null,
-    }
+      orders: null,
+    };
   },
   methods: {},
   computed: {
-      orders() {
-      let hostOrders = this.$store.getters.getOrder;
-      console.log("dash from service ",hostOrders)
-      this.orders = hostOrders
-      console.log(this.orders)
-    },
+ 
   },
   created() {
-     this.$store.dispatch({ type: "loadOrders" })
+     this.orders=this.$store.getters.getOrder
+     console.log("orders from dashhh",this.orders)
   },
   unmounted() {},
-}
+};
 </script>
