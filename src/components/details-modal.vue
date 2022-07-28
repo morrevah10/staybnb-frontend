@@ -113,7 +113,7 @@ export default {
     },
     reservation(){
       this.$emit("makeReservation");
-      this.isReserveModal =!this.isReserveModal
+      // this.isReserveModal =!this.isReserveModal
       // console.log("modal open",this.isReserveModal)
     }
   },

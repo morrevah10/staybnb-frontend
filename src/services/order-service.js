@@ -54,5 +54,13 @@ function getOrders() {
   }
 
 function makeOrder(stay,reservation){
-  
+  let order={
+    date: Date.now(),
+    guestName: 'Mor Revah',
+    stay: stay.name,
+    
+
+
+  }
+
 }

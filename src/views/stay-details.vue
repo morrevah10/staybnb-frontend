@@ -14,23 +14,23 @@
     <details-header :stay="stay" />
     <section class="stay-display flex">
       <details-info :stay="stay" />
-      <details-modal :stay="stay" @makeReservation="reserve"/>
+      <details-modal :stay="stay" @makeReservation="reserve" />
     </section>
     <details-reviews :stay="stay" />
   </section>
   <app-footer class="footer footer-layout main-layout relative" />
 </template>
 <script>
-import { stayService } from "../services/stay-service";
-import detailsHeader from "../components/details-header.vue";
-import detailsInfo from "../components/details-info.vue";
-import detailsModal from "../components/details-modal.vue";
-import detailsReviews from "../components/details-reviews.vue";
-import calenderSpread from "../components/calender-spread.vue";
-import guestsPicker from "../components/guests-picker.cmp.vue";
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
-import fancyBtn from "../components/fancy-btn.cmp.vue";
+import { stayService } from "../services/stay-service"
+import detailsHeader from "../components/details-header.vue"
+import detailsInfo from "../components/details-info.vue"
+import detailsModal from "../components/details-modal.vue"
+import detailsReviews from "../components/details-reviews.vue"
+import calenderSpread from "../components/calender-spread.vue"
+import guestsPicker from "../components/guests-picker.cmp.vue"
+import appHeader from "../components/app-header.vue"
+import appFooter from "../components/app-footer.vue"
+import fancyBtn from "../components/fancy-btn.cmp.vue"
 
 export default {
   props: [],
@@ -60,48 +60,48 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
-      reservation:{
-        stayToOrder:{
-          date:null,
-          guests:null
-        },
-      }
-    };
+
+      stayToOrder: {
+        date: null,
+        guests: null,
+      },
+    }
   },
   methods: {
     removeStay() {
       this.$store
         .dispatch({ type: "removeStay", stayId: this.stay._id })
         .then(() => {
-          this.$router.push("/stay");
-        });
+          this.$router.push("/stay")
+        })
     },
     sumGuests() {
       this.guests.total =
-        this.guests.adults + this.guests.kids + this.guests.infants;
+        this.guests.adults + this.guests.kids + this.guests.infants
     },
     updateAdults(num) {
-      this.guests.adults = num;
-      this.sumGuests();
+      this.guests.adults = num
+      this.sumGuests()
     },
     updateKids(num) {
-      this.guests.kids = num;
-      this.sumGuests();
+      this.guests.kids = num
+      this.sumGuests()
     },
     updateInfants(num) {
-      this.guests.infants = num;
-      this.sumGuests();
+      this.guests.infants = num
+      this.sumGuests()
     },
     dateUpdate(date) {
-      this.date = date;
+      this.date = date
     },
-    reserve(){
-      this.$store.dispatch({ type: "sendReservation",stay:this.stay,reservation:this.reservation })
-    }
+    reserve() {
+      // console.log("from stay det after click", this.stayToOrder)
+      // this.$store.dispatch({ type: "sendReservation",stay:this.stay,reservation:this.reservation })
+    },
   },
   computed: {
     dateFormat() {
-      moment(review.at).format("MMMM YYYY");
+      moment(review.at).format("MMMM YYYY")
     },
     checkInDate() {
       return this.date.start
@@ -110,7 +110,7 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add date";
+        : "Add date"
     },
 
     checkOutDate() {
@@ -120,24 +120,25 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add date";
+        : "Add date"
     },
     totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
+      return this.guests.total > 0 ? this.guests.total : "1 guest"
     },
     totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
+      return this.guests.total > 0 ? this.guests.total : "1 guest"
     },
   },
   created() {
-    const { stayId } = this.$route.params;
+    const { stayId } = this.$route.params
     stayService.getById(stayId).then((displayed) => {
-      this.stay = displayed;
-    });
-    let stayToOrder = this.$store.getters.getStayToOrder;
-    this.date = stayToOrder.date;
-    this.guests = stayToOrder.guests;
+      this.stay = displayed
+    })
+    let stayToOrder = this.$store.getters.getStayToOrder
+    this.date = stayToOrder.date
+    this.guests = stayToOrder.guests
+    console.log("from stay det ", stayToOrder)
   },
   unmounted() {},
-};
+}
 </script>
