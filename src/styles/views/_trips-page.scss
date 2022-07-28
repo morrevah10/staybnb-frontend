@@ -1,17 +1,32 @@
-.trips-line {
-  justify-content: space-between;
-  border-bottom: solid 2px gray;
-  width: 100%;
-  padding: 1rem 0;
-  font-size: 13px;
+.trips-table {
+  padding-top: 1.5rem;
 }
 
 .trips-table-title {
+  border-bottom: solid 2px lightgray;
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   font-weight: bold;
+  li:first-child {
+    padding-right: 25px;
+  }
+}
+
+.trips-line {
+  padding-bottom: 50px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: solid 2px lightgray;
+  li {
+    font-size: 14px;
+    width: 120px;
+    margin-right: 20px;
+  }
 }
 
 .trips-container button {

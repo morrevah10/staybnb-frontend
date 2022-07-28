@@ -93,8 +93,8 @@
             <li>{{ order.guests }}</li>
             <li>{{ order.price }}</li>
             <li>{{ order.total }}</li>
-            <li>{{ order.status }}</li>
-            <li>{{ order.action }}</li>
+            <li class="order-status">{{ order.status }}</li>
+            <li class="approve-btn">Approve</li>
           </ul>
         </div>
       </section>
