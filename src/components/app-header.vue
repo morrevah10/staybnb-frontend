@@ -8,7 +8,6 @@
     </router-link>
     <stay-filter
       class="filter-header"
-      @setFilter="setFilter"
       @open-large-modal="(isOpen) => openLarge(isOpen)"
     />
     <section class="user-actions flex align-items space-between">
@@ -27,6 +26,7 @@
       </section>
     </section>
   </header>
+  <div class="line-layout"></div>
   <section class="search-modal">
     <div class="open-modal">
       <div>

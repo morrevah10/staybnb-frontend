@@ -8,21 +8,20 @@
         <p class="dash-data-title">Total Rate</p>
         <div class="dash-data-table">
           <div class="dash-rate">
-            <img src="../styles/icons/star.svg" />
-            <p>avg</p>
+            <p>Average</p>
           </div>
           <p>4.2</p>
         </div>
         <div class="dash-data-table">
-          <p>reviews</p>
+          <p>Reviews</p>
           <p>17</p>
         </div>
       </div>
       <div class="container">
         <p class="dash-data-title">Total Revenue</p>
         <div class="dash-data-table">
-          <p>Mounth</p>
-          <p>$0</p>
+          <p>Month</p>
+          <p>$960</p>
         </div>
         <div class="dash-data-table">
           <p>Year</p>
@@ -34,7 +33,7 @@
         </div>
       </div>
       <div class="container">
-        <p class="dash-data-title">Orders management</p>
+        <p class="dash-data-title">Orders Management</p>
         <div class="dash-data-table">
           <p>Total</p>
           <p>37</p>
@@ -71,32 +70,33 @@
 
     <div class="dash-table">
       <section v-if="orders" class="order-list">
-        <!-- <ul class="dash-table-title">
-        <li>gest img</li>
-            <li>gest name</li>
-            <li>check in </li>
-            <li>checkOut </li>
-            <li>status </li>
-            <li>revenue</li>
-            <li>action </li>
-      </ul> -->
+        <ul class="dash-table-title">
+          <li>Date</li>
+          <li>Host</li>
+          <li>Stay</li>
+          <li>Dates</li>
+          <li>Nights</li>
+          <li>Guests</li>
+          <li>Price/night</li>
+          <li>Total</li>
+          <li>Status</li>
+          <li>Actions</li>
+        </ul>
 
         <div class="orders-container" v-for="order in orders" :key="order._id">
           <ul class="order-line">
             <li>{{ order.date }}</li>
             <li>{{ order.guestName }}</li>
-            <li>{{ order.stay }}</li>
-            <li>{{ order.checkIn }}</li>
-            <li>{{ order.checkOut }}</li>
+            <li class="ellipsis">{{ order.stay }}</li>
+            <li>{{ order.checkIn }} - {{ order.checkOut }}</li>
             <li>{{ order.nights }}</li>
             <li>{{ order.guests }}</li>
             <li>{{ order.price }}</li>
             <li>{{ order.total }}</li>
-            <li>{{ order.status }}</li>
-            <li>{{ order.action }}</li>
+            <li class="order-status">{{ order.status }}</li>
+            <li class="approve-btn">Approve</li>
           </ul>
         </div>
-        <!-- </div> -->
       </section>
     </div>
   </section>
@@ -117,16 +117,10 @@ export default {
     }
   },
   methods: {},
-  computed: {
-    orders() {
-      return this.$store.getters.staysToDisplay;
-    },
-  },
+  computed: {},
   created() {
-    this.$store.dispatch({ type: "loadOrders" })
-    //  this.orders=this.$store.getters.getOrders
-    //  console.log("orders from dashhh",this.orders)
+    this.orders = this.$store.getters.getOrder;
+    console.log("orders from dashhh", this.orders);
   },
-  unmounted() {},
+  unmounted(){},
 }
-</script>

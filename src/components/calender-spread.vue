@@ -1,5 +1,5 @@
 <template>
-<div v-click-outside="onClickOutside">
+<div>
   <button class="x-btn" @click.prevent="$emit('closeCalendar')">x</button>
   <DatePicker :columns="2" v-model="date" is-range update-on-input />
 </div>
@@ -7,13 +7,10 @@
 
     <script>
     import { Calendar, DatePicker } from 'v-calendar';
-    import vClickOutside from 'click-outside-vue3'
+
     
     export default {
       name: 'calendar-spread',
-      directives: {
-        clickOutside: vClickOutside.directive
-      },
       components: {
         Calendar,
         DatePicker,
@@ -35,9 +32,7 @@
         }
       },
       methods: {
-        onClickOutside(event) {
-          console.log('Clicked outside. Event: ', event)
-        }
+
       },
     }
     </script>

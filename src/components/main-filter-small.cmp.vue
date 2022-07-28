@@ -34,6 +34,7 @@ export default {
   methods: {
     openSearch(mode) {
       this.$emit("openLarge", mode);
+      console.log('hello')
     },
   },
   computed: {},

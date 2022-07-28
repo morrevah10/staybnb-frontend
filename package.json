@@ -12,6 +12,7 @@
     "element-plus": "^2.2.10",
     "flatpickr": "^4.6.13",
     "sass": "^1.53.0",
+    "sweetalert2": "^11.4.24",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.37",
     "vue-flatpickr-component": "^9.0.6",
