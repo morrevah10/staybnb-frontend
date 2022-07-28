@@ -45,12 +45,7 @@
               <span>${{ stay.price }}</span>
             </p>
           </div>
-          <Transition>
-            <div class="reserve-modal main-layout flex" v-if="isReserveModal" @click="isReserveModal = false" >
-                Order successfully placed! The order is on hold and has been sent to the
-                host for confirmation Have a nice trip!
-            </div>
-          </Transition>
+         
         </form>
       </div>
     </div>
@@ -88,7 +83,6 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
-      isReserveModal: false,
     };
   },
   methods: {
@@ -113,7 +107,7 @@ export default {
     },
     reservation() {
       this.$emit("makeReservation");
-      this.isReserveModal = true
+      
       // console.log("modal open",this.isReserveModal)
     },
   },

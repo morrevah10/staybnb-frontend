@@ -18,6 +18,12 @@
     </section>
     <details-reviews :stay="stay" />
   </section>
+  <Transition>
+    <div class="reserve-modal main-layout flex" v-if="isReserveModal" @click="isReserveModal = false">
+      Order successfully placed! <span> The order is on hold and has been sent to the
+      host for confirmation. <span>  Have a nice trip!</span></span>
+    </div>
+  </Transition>
   <app-footer class="details-layout relative" />
 </template>
 <script>
@@ -60,6 +66,7 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
+      isReserveModal: false,
 
       stayToOrder: {
         date: null,
@@ -95,8 +102,9 @@ export default {
       this.date = date
     },
     reserve() {
-      console.log("from stay det after click",this.stayToOrder)
+      console.log("from stay det after click", this.stayToOrder)
       this.$store.dispatch({ type: "sendReservation", stay: this.stay, reservation: this.stayToOrder })
+      this.isReserveModal = true
     },
   },
   computed: {
@@ -106,20 +114,20 @@ export default {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date"
     },
 
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date"
     },
     totalGuests() {
@@ -137,8 +145,8 @@ export default {
     let info = this.$store.getters.getStayToOrder
     this.stayToOrder.date = info.date
     this.stayToOrder.guests = info.guests
-    console.log("from stay det created",this.stayToOrder)
+    console.log("from stay det created", this.stayToOrder)
   },
-  unmounted() {},
+  unmounted() { },
 }
 </script>
