@@ -1,5 +1,5 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="header main-layout" />
   <main class="login-container">
     <section class="login-signup">
       <from class="login-form">
@@ -29,7 +29,7 @@
       </from>
     </section>
   </main>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>

@@ -3,28 +3,24 @@ $clr1: #ff385d;
 $clr2: #222222;
 $clr3: #fff;
 $clr4: darken($clr3, 40%);
-$clr5:#717171 ;
+$clr5: #717171;
 $clr6: #ddd;
-$clr7:#ebebeb ;
-$clr8:#484848 ;
-$clr9:#e0e0e0 ;
-$clr10:#333 ;
-
+$clr7: #ebebeb;
+$clr8: #484848;
+$clr9: #e0e0e0;
+$clr10: #333;
 
 //ROW-CAPACITY
-$capacity-wide:5;
-$capacity-larg:4;
-$capacity-normal:3;
-$capacity-tablet:2;
-$capacity-phone:1;
-
-
+$capacity-wide: 5;
+$capacity-larg: 4;
+$capacity-normal: 3;
+$capacity-tablet: 2;
+$capacity-phone: 1;
 
 // LAYOUT
 $layoutWidePadding: 80px;
 $layoutNormalPadding: 40px;
 $layoutSmallPadding: 24px;
-
 
 // LAYOUT BREAKPOINTS
 // $break-narrow: 1200px;
@@ -35,11 +31,8 @@ $layoutSmallPadding: 24px;
 // $padded-break-normal: $break-normal + $layoutPadding * 2;
 // $padded-break-wide: $break-wide + $layoutPadding * 2;
 
-
-
-
-$break-wide:1440px;
-$break-larg:1120px;
-$break-normal:950px;
-$break-tablet:745px;
-$break-phone:375px;
+$break-wide: 1440px;
+$break-larg: 1120px;
+$break-normal: 950px;
+$break-tablet: 745px;
+$break-phone: 375px;

@@ -1,5 +1,5 @@
 <template>
-  <section class="header main-layout">
+  <header :class="className ? 'header ' + className : 'header main-layout'">
     <router-link :to="'/'" class="link">
       <div class="logo flex">
         <img class="logo-img" src="../styles/icons/air-logo.png" />
@@ -26,7 +26,7 @@
         </button>
       </section>
     </section>
-  </section>
+  </header>
   <section class="search-modal">
     <div class="open-modal">
       <div>
@@ -45,7 +45,7 @@ import stayFilter from "./stay-filter.vue";
 import mainFilterLarge from "./main-filter-large.cmp.vue";
 import userModal from "./user-modal.vue";
 export default {
-  props: [],
+  props: ["className"],
   components: {
     userModal,
     stayFilter,

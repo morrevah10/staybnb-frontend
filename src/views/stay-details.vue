@@ -9,16 +9,16 @@
   <div class="guests-modal" :class="{ active: isGuestModalShown }">
     <guests-picker />
   </div> -->
-  <app-header class="details-header header-layout main-layout" />
-  <section class="stay-details main-layout" v-if="stay">
+  <app-header className="details-layout relative" />
+  <section class="stay-details details-layout" v-if="stay">
     <details-header :stay="stay" />
     <section class="stay-display flex">
       <details-info :stay="stay" />
-      <details-modal :stay="stay" @makeReservation="reserve"/>
+      <details-modal :stay="stay" @makeReservation="reserve" />
     </section>
     <details-reviews :stay="stay" />
   </section>
-  <app-footer class="footer footer-layout main-layout relative" />
+  <app-footer class="details-layout relative" />
 </template>
 <script>
 import { stayService } from "../services/stay-service";
@@ -60,12 +60,12 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
-      reservation:{
-        stayToOrder:{
-          date:null,
-          guests:null
+      reservation: {
+        stayToOrder: {
+          date: null,
+          guests: null,
         },
-      }
+      },
     };
   },
   methods: {
@@ -95,9 +95,13 @@ export default {
     dateUpdate(date) {
       this.date = date;
     },
-    reserve(){
-      this.$store.dispatch({ type: "sendReservation",stay:this.stay,reservation:this.reservation })
-    }
+    reserve() {
+      this.$store.dispatch({
+        type: "sendReservation",
+        stay: this.stay,
+        reservation: this.reservation,
+      });
+    },
   },
   computed: {
     dateFormat() {

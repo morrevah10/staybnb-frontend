@@ -1,5 +1,5 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="header main-layout" />
   <section class="my-trips main-layout">
     <h1 class="trips-header">My Trips</h1>
     <div class="trips-table">
@@ -34,7 +34,7 @@
       </section>
     </div>
   </section>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>

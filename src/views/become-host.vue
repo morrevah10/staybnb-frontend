@@ -1,5 +1,5 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="header main-layout" />
   <section class="become-host">
     <img src="../../img/become-host.jpg" class="become-host-img" />
     <div class="become-host-info">
@@ -9,7 +9,7 @@
       </button>
     </div>
   </section>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>
