@@ -74,7 +74,7 @@
     <div class="dash-table">
 
       <section v-if="orders" class="order-list">
-      <ul class="dash-table-title">
+      <!-- <ul class="dash-table-title">
         <li>gest img</li>
             <li>gest name</li>
             <li>check in </li>
@@ -82,16 +82,20 @@
             <li>status </li>
             <li>revenue</li>
             <li>action </li>
-      </ul>
+      </ul> -->
       
         <div class="orders-container " v-for="order in orders" :key="order._id">
           <ul class="order-line">
-            <li>{{ order.imgUrl }}</li>
+            <li>{{ order.date }}</li>
             <li>{{ order.guestName }}</li>
+            <li>{{order.stay}}</li>
             <li>{{ order.checkIn }}</li>
             <li>{{ order.checkOut }}</li>
+            <li>{{order.nights}}</li>
+            <li>{{order.guests}}</li>
+            <li>{{order.price}}</li>
+            <li>{{ order.total }}</li>
             <li>{{ order.status }}</li>
-            <li>{{ order.revenue }}</li>
             <li>{{ order.action }}</li>
             </ul>
             </div>
@@ -151,15 +155,11 @@ export default {
   },
   methods: {},
   computed: {
-      orders() {
-      let hostOrders = this.$store.getters.getOrder;
-      console.log("dash from service ",hostOrders)
-      this.orders = hostOrders
-      console.log(this.orders)
-    },
+ 
   },
   created() {
-     this.$store.dispatch({ type: "loadOrders" })
+     this.orders=this.$store.getters.getOrder
+     console.log("orders from dashhh",this.orders)
   },
   unmounted() {},
 }

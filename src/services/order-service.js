@@ -1,66 +1,74 @@
-import { storageService } from "./storage-service.js";
+import { storageService } from "./storage-service.js"
 
 export const ordersService = {
   query,
   getOrders,
   makeOrder,
-};
+  getDays,
+  getTotal,
+  getdate,
+}
 
-const order_key = "orderDB";
+const order_key = "orderDB"
 
-getOrders();
+getOrders()
 
 function query() {
-  return storageService.query(order_key);
+  return storageService.query(order_key)
 }
 function getOrders() {
-    let orders = JSON.parse(localStorage.getItem(order_key));
-    if (!orders || !orders.length) {
-      orders = [
-        {
-            _id: "1",
-            imgUrl: "img",
-            guestName: "yossi chen",
-            checkIn: "2016-05-01",
-            checkOut: "2016-05-03",
-            status: "panding",
-            revenue: "$100",
-            action: "aprove/decline",
-          },
-          {
-            _id: "2",
-            imgUrl: "img",
-            guestName: "mor revah",
-            checkIn: "2016-05-01",
-            checkOut: "2016-05-03",
-            status: "panding",
-            revenue: "$150",
-            action: "approve/decline",
-          },
-          {
-            _id: "3",
-            imgUrl: "img",
-            guestName: "mor revah",
-            checkIn: "2016-05-01",
-            checkOut: "2016-05-03",
-            status: "panding",
-            revenue: "$150",
-            action: "approve/decline",
-          },
-      ];
-      localStorage.setItem(order_key, JSON.stringify(orders));
-    }
-    return orders;
+  let orders = JSON.parse(localStorage.getItem(order_key))
+  if (!orders || !orders.length) {
+    orders = [
+      {
+        date: Date.now(),
+        guestName: "hard coded",
+        stay: "hard coded",
+        checkIn: "hard coded",
+        checkOut: "hard coded",
+        nights: "hard coded",
+        guests: "hard coded",
+        price: "hard coded",
+        total: "hard coded",
+        status: "hard coded",
+        action: "hard coded",
+      },
+    ]
+    localStorage.setItem(order_key, JSON.stringify(orders))
   }
+  return orders
+}
 
-function makeOrder(stay,reservation){
-  let order={
-    date: Date.now(),
-    guestName: 'Mor Revah',
+function makeOrder(stay, reservation) {
+  let order = {
+    date: getdate(new Date(), 'mm/dd/yy'),
+    guestName: "hard coded need fix",
     stay: stay.name,
-    
-
-
+    checkIn: reservation.date.start.toLocaleDateString(),
+    checkOut: reservation.date.end.toLocaleDateString(),
+    nights: getDays(reservation.date.start, reservation.date.end),
+    guests:reservation.guests.total,
+    price:"$"+stay.price,
+    total:"$"+ getTotal(
+      getDays(reservation.date.start, reservation.date.end),
+      stay.price
+    ),
+    status: "pending",
+    action: "place 2 buttom aprrove & reject",
   }
+  return order
+}
 
+function getDays(d1, d2) {
+  var t2 = d2.getTime()
+  var t1 = d1.getTime()
+  return Math.floor((t2 - t1) / (24 * 3600 * 1000))
+}
+
+function getTotal(nights, price) {
+  return nights * price
+}
+
+function getdate(date,formated){
+  return date.toLocaleDateString()
 }

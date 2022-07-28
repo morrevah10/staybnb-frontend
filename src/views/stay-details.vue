@@ -95,8 +95,8 @@ export default {
       this.date = date
     },
     reserve() {
-      // console.log("from stay det after click", this.stayToOrder)
-      // this.$store.dispatch({ type: "sendReservation",stay:this.stay,reservation:this.reservation })
+      console.log("from stay det after click",this.stayToOrder)
+      this.$store.dispatch({ type: "sendReservation", stay: this.stay, reservation: this.stayToOrder })
     },
   },
   computed: {
@@ -134,10 +134,10 @@ export default {
     stayService.getById(stayId).then((displayed) => {
       this.stay = displayed
     })
-    let stayToOrder = this.$store.getters.getStayToOrder
-    this.date = stayToOrder.date
-    this.guests = stayToOrder.guests
-    console.log("from stay det ", stayToOrder)
+    let info = this.$store.getters.getStayToOrder
+    this.stayToOrder.date = info.date
+    this.stayToOrder.guests = info.guests
+    console.log("from stay det created",this.stayToOrder)
   },
   unmounted() {},
 }
