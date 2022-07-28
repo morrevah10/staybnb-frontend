@@ -565,13 +565,12 @@
   }
 }
 
-
-.reserve-modal{
+.reserve-modal {
   flex-direction: column;
   width: 400px;
   padding: 3rem;
   background-color: $clr1;
-  position: absolute; 
+  position: absolute;
   color: $clr3;
   font-family: Circular;
   border-radius: 2rem;
@@ -580,7 +579,7 @@
   z-index: 10;
   top: 9%;
   right: 4%;
-  span{
+  span {
     font-weight: 200;
     font-size: 0.9rem;
   }
@@ -589,10 +588,15 @@
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
- 
 }
 
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+.line-layout {
+  height: 0.5px;
+  box-shadow: inset 0 -0.5px 0 0 #ddd;
+  width: 100%;
 }

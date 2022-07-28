@@ -8,11 +8,10 @@
     </router-link>
     <stay-filter
       class="filter-header"
- 
       @open-large-modal="(isOpen) => openLarge(isOpen)"
     />
     <section class="user-actions flex align-items space-between">
-    <div class="host">
+      <div class="host">
         <router-link :to="'/host'" class="host-header link"
           >Become a Host</router-link
         >
@@ -27,6 +26,7 @@
       </section>
     </section>
   </header>
+  <div class="line-layout"></div>
   <section class="search-modal">
     <div class="open-modal">
       <div>

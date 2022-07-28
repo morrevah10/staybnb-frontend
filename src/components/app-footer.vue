@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'app-footer',
+  name: "app-footer",
   props: [],
   template: ``,
   components: {},
