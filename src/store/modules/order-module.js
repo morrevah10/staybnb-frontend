@@ -7,9 +7,11 @@ export default {
     currOrder:null,
   },
   getters: {
-    getOrder({orders}) {
-      return orders
-    }
+    order({orders}) {
+      console.log("from getters",orders)
+      // return orders
+    },
+
   },
   actions: {
     loadOrders({ commit }) {
@@ -17,6 +19,7 @@ export default {
         .query()
         .then((orders) => {
           commit({ type: "getOrders", orders });
+          console.log("order from service",orders)
           return orders;
         })
         .catch((err) => {
@@ -24,22 +27,22 @@ export default {
         });
     },
     sendReservation({commit},{stay,reservation}){
-      console.log("from order module-sendReservation",stay,reservation)
+      // console.log("from order module-sendReservation",stay,reservation)
       let order =ordersService.makeOrder(stay,reservation)
-      console.log("from order module  order",order)
-      commit({type:"setOrder",order})
+      // console.log("from order module  order",order)
+      // commit({type:"setOrder",order})
     }
   },
   mutations: {
     getOrders(state, { orders }) {
       state.orders = orders;
     },
-    setOrder(state,{order}){
-      state.currOrder=order
-      state.orders.push(order)
-      console.log("order from set order-stor",state.currOrder)
-      console.log("orders from set order-stor",state.orders)
-    }
+    // setOrder(state,{order}){
+    //   state.currOrder=order
+    //   state.orders.push(order)
+      // console.log("order from set order-stor",state.currOrder)
+      // console.log("orders from set order-stor",state.orders)
+    // }
   },
 }
 

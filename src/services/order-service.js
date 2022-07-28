@@ -13,7 +13,7 @@ const order_key = "orderDB"
 
 getOrders()
 
-function query() {
+ function query() {
   return storageService.query(order_key)
 }
 function getOrders() {
@@ -21,7 +21,7 @@ function getOrders() {
   if (!orders || !orders.length) {
     orders = [
       {
-        date: Date.now(),
+        date: "hard coded",
         guestName: "hard coded",
         stay: "hard coded",
         checkIn: "hard coded",
@@ -56,6 +56,7 @@ function makeOrder(stay, reservation) {
     status: "pending",
     action: "place 2 buttom aprrove & reject",
   }
+  localStorage.setItem(order_key, JSON.stringify(order))
   return order
 }
 

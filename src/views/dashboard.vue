@@ -71,7 +71,7 @@
 
     <div class="dash-table">
       <section v-if="orders" class="order-list">
-      <!-- <ul class="dash-table-title">
+        <!-- <ul class="dash-table-title">
         <li>gest img</li>
             <li>gest name</li>
             <li>check in </li>
@@ -80,17 +80,17 @@
             <li>revenue</li>
             <li>action </li>
       </ul> -->
-      
-        <div class="orders-container " v-for="order in orders" :key="order._id">
+
+        <div class="orders-container" v-for="order in orders" :key="order._id">
           <ul class="order-line">
             <li>{{ order.date }}</li>
             <li>{{ order.guestName }}</li>
-            <li>{{order.stay}}</li>
+            <li>{{ order.stay }}</li>
             <li>{{ order.checkIn }}</li>
             <li>{{ order.checkOut }}</li>
-            <li>{{order.nights}}</li>
-            <li>{{order.guests}}</li>
-            <li>{{order.price}}</li>
+            <li>{{ order.nights }}</li>
+            <li>{{ order.guests }}</li>
+            <li>{{ order.price }}</li>
             <li>{{ order.total }}</li>
             <li>{{ order.status }}</li>
             <li>{{ order.action }}</li>
@@ -104,60 +104,29 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
+import appHeader from "../components/app-header.vue"
+import appFooter from "../components/app-footer.vue"
 export default {
-  props: {
-    // orders: [
-    //   {
-    //     _id: "1",
-    //     imgUrl: "img",
-    //     guestName: "yossi chen",
-    //     checkIn: "2016-05-01",
-    //     checkOut: "2016-05-03",
-    //     status: "panding",
-    //     revenue: "$100",
-    //     action: "aprove/decline",
-    //   },
-    //   {
-    //     _id: "2",
-    //     imgUrl: "img",
-    //     guestName: "mor revah",
-    //     checkIn: "2016-05-01",
-    //     checkOut: "2016-05-03",
-    //     status: "panding",
-    //     revenue: "$150",
-    //     action: "approve/decline",
-    //   },
-    //   {
-    //     _id: "3",
-    //     imgUrl: "img",
-    //     guestName: "mor revah",
-    //     checkIn: "2016-05-01",
-    //     checkOut: "2016-05-03",
-    //     status: "panding",
-    //     revenue: "$150",
-    //     action: "approve/decline",
-    //   },
-    // ],
-  },
+  props: {},
   components: {
     appHeader,
     appFooter,
   },
   data() {
     return {
-      orders: null,
-    };
+    }
   },
   methods: {},
   computed: {
- 
+    orders() {
+      return this.$store.getters.staysToDisplay;
+    },
   },
   created() {
-     this.orders=this.$store.getters.getOrder
-     console.log("orders from dashhh",this.orders)
+    this.$store.dispatch({ type: "loadOrders" })
+    //  this.orders=this.$store.getters.getOrders
+    //  console.log("orders from dashhh",this.orders)
   },
   unmounted() {},
-};
+}
 </script>
