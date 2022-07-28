@@ -44,7 +44,10 @@
   border: 1px solid #ddd;
   line-height: 20px;
   align-items: center;
-  box-shadow: inset lightgray;
+}
+
+.user-info:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
 }
 
 .menu-img {

@@ -31,7 +31,7 @@
             placeholder="Email"
             class="signup-input"
           />
-          <button type="submit" class="signup-btn">Sign Up</button>
+          <fancy-btn class="signup-btn">Sign Up</fancy-btn>
           <div class="login-move">
             <router-link :to="'/login'">
               <button type="button" class="login-btn-move">
@@ -49,10 +49,12 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import fancyBtn from "../components/fancy-btn.cmp.vue";
 export default {
   components: {
     appHeader,
     appFooter,
+    fancyBtn,
   },
   data() {
     return {};

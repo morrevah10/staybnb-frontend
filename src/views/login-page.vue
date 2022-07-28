@@ -19,7 +19,7 @@
             placeholder="Password"
             class="login-input"
           />
-          <button type="submit" class="login-btn">Login</button>
+          <fancy-btn class="login-btn">Login In</fancy-btn>
           <div class="signup-move">
             <router-link :to="'/signup'">
               <button type="button" class="signup-btn-move">Sign Up</button>
@@ -35,10 +35,12 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import fancyBtn from "../components/fancy-btn.cmp.vue";
 export default {
   components: {
     appHeader,
     appFooter,
+    fancyBtn,
   },
   data() {
     return {};
