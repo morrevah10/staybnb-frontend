@@ -9,18 +9,21 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 .large-search-modal {
-  position: fixed;
+  position: absolute;
   opacity: 100%;
   top: 61px;
   z-index: 10;
   transition: opacity 0.3s;
   background-color: white;
+  
 }
 
 .filter-large-modal {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-right: 380px;
+
 }
 
 .small-nav {
