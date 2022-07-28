@@ -28,6 +28,14 @@
   }
 }
 
+p:first-child {
+  margin-top: 0.5rem;
+}
+
+p:last-child {
+  margin-bottom: 0.5rem;
+}
+
 .user-modal-active {
   position: absolute;
   background-color: $clr3;

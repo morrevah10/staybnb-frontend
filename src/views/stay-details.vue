@@ -10,14 +10,17 @@
     <guests-picker />
   </div> -->
   <app-header className="details-layout relative" />
-  <section class="stay-details details-layout" v-if="stay">
-    <details-header :stay="stay" />
-    <section class="stay-display flex">
-      <details-info :stay="stay" />
-      <details-modal :stay="stay" @makeReservation="reserve" />
+  <section class="stay-details details-wrapper details-layout">
+    <section class="details-wrapper" v-if="stay">
+      <details-header :stay="stay" />
+      <section class="stay-display flex">
+        <details-info :stay="stay" />
+        <details-modal :stay="stay" @makeReservation="reserve" />
+      </section>
+      <details-reviews :stay="stay" />
     </section>
-    <details-reviews :stay="stay" />
   </section>
+
   <Transition>
     <div
       class="reserve-modal main-layout flex"

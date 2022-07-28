@@ -3,9 +3,9 @@
     <button value="destination" @click="openSearch('destination')">
       Anywhere
     </button>
-    <span class="header-separator">|</span>
+    <span class="separator-line"></span>
     <button @click="openSearch('date')">Any week</button>
-    <span class="header-separator">|</span>
+    <span class="separator-line"></span>
 
     <div class="add-container flex">
       <button
@@ -34,7 +34,7 @@ export default {
   methods: {
     openSearch(mode) {
       this.$emit("openLarge", mode);
-      console.log('hello')
+      console.log("hello");
     },
   },
   computed: {},

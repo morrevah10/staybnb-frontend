@@ -20,8 +20,6 @@
           <p>Trips</p>
         </router-link>
       </div>
-      <p>About</p>
-      <p>Logout</p>
     </div>
   </section>
 </template>

@@ -21,7 +21,7 @@
           <img class="menu-img" src="../styles/icons/menu-icon.svg" alt="" />
         </button>
         <button class="user-btn btn">
-          <img class="user-img" src="../styles/icons/user-icon.svg" alt="" />
+          <img class="user-img" src="../styles/icons/user-icon.png" alt="" />
         </button>
       </section>
     </section>
