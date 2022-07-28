@@ -3,7 +3,7 @@
     <div @click="$router.push(`/${stay._id}`)" class="stay-preview-card">
       <div class="card-img">
         <el-carousel arrow="hover" trigger="click" :autoplay="false">
-          <el-carousel-item v-for="img in stay.imgUrls" >
+          <el-carousel-item v-for="img in stay.imgUrls">
             <img class="carousel-img" :src="`../../img/${img}`" />
           </el-carousel-item>
         </el-carousel>
@@ -21,8 +21,8 @@
               {{ stay.address.city }}, {{ stay.address.country }}
             </p>
           </div>
-          <div class="beds-num-preview">{{ stay.summary }}</div>
-          <p class="stay-type-preview">{{ stay.beds }} beds</p>
+          <div class="summary-preview">{{ stay.summary }}</div>
+          <p class="beds-preview">{{ stay.beds }} beds</p>
           <p class="stay-price-preview">
             <span class="bold">${{ stay.price }} </span> night
           </p>

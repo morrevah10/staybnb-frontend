@@ -1,4 +1,4 @@
-import { storageService } from "./storage-service.js"
+import { storageService } from "./storage-service.js";
 
 export const ordersService = {
   query,
@@ -7,17 +7,17 @@ export const ordersService = {
   getDays,
   getTotal,
   getdate,
-}
+};
 
-const order_key = "orderDB"
+const order_key = "orderDB";
 
-getOrders()
+getOrders();
 
 function query() {
-  return storageService.query(order_key)
+  return storageService.query(order_key);
 }
 function getOrders() {
-  let orders = JSON.parse(localStorage.getItem(order_key))
+  let orders = JSON.parse(localStorage.getItem(order_key));
   if (!orders || !orders.length) {
     orders = [
       {
@@ -33,42 +33,44 @@ function getOrders() {
         status: "hard coded",
         action: "hard coded",
       },
-    ]
-    localStorage.setItem(order_key, JSON.stringify(orders))
+    ];
+    localStorage.setItem(order_key, JSON.stringify(orders));
   }
-  return orders
+  return orders;
 }
 
 function makeOrder(stay, reservation) {
   let order = {
-    date: getdate(new Date(), 'mm/dd/yy'),
-    guestName: "hard coded need fix",
+    date: getdate(new Date(), "mm/dd/yy"),
+    guestName: "David",
     stay: stay.name,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
     nights: getDays(reservation.date.start, reservation.date.end),
-    guests:reservation.guests.total,
-    price:"$"+stay.price,
-    total:"$"+ getTotal(
-      getDays(reservation.date.start, reservation.date.end),
-      stay.price
-    ),
-    status: "pending",
-    action: "place 2 buttom aprrove & reject",
-  }
-  return order
+    guests: reservation.guests.total,
+    price: "$" + stay.price,
+    total:
+      "$" +
+      getTotal(
+        getDays(reservation.date.start, reservation.date.end),
+        stay.price
+      ),
+    status: "Pending",
+    action: "",
+  };
+  return order;
 }
 
 function getDays(d1, d2) {
-  var t2 = d2.getTime()
-  var t1 = d1.getTime()
-  return Math.floor((t2 - t1) / (24 * 3600 * 1000))
+  var t2 = d2.getTime();
+  var t1 = d1.getTime();
+  return Math.floor((t2 - t1) / (24 * 3600 * 1000));
 }
 
 function getTotal(nights, price) {
-  return nights * price
+  return nights * price;
 }
 
-function getdate(date,formated){
-  return date.toLocaleDateString()
+function getdate(date, formated) {
+  return date.toLocaleDateString();
 }
