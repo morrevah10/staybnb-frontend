@@ -9,8 +9,8 @@
   <div class="guests-modal" :class="{ active: isGuestModalShown }">
     <guests-picker />
   </div> -->
-  <app-header class="details-header header-layout main-layout" />
-  <section class="stay-details main-layout" v-if="stay">
+  <app-header className="details-layout relative" />
+  <section class="stay-details details-layout" v-if="stay">
     <details-header :stay="stay" />
     <section class="stay-display flex">
       <details-info :stay="stay" />
@@ -18,7 +18,7 @@
     </section>
     <details-reviews :stay="stay" />
   </section>
-  <app-footer class="footer footer-layout main-layout relative" />
+  <app-footer class="details-layout relative" />
 </template>
 <script>
 import { stayService } from "../services/stay-service"

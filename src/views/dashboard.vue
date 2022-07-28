@@ -1,7 +1,6 @@
 <template>
-  <app-header class="details-header header-layout main-layout" />
+  <app-header class="header main-layout" />
   <section class="dash main-layout">
-
     <h1 class="dash-title">My Dashboard</h1>
 
     <div class="dash-data">
@@ -70,9 +69,7 @@
       </div>
     </div>
 
-
     <div class="dash-table">
-
       <section v-if="orders" class="order-list">
       <!-- <ul class="dash-table-title">
         <li>gest img</li>
@@ -97,18 +94,18 @@
             <li>{{ order.total }}</li>
             <li>{{ order.status }}</li>
             <li>{{ order.action }}</li>
-            </ul>
-            </div>
-      <!-- </div> -->
+          </ul>
+        </div>
+        <!-- </div> -->
       </section>
     </div>
   </section>
-  <app-footer class="footer footer-layout main-layout" />
+  <app-footer class="footer main-layout" />
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue"
-import appFooter from "../components/app-footer.vue"
+import appHeader from "../components/app-header.vue";
+import appFooter from "../components/app-footer.vue";
 export default {
   props: {
     // orders: [
@@ -150,8 +147,8 @@ export default {
   },
   data() {
     return {
-      orders:null,
-    }
+      orders: null,
+    };
   },
   methods: {},
   computed: {
@@ -162,5 +159,5 @@ export default {
      console.log("orders from dashhh",this.orders)
   },
   unmounted() {},
-}
+};
 </script>
