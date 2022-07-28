@@ -17,20 +17,8 @@ export default {
     }
   },
   getters: {
-    staysToDisplay({ txt, byAmenity, stays }) {
-      if (!stays) return;
-
-      const regex = new RegExp(txt, "i");
-      let filteredStays = stays.filter((stay) => regex.test(stay.name));
-
-      // byAmenity
-      // if (byAmenity && byAmenity.length) {
-      //   filteredStays = filteredStays.filter((stay) =>
-      //     byAmenity.some((amenity) => stay.amenities.includes(amenity))
-      //   );
-      // }
-
-      return filteredStays;
+    staysToDisplay({stays}) {
+      return stays;
     },
     getStayToOrder({stayToOrder}) {
       return stayToOrder

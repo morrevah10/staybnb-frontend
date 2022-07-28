@@ -7,6 +7,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { SetupCalendar } from 'v-calendar';
 import 'v-calendar/dist/style.css'
+import {clickOutsideDirective} from './directives'
 
 const app = createApp(App);
 
@@ -14,5 +15,7 @@ app.use(SetupCalendar, {})
 app.use(router);
 app.use(store);
 app.use(ElementPlus)
+
+app.directive('click-outside', clickOutsideDirective)
 
 app.mount("#app");
