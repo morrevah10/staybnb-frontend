@@ -109,7 +109,7 @@ export default {
       this.date = date;
     },
     reserve() {
-      console.log("from stay det after click", this.stayToOrder);
+      // console.log("from stay det after click", this.stayToOrder);
       this.$store.dispatch({
         type: "sendReservation",
         stay: this.stay,

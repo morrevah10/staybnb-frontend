@@ -104,8 +104,8 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue"
-import appFooter from "../components/app-footer.vue"
+import appHeader from "../components/app-header.vue";
+import appFooter from "../components/app-footer.vue";
 export default {
   props: {},
   components: {
@@ -114,7 +114,8 @@ export default {
   },
   data() {
     return {
-    }
+      orders: null,
+    };
   },
   methods: {},
   computed: {},
@@ -122,5 +123,6 @@ export default {
     this.orders = this.$store.getters.getOrder;
     console.log("orders from dashhh", this.orders);
   },
-  unmounted(){},
-}
+  unmounted() {},
+};
+</script>

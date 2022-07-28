@@ -21,7 +21,7 @@ function getOrders() {
   if (!orders || !orders.length) {
     orders = [
       {
-        date: "hard coded",
+        date: Date.now(),
         guestName: "hard coded",
         stay: "hard coded",
         checkIn: "hard coded",
@@ -58,6 +58,7 @@ function makeOrder(stay, reservation) {
     status: "Pending",
     action: "",
   };
+  localStorage.setItem(order_key, JSON.stringify(order));
   return order;
 }
 
