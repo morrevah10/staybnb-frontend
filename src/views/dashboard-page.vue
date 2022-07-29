@@ -122,7 +122,7 @@ export default {
   created() {
     this.$store.dispatch({ type: "loadOrders"});
     console.log("dash created orders",this.orders)
-    let orders = this.$store.stat.getters.getOrder
+    let orders = this.$store.state.getters.getOrder
     console.log(orders)
   
   },

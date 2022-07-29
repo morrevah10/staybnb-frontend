@@ -7,8 +7,8 @@ export default {
   },
   getters: {
     getOrder({orders}) {
-      // return orders
-      console.log("get orders from dash",orders)
+      return orders
+      // console.log("get orders from dash",orders)
     }
   },
   actions: {

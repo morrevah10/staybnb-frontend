@@ -2,7 +2,7 @@
   <app-header class="header main-layout" />
   <main class="login-container">
     <section class="login-signup">
-      <from class="login-form">
+      <div class="login-form">
         <div class="login-form-header">
           <h2>Sign In</h2>
         </div>
@@ -22,14 +22,14 @@
             class="login-input"
           />
           {{this.logedInUser}}
-          <fancy-btn class="login-btn" @click="checkLogIn">Login In</fancy-btn>
+          <fancy-btn class="login-btn" @click.prevent="checkLogIn">Login In</fancy-btn>
           <div class="signup-move">
             <router-link :to="'/signup'">
               <button type="button" class="signup-btn-move">Sign Up</button>
             </router-link>
           </div>
         </div>
-      </from>
+      </div>
     </section>
   </main>
   <app-footer class="footer main-layout" />
@@ -53,10 +53,12 @@ export default {
         username: "",
         password: "",
       },
+      msg:''
     }
   },
   methods: {
     async checkLogIn() {
+      console.log('check')
       if (!this.logedInUser.username) {
         this.msg = "Please enter username/password"
         return
