@@ -23,9 +23,12 @@
           date: null,
         }
       },
-      created() {
-        // this.date = this.startDate || new Date()
-      },
+       created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
       watch: {
         date() {
           this.$emit('dateChange', this.date)
@@ -34,7 +37,11 @@
       methods: {
         closeCalendar() {
           this.$emit('closeCalendar')
-        }
+        },
+          handleScroll (event) {
+         this.$emit("closeCalendar");
+    }
+
       },
     }
     </script>

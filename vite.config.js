@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/staybnb",
+  base: "/",
   plugins: [vue()],
   resolve: {
     alias: {
@@ -14,6 +14,7 @@ export default defineConfig({
   },
   build:{
     outDir:'../backend/public',
-    emptyOutDir:true
+    emptyOutDir:true,
+    assestsDir: "./dist",
   }
 });

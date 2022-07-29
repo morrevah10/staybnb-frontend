@@ -21,8 +21,8 @@ async function query(filterBy = null) {
   try {
     const res = await axios.get(_getUrl(), { params: filterBy });
     return res.data;
-  } catch {
-    console.error("can not get stays");
+  } catch(err) {
+    console.error("can not get stays", err);
   }
 }
 

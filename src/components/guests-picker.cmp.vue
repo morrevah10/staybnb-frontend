@@ -63,6 +63,15 @@ export default {
     closeModal() {
       this.$emit("closeGuestsModal");
     },
+     handleScroll (event) {
+         this.$emit("closeGuestsModal");
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
