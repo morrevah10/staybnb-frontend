@@ -49,6 +49,7 @@
     </form>
     <transition>
       <calender-spread
+        class="vc-container"
         @closeCalendar="isCalendarShown = false"
         @dateChange="dateUpdate"
         @click.prevent

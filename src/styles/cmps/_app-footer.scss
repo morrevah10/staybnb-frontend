@@ -7,7 +7,7 @@
   box-shadow: inset 0 0.5px 0 0 #ddd;
   color: #484848;
   font-size: 0.9rem;
-  z-index: 345;
+  z-index: 15;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -15,6 +15,7 @@
 }
 
 .btn {
+  margin-right: 5px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -28,6 +29,7 @@
 }
 
 .footer-details {
+  margin-right: 12px;
   align-items: center;
   justify-content: space-between;
   width: 25vw;
@@ -37,4 +39,5 @@
   align-items: center;
   justify-content: space-between;
   width: 30vw;
+  margin-left: -20px;
 }

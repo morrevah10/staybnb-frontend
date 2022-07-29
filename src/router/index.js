@@ -4,8 +4,9 @@ import stayDetails from "../views/stay-details.vue";
 import hostPage from "../views/become-host.vue";
 import loginPage from "../views/login-page.vue";
 import signupPage from "../views/signup-page.vue";
-import dashboardPage from "../views/dashboard.vue";
+import dashboardPage from "../views/dashboard-page.vue";
 import tripsPage from "../views/trips-page.vue";
+import reservationPage from "../views/reservation-page.vue";
 // import stayEdit from "../views/stay-edit.vue";
 
 const router = createRouter({
@@ -45,6 +46,11 @@ const router = createRouter({
       path: "/trips",
       name: "trips",
       component: tripsPage,
+    },
+    {
+      path: "/reservation",
+      name: "reservation",
+      component: reservationPage,
     },
     // {
     //   path: "/edit/:stayId?",
