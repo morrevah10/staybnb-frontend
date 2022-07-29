@@ -1,0 +1,33 @@
+.mini-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 40px;
+  height: 48px;
+  padding: 0 7px 0 16px;
+  width: 300px;
+  font-size: 14px;
+  text-indent: 5px;
+  cursor: pointer;
+}
+
+.filter-search-icon {
+  border: none;
+  justify-content: center;
+  align-items: center;
+  margin: 7px 7px 7px 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: $clr1;
+  display: flex;
+}
+
+.filter-search-icon img {
+  color: white;
+  width: 0.85rem;
+  height: 0.85rem;
+}

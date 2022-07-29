@@ -10,6 +10,7 @@
     <guests-picker />
   </div> -->
   <app-header className="details-layout relative" />
+  <!-- <mini-filter /> -->
   <section class="stay-details details-wrapper details-layout">
     <section class="details-wrapper" v-if="stay">
       <details-header :stay="stay" />
@@ -24,28 +25,30 @@
 </template>
 <script>
 import { stayService } from "../services/stay-service";
+import miniFilter from "../components/main-filter-mini.cmp.vue";
+import appHeader from "../components/app-header.vue";
+import appFooter from "../components/app-footer.vue";
 import detailsHeader from "../components/details-header.vue";
 import detailsInfo from "../components/details-info.vue";
 import detailsModal from "../components/details-modal.vue";
 import detailsReviews from "../components/details-reviews.vue";
 import calenderSpread from "../components/calender-spread.vue";
 import guestsPicker from "../components/guests-picker.cmp.vue";
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
 import fancyBtn from "../components/fancy-btn.cmp.vue";
 
 export default {
   props: [],
   components: {
+    appHeader,
+    appFooter,
     detailsHeader,
     detailsInfo,
     detailsModal,
     detailsReviews,
-    guestsPicker,
     calenderSpread,
-    appHeader,
-    appFooter,
+    guestsPicker,
     fancyBtn,
+    miniFilter,
   },
   data() {
     return {
@@ -62,7 +65,7 @@ export default {
         total: 0,
       },
 
-      loggedinUser:null,
+      loggedinUser: null,
 
       isCalendarShown: false,
       isReserveModal: false,
@@ -152,9 +155,9 @@ export default {
     this.stayToOrder.date = info.date;
     this.stayToOrder.guests = info.guests;
     console.log("from stay det created", this.stayToOrder);
-    let user = this.$store.getters.loggedinUser
-    this.loggedinUser =user
-    console.log("user created",user)
+    let user = this.$store.getters.loggedinUser;
+    this.loggedinUser = user;
+    console.log("user created", user);
   },
   unmounted() {},
 };
