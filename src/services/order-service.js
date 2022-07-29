@@ -58,6 +58,7 @@ function makeOrder(stay, reservation) {
     status: "Pending",
     action: "",
   };
+  localStorage.setItem(order_key, JSON.stringify(order));
   return order;
 }
 

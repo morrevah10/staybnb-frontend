@@ -1,4 +1,3 @@
-
 import {ordersService} from '../../services/order-service.js'
 
 export default {
@@ -24,9 +23,9 @@ export default {
         });
     },
     sendReservation({commit},{stay,reservation}){
-      console.log("from order module-sendReservation",stay,reservation)
+      // console.log("from order module-sendReservation",stay,reservation)
       let order =ordersService.makeOrder(stay,reservation)
-      console.log("from order module  order",order)
+      // console.log("from order module  order",order)
       commit({type:"setOrder",order})
     }
   },
@@ -42,4 +41,3 @@ export default {
     }
   },
 }
-

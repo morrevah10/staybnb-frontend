@@ -44,7 +44,7 @@ export default {
       return this.$store.getters.staysToDisplay;
     },
     labels() {
-      return this.$store.getters.labelToDisplay;
+      // return this.$store.getters.labelToDisplay;
     },
   },
   created() {

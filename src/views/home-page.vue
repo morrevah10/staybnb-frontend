@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="stay-app">
     <app-header class="main-layout" />
     <label-list :labels="labels" class="main-layout" />
@@ -50,4 +50,4 @@ export default {
   },
   unmounted() {},
 };
-</script>
+</script> -->

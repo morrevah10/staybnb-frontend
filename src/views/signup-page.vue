@@ -50,6 +50,9 @@
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
 import fancyBtn from "../components/fancy-btn.cmp.vue";
+
+
+
 export default {
   components: {
     appHeader,
@@ -57,11 +60,14 @@ export default {
     fancyBtn,
   },
   data() {
-    return {};
+    return {
+          };
   },
   methods: {},
   computed: {},
-  created() {},
+  created() {
+
+  },
   unmounted() {},
 };
 </script>
