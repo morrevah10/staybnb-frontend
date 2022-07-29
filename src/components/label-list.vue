@@ -1,28 +1,20 @@
 <template>
   <section class="labels-filter flex">
-    <!-- <button class="labels-control prev flex" @click.stop="$emit('prev')">
-      &#60;
-    </button> -->
     <section class="labels-list">
       <div
         class="labels-container"
         v-for="(label, idx) in labels"
         :key="idx"
-        @click=""
-      >
-        <img class="label-img" :src="`${label.src}`" alt="" />
-        <p class="label-name">{{ label.name }}</p>
+        @click="onLabelClick(label)">
+        <img class="label-img" :src="`${label.src}`"  />
+        <p class="label-name">{{ $filters.capitalizeFirstLetter(label.name)}}</p>
       </div>
     </section>
-    <!-- <div class="lable-container">here comes lables</div> -->
     <div class="filters-btn">
-      <!-- <button class="labels-control next flex" @click.stop="$emit('next')">
-        &#62;
-      </button> -->
       <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
         <img
           src="/lable-img/filter-icon.png"
-          alt=""
+          
           class="filter-img"
         />Filters
       </button>
@@ -31,12 +23,9 @@
 </template>
 
 <script>
-import { labelService } from "../services/label-service.js";
+// import { labelService } from "../services/label-service.js";
 export default {
   name: "label-filter",
-  props: {
-    // labels: Array,
-  },
   components: {},
   data() {
     return {
@@ -46,42 +35,43 @@ export default {
           src: "/lable-img/beach.jpg",
         },
         {
-          name: "castles",
-          src: "/lable-img/castles.jpg",
+          name: "tropical",
+          src: "/lable-img/tropical.jpg",
         },
         {
-          name: "caves",
-          src: "/lable-img/caves.jpg",
+          name: "amazing pools",
+          src: "/lable-img/pools.jpg",
         },
         {
-          name: "containers",
-          src: "/lable-img/containers.jpg",
+          name: "creative spaces",
+          src: "/lable-img/creative-spaces.jpg",
         },
         {
-          name: "creative-spaces",
-          src: "/lable-img/creativ-spaces.jpg",
+          name: "shared homes",
+          src: "/lable-img/shared_homes.jpg",
         },
         {
-          name: "desert",
-          src: "/lable-img/desert.jpg",
+          name: "islands",
+          src: "/lable-img/island.jpg",
         },
         {
-          name: "golf",
-          src: "/lable-img/golf.jpg",
-        },
-        {
-          name: "skiing",
-          src: "/lable-img/skiing.jpg",
+          name: "iconic cities",
+          src: "/lable-img/iconic_city.jpg",
         },
         {
           name: "surfing",
           src: "/lable-img/surfing.jpg",
         },
       ],
+      activeLabel: ""
     };
   },
-  methods: {},
-
+  methods: {
+    onLabelClick(label){
+    this.activeLabel = label.name
+    this.$emit('setLabelFilter', label.name)
+  },
+  },
   created() {},
   unmounted() {},
 };
