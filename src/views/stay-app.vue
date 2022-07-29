@@ -25,27 +25,25 @@ export default {
     horizontalLine,
   },
   data() {
-    return {};
+    return {
+      filterBy: null
+    };
   },
   methods: {
     removeStay(stayId) {
       this.$store.dispatch({ type: "removeStay", stayId });
     },
-    setFilter(filter) {
-      filter = JSON.parse(JSON.stringify(filter));
-      this.$store.dispatch({ type: "setFilterBy", filterBy: filter });
-    },
-    setLabelFilter(label){
-      console.log("label", label)
+    setLabelFilter(filterBy){
+      // console.log("filterBy - in the stay app", filterBy)
+      const copyFilter = JSON.parse(JSON.stringify(filterBy));
+      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
     }
   },
   computed: {
     stays() {
       return this.$store.getters.staysToDisplay;
     },
-    labels() {
-      // return this.$store.getters.labelToDisplay;
-    },
+ 
   },
   created() {
     this.$store.dispatch({ type: "loadStays" });

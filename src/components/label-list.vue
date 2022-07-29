@@ -63,13 +63,19 @@ export default {
           src: "/lable-img/surfing.jpg",
         },
       ],
-      activeLabel: ""
+      activeLabel: "",
+      filterBy: {
+      label:""
+      }
     };
   },
   methods: {
     onLabelClick(label){
     this.activeLabel = label.name
-    this.$emit('setLabelFilter', label.name)
+    this.filterBy.label = label.name
+    // console.log('in the label list:', this.filterBy)
+    this.$emit('setLabelFilter', this.filterBy)
+    
   },
   },
   created() {},
