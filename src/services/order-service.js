@@ -10,6 +10,7 @@ export const ordersService = {
 };
 
 const order_key = "orderDB";
+const orders=getOrders();
 
 getOrders();
 
@@ -17,21 +18,20 @@ function query() {
   return storageService.query(order_key);
 }
 function getOrders() {
-  let orders = JSON.parse(localStorage.getItem(order_key));
+   let orders = JSON.parse(localStorage.getItem(order_key));
   if (!orders || !orders.length) {
     orders = [
       {
-        date: Date.now(),
-        guestName: "hard coded",
-        stay: "hard coded",
-        checkIn: "hard coded",
-        checkOut: "hard coded",
-        nights: "hard coded",
-        guests: "hard coded",
-        price: "hard coded",
-        total: "hard coded",
-        status: "hard coded",
-        action: "hard coded",
+        action: "",
+        checkIn: "29.7.2022",
+        checkOut: "30.7.2022",
+        date: "29.7.2022",
+        guestName: "David",
+        nights: 1,
+        price: "$63",
+        status: "Pending",
+        stay: "Private Room with perfect location in Bostanci",
+        total: "$63",
       },
     ];
     localStorage.setItem(order_key, JSON.stringify(orders));
@@ -39,10 +39,10 @@ function getOrders() {
   return orders;
 }
 
-function makeOrder(stay, reservation) {
+function makeOrder(stay, reservation,user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-    guestName: "David",
+    guestName: user.fullName,
     stay: stay.name,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
@@ -58,7 +58,8 @@ function makeOrder(stay, reservation) {
     status: "Pending",
     action: "",
   };
-  localStorage.setItem(order_key, JSON.stringify(order));
+  orders.push(order)
+  localStorage.setItem(order_key, JSON.stringify(orders));
   return order;
 }
 

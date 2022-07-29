@@ -1,6 +1,6 @@
 <template>
   <div class="stay-app">
-    <app-header class="main-layout" />
+    <app-header  class="main-layout" />
     <label-list :labels="labels" class="main-layout" @setLabelFilter="setLabelFilter"/>
 
     <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
@@ -26,7 +26,8 @@ export default {
   },
   data() {
     return {
-      filterBy: null
+      filterBy: null,
+      // loggedinUser:null,
     };
   },
   methods: {
@@ -43,11 +44,17 @@ export default {
     stays() {
       return this.$store.getters.staysToDisplay;
     },
+    // loggedinUser(){
+    //   return this.$store.getters.loggedinUser
+    // }
+
  
   },
   created() {
     this.$store.dispatch({ type: "loadStays" });
     // this.$store.dispatch({type: "loadLabels"}).then(()=>{});
+    // this.loggedinUser =this.$store.getters.loggedinUser
+    // console.log("loggedin user from stay app",this.loggedinUser);
   },
   unmounted() {},
 };

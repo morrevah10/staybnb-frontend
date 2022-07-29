@@ -94,7 +94,8 @@
             <li>{{ order.price }}</li>
             <li>{{ order.total }}</li>
             <li class="order-status">{{ order.status }}</li>
-            <li class="approve-btn">Approve</li>
+            <button class="approve-btn">Approve</button>
+            <button class="cancel-btn">Cancel</button>
           </ul>
         </div>
       </section>
@@ -120,8 +121,11 @@ export default {
   methods: {},
   computed: {},
   created() {
-    this.orders = this.$store.getters.getOrder;
-    console.log("orders from dashhh", this.orders);
+    this.$store.dispatch({ type: "loadOrders"});
+    console.log("dash created orders",this.orders)
+    let orders = this.$store.state.getters.getOrder
+    console.log(orders)
+  
   },
   unmounted() {},
 };

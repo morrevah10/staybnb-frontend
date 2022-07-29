@@ -61,6 +61,9 @@ export default {
         infants: 0,
         total: 0,
       },
+
+      loggedinUser:null,
+
       isCalendarShown: false,
       isReserveModal: false,
 
@@ -106,6 +109,7 @@ export default {
         type: "sendReservation",
         stay: this.stay,
         reservation: this.stayToOrder,
+        user: this.loggedinUser,
       });
       this.isReserveModal = true;
     },
@@ -123,7 +127,6 @@ export default {
           })
         : "Add date";
     },
-
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
@@ -149,6 +152,9 @@ export default {
     this.stayToOrder.date = info.date;
     this.stayToOrder.guests = info.guests;
     console.log("from stay det created", this.stayToOrder);
+    let user = this.$store.getters.loggedinUser
+    this.loggedinUser =user
+    console.log("user created",user)
   },
   unmounted() {},
 };

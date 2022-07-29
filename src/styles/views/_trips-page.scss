@@ -3,40 +3,54 @@
 }
 
 .trips-table-title {
+  text-align: center;
   border-bottom: solid 2px lightgray;
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 0.75rem 0;
   font-weight: bold;
-  li:first-child {
-    padding-right: 25px;
+  li {
+    width: 10%;
   }
 }
 
 .trips-line {
-  padding-bottom: 50px;
+  text-align: center;
   align-items: center;
   display: flex;
   width: 100%;
-  justify-content: space-between;
   padding: 0.7rem 0;
   border-bottom: solid 2px lightgray;
   li {
     font-size: 14px;
-    width: 120px;
-    margin-right: 20px;
+    width: 10%;
   }
 }
 
 .trips-container button {
   font-size: 15px;
   border: none;
-  background: lightgray;
-  color: black;
+  color: white;
   border-radius: 5px;
 }
 
 .trips-container button:hover {
-  background-color: white;
+  background-color: black;
+}
+
+.trip-status {
+  color: blue;
+}
+
+.cancel {
+  background-color: red;
+  width: 10%;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
