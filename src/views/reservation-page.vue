@@ -7,9 +7,9 @@
         <h2>Reservation Details:</h2>
       </div>
       <div class="reservation-details">
-        <p>name</p>
-        <p>type</p>
-        <p>dates</p>
+        <p>Name</p>
+        <p>Type</p>
+        <p>Dates</p>
         <p>Guests</p>
         <p>Price</p>
       </div>

@@ -1,21 +1,25 @@
 <template>
   <footer class="footer">
     <div class="footer-action flex">
-      <p>&copy; 2022 Staybnb</p>
+      <p clas="copyright">&copy; 2022 Staybnb</p>
       <pre> · </pre>
       <router-link :to="'/login'" class="link">
-        <p>Login</p>
+        <p class="login-footer">Login</p>
       </router-link>
       <pre> · </pre>
       <router-link :to="'/signup'" class="link">
-        <p>Sign Up</p>
+        <p class="signup-footer">Sign Up</p>
       </router-link>
       <pre> · </pre>
       <router-link :to="'/host'" class="link">
-        <p>Become a Host</p>
+        <p class="host-filter">Become a Host</p>
       </router-link>
     </div>
     <div class="footer-details flex">
+      <router-link :to="'/trips'" class="link">
+        <p>Trips</p>
+      </router-link>
+      <pre></pre>
       <button class="btn flex align-items">
         <img src="/footer-imgs/lan.png" alt="" />
         English
@@ -25,10 +29,6 @@
         <img src="/footer-imgs/dollar.png" alt="" />
         Currency
       </button>
-      <pre></pre>
-      <router-link :to="'/'" class="link">
-        <p>Support</p>
-      </router-link>
     </div>
   </footer>
 </template>

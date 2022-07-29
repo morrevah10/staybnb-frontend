@@ -2,7 +2,7 @@
   font-size: 12px;
   font-family: Circular;
   position: sticky;
-  height: 96px;
+  height: 78px;
   margin-bottom: 16px;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
 }
 
 .labels-container:hover {
-  border-bottom: 1px solid $clr5;
+  border-bottom: 2px solid rgb(212, 212, 212);
 
   .label-name {
     color: black;
