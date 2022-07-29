@@ -16,6 +16,16 @@ app.use(router);
 app.use(store);
 app.use(ElementPlus)
 
+
 app.directive('click-outside', clickOutsideDirective)
+
+app.config.globalProperties.$filters = {
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+    formatNumber(number) {
+        return Intl.NumberFormat().format(number);
+    }
+  }
 
 app.mount("#app");
