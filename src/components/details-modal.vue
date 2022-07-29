@@ -12,7 +12,7 @@
               <div class="star-preview">
                 <img src="../styles/icons/star.svg" class="star" />
               </div>
-              <span class="review-avg"> 4.7</span> ·
+              <span class="review-avg">4.7</span>·
               <span class="total-reviews">3 reviews</span>
             </div>
           </div>
@@ -54,14 +54,16 @@
             </button>
             <div></div>
           </div>
-          <fancy-btn class="reserve-btn" @click="reservation"
-            >Reserve</fancy-btn
-          >
+          <router-link to="/reservation">
+            <fancy-btn class="reserve-btn" @click="reservation"
+              >Reserve</fancy-btn
+            >
+          </router-link>
           <div class="pricing">
             <p>You won't be charged yet</p>
             <p>
               <span>Price</span>
-              <span>${{ stay.price }}</span>
+              <span>${{ $filters.formatNumber(stay.price) }}</span>
             </p>
             <p>
               <span>Service fee</span>
@@ -69,13 +71,31 @@
             </p>
             <p>
               <span>Total</span>
-              <span>${{ stay.price + 25 }}</span>
+              <span>${{ $filters.formatNumber(stay.price + 25) }}</span>
             </p>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <transition>
+    <calender-spread
+      @closeCalendar="isCalendarShown = false"
+      @dateChange="dateUpdate"
+      @click.prevent
+      is-expanded
+      v-if="isCalendarShown"
+    >
+    </calender-spread>
+  </transition>
+
+  <transition>
+    <guests-picker
+      v-if="isGuestModalShown"
+      @guestsUpdate="updateGuests"
+      @closeGuestsModal="isGuestModalShown = false"
+    />
+  </transition>
 </template>
 
 <script>
@@ -109,6 +129,7 @@ export default {
         total: 0,
       },
       isCalendarShown: false,
+      isGuestModalShown: false,
     };
   },
   methods: {

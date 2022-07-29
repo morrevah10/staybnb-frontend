@@ -1,7 +1,7 @@
 <template>
   <div class="stay-app">
     <app-header class="main-layout" />
-    <label-list :labels="labels" class="main-layout" />
+    <label-list :labels="labels" class="main-layout" @setLabelFilter="setLabelFilter"/>
 
     <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
     <app-footer class="footer main-layout" />
@@ -35,6 +35,9 @@ export default {
       filter = JSON.parse(JSON.stringify(filter));
       this.$store.dispatch({ type: "setFilterBy", filterBy: filter });
     },
+    setLabelFilter(label){
+      console.log("label", label)
+    }
   },
   computed: {
     stays() {

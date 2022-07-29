@@ -3,21 +3,21 @@
     <div class="user-nav">
       <div class="small-line">
         <router-link :to="'/signup'" class="link">
-          <p class="gray">Sign up</p>
+          <p class="signup-menu gray">Sign up</p>
         </router-link>
         <router-link :to="'/login'" class="link">
-          <p>Log in</p>
+          <p class="login-menu">Log in</p>
         </router-link>
       </div>
       <div class="small-line">
         <router-link :to="'/host'" class="link">
-          <p>Host your home</p>
+          <p class="host-menu">Host your home</p>
         </router-link>
         <router-link :to="'/dashboard'" class="link">
-          <p>Dashboard</p>
+          <p class="dashboard-menu">Dashboard</p>
         </router-link>
         <router-link :to="'/trips'" class="link">
-          <p>Trips</p>
+          <p class="trips-menu">Trips</p>
         </router-link>
       </div>
     </div>

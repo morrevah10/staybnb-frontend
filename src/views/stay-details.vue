@@ -20,16 +20,6 @@
       <details-reviews :stay="stay" />
     </section>
   </section>
-
-  <Transition>
-    <div v-click-outside="close" class="reserve-modal main-layout flex" v-if="isReserveModal"
-      @click="isReserveModal = false">
-      Order successfully placed!
-      <span>
-        The order is on hold and has been sent to the host for confirmation.
-        <span> Have a nice trip!</span></span>
-    </div>
-  </Transition>
   <app-footer class="details-layout relative" />
 </template>
 <script>
@@ -88,8 +78,8 @@ export default {
           this.$router.push("/stay");
         });
     },
-    close(){
-      this.isReserveModal = false
+    close() {
+      this.isReserveModal = false;
     },
     sumGuests() {
       this.guests.total =
@@ -127,20 +117,20 @@ export default {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        })
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
         : "Add date";
     },
 
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        })
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })
         : "Add date";
     },
     totalGuests() {
@@ -160,6 +150,6 @@ export default {
     this.stayToOrder.guests = info.guests;
     console.log("from stay det created", this.stayToOrder);
   },
-  unmounted() { },
+  unmounted() {},
 };
 </script>

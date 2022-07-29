@@ -1,8 +1,14 @@
 <template>
   <section class="stay-previews" v-if="stay">
+    <!-- <h4 class="stay-num">{{ stay.length }}</h4> -->
     <div @click="$router.push(`/${stay._id}`)" class="stay-preview-card">
       <div class="card-img">
-        <el-carousel arrow="hover" trigger="click" :autoplay="false" :loop="false">
+        <el-carousel
+          arrow="hover"
+          trigger="click"
+          :autoplay="false"
+          :loop="false"
+        >
           <el-carousel-item v-for="img in stay.imgUrls">
             <img class="carousel-img" :src="`../../img/${img}`" />
           </el-carousel-item>
