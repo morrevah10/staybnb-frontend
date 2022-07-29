@@ -27,5 +27,4 @@ app.config.globalProperties.$filters = {
         return Intl.NumberFormat().format(number);
     }
   }
-
 app.mount("#app");

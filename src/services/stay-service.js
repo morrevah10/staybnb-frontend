@@ -1,4 +1,8 @@
-import axios from "axios";
+import Axios from "axios";
+
+var axios = Axios.create({
+  withCredentials: true
+})
 
 function _getUrl(id = "") {
   const BASE_URL =
