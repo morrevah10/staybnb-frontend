@@ -21,14 +21,14 @@
           <ul class="trips-line flex">
             <li>{{ trip.Date }}</li>
             <li>{{ trip.Host }}</li>
-            <li>{{ trip.Stay }}</li>
+            <li class="ellipsis">{{ trip.Stay }}</li>
             <li>{{ trip.Dates }}</li>
             <li>{{ trip.Nights }}</li>
             <li>{{ trip.Guests }}</li>
             <li>{{ trip.Price }}</li>
             <li>{{ trip.Total }}</li>
-            <li>{{ trip.Status }}</li>
-            <button>{{ trip.Actions }}</button>
+            <li class="trip-status">{{ trip.Status }}</li>
+            <button class="cancel">{{ trip.Actions }}</button>
           </ul>
         </div>
       </section>
