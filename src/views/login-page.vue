@@ -8,21 +8,20 @@
         </div>
         <div class="login-form-body">
           <input
-          v-model="logedInUser.fullName"
+            v-model="logedInUser.username"
             type="text"
-            name="username" 
+            name="username"
             placeholder="Username"
             class="login-input"
-            
           />
           <input
-          v-model="logedInUser.password"
+            v-model="logedInUser.password"
             type="password"
             name="password"
             placeholder="Password"
             class="login-input"
-            
           />
+          {{this.logedInUser}}
           <fancy-btn class="login-btn" @click="checkLogIn">Login In</fancy-btn>
           <div class="signup-move">
             <router-link :to="'/signup'">
@@ -37,11 +36,10 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
-import fancyBtn from "../components/fancy-btn.cmp.vue";
-import { userService } from "../services/user-service.js";
-
+import appHeader from "../components/app-header.vue"
+import appFooter from "../components/app-footer.vue"
+import fancyBtn from "../components/fancy-btn.cmp.vue"
+import { userService } from "../services/user-service.js"
 
 export default {
   components: {
@@ -51,23 +49,34 @@ export default {
   },
   data() {
     return {
-      logedInUser:{
-        fullName:"",
-        password:"",
-      }
-    };
-  },
-  methods: {
-    checkLogIn(){
-      console.log("new user after click ",this.logedInUser)
+      logedInUser: {
+        username: "",
+        password: "",
+      },
     }
   },
-  computed: {
+  methods: {
+    async checkLogIn() {
+      if (!this.logedInUser.username) {
+        this.msg = "Please enter username/password"
+        return
+      }
+      try {
+         console.log("try from log in cmp ",this.logedInUser)
+        await this.$store.dispatch({ type: "login", userCred: this.logedInUser })
+
+        this.$router.push("/")
+      } catch (err) {
+        console.log(err)
+        this.msg = "Failed to login"
+      }
+    },
   },
+  computed: {},
   created() {
     // this.users=userService.query()
     // console.log("log in from login page created",this.users)
   },
   unmounted() {},
-};
+}
 </script>

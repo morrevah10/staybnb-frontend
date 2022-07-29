@@ -7,7 +7,8 @@ export default {
   },
   getters: {
     getOrder({orders}) {
-      return orders
+      // return orders
+      console.log("get orders from dash",orders)
     }
   },
   actions: {
@@ -16,6 +17,7 @@ export default {
         .query()
         .then((orders) => {
           commit({ type: "getOrders", orders });
+          console.log("load from stor",orders)
           return orders;
         })
         .catch((err) => {
@@ -32,12 +34,15 @@ export default {
   mutations: {
     getOrders(state, { orders }) {
       state.orders = orders;
+      console.log("get order from stor",state.orders)
     },
     setOrder(state,{order}){
+      console.log("orders from set order-stor befor clike",state.orders)
       state.currOrder=order
       state.orders.push(order)
       console.log("order from set order-stor",state.currOrder)
-      console.log("orders from set order-stor",state.orders)
+      console.log("orders from set order-stor befor clike",state.orders)
+
     }
   },
 }

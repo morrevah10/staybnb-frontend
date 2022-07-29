@@ -21,7 +21,8 @@
           <img class="menu-img" src="../styles/icons/menu-icon.svg" alt="" />
         </button>
         <button class="user-btn btn">
-          <img class="user-img" src="../styles/icons/user-icon.png" alt="" />
+          <img v-if="loggedinUser" class="user-img" :src="loggedinUser.imgUrl" alt="" />
+          <img v-else class="user-img" src="../styles/icons/user-icon.png" alt="" />
         </button>
       </section>
     </section>
@@ -68,7 +69,11 @@ export default {
       console.log("user modal open", this.isUserModal);
     },
   },
-  computed: {},
+  computed: {
+    loggedinUser(){
+      return this.$store.getters.loggedinUser
+    }
+  },
   created() {},
   unmounted() {},
 };

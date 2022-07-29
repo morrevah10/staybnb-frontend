@@ -120,8 +120,11 @@ export default {
   methods: {},
   computed: {},
   created() {
-    this.orders = this.$store.getters.getOrder;
-    console.log("orders from dashhh", this.orders);
+    this.$store.dispatch({ type: "loadOrders"});
+    console.log("dash created orders",this.orders)
+    let orders = this.$store.stat.getters.getOrder
+    console.log(orders)
+  
   },
   unmounted() {},
 };
