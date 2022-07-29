@@ -94,7 +94,8 @@
             <li>{{ order.price }}</li>
             <li>{{ order.total }}</li>
             <li class="order-status">{{ order.status }}</li>
-            <li class="approve-btn">Approve</li>
+            <button class="approve-btn">Approve</button>
+            <button class="cancel-btn">Cancel</button>
           </ul>
         </div>
       </section>
