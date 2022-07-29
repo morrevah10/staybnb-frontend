@@ -12,7 +12,7 @@
               <div class="star-preview">
                 <img src="../styles/icons/star.svg" class="star" />
               </div>
-              <span class="review-avg"> 4.7</span> ·
+              <span class="review-avg">4.7</span>·
               <span class="total-reviews">3 reviews</span>
             </div>
           </div>

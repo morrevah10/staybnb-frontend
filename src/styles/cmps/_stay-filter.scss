@@ -67,6 +67,7 @@
 //LARGE FILTER
 
 .header-filter {
+  position: relative;
   display: flex;
   margin-bottom: rem(23px);
   margin-top: rem(23px);
@@ -171,11 +172,6 @@
 }
 
 .guests-modal {
-  // margin-top: -37.25rem;
-  // opacity: 0%;
-  // position: fixed;
-  // z-index: -3;
-
   background-color: $clr3;
   border-radius: 2rem;
   padding: 1rem 2rem;
@@ -184,10 +180,7 @@
 
 .calendar-modal {
   opacity: 0%;
-  // margin-top: -50rem;
   margin-top: 29.5rem;
-  // position: fixed;
-  // z-index: -3;
   vertical-align: middle;
   background-color: $clr3;
   border-radius: 2rem;
@@ -196,30 +189,41 @@
 }
 
 .vc-container {
-  width: 100%;
-  border-color: transparent;
-  background-color: transparent;
-  border: 0px solid;
+  bottom: 200px !important;
+  position: fixed !important;
+  left: 400px !important;
 }
 
 .btn-container {
   height: inherit;
 }
 
-// .active-calendar {
-//   opacity: 100%;
-//   margin-top: 29.5rem;
-//   z-index: 10;
-// }
+.guest-picker {
+  position: absolute;
+  background-color: white;
+  top: 90px;
+  right: 250px;
+  border-radius: 32px;
+  padding: 16px 32px;
+}
 
-// .active-guest {
-//   opacity: 100%;
-//   margin-top: 4.75rem;
-//   z-index: 10;
+.num-input-cmp {
+  font-size: 16px !important;
+  border-bottom: solid 1px rgb(235, 235, 235) !important;
+}
 
-// }
+.num-input-cmp .item-label .title {
+  color: rgb(34, 34, 34) !important;
+  font-weight: bold;
+}
+
+.num-input-cmp .item-label .sub-title {
+  color: rgb(113, 113, 113) !important;
+  font-size: 14px !important;
+}
 
 .x-btn {
+  margin-left: 12px;
   justify-self: end;
   background-color: transparent;
   border: 0.2rem solid transparent;
