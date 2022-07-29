@@ -4,6 +4,7 @@ export default {
   state: {
     orders:[],
     currOrder:null,
+    
   },
   getters: {
     getOrder({orders}) {
@@ -24,11 +25,10 @@ export default {
           console.log(err);
         });
     },
-    sendReservation({commit},{stay,reservation}){
-      // console.log("from order module-sendReservation",stay,reservation)
-      let order =ordersService.makeOrder(stay,reservation)
-      // console.log("from order module  order",order)
-      commit({type:"setOrder",order})
+    sendReservation({commit},{stay,reservation,user}){
+      console.log("from order module-sendReservation",stay,reservation,user)
+      let order =ordersService.makeOrder(stay,reservation,user)
+      // commit({type:"setOrder",order})
     }
   },
   mutations: {
@@ -36,13 +36,13 @@ export default {
       state.orders = orders;
       console.log("get order from stor",state.orders)
     },
-    setOrder(state,{order}){
-      console.log("orders from set order-stor befor clike",state.orders)
-      state.currOrder=order
-      state.orders.push(order)
-      console.log("order from set order-stor",state.currOrder)
-      console.log("orders from set order-stor befor clike",state.orders)
+    // setOrder(state,{order}){
+    //   console.log("orders from set order-stor befor clike",state.orders)
+    //   state.currOrder=order
+    //   state.orders.push(order)
+    //   console.log("order from set order-stor",state.currOrder)
+    //   console.log("orders from set order-stor befor clike",state.orders)
 
-    }
+    // }
   },
 }

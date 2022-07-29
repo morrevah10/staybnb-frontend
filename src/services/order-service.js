@@ -39,10 +39,10 @@ function getOrders() {
   return orders;
 }
 
-function makeOrder(stay, reservation) {
+function makeOrder(stay, reservation,user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-    guestName: "David",
+    guestName: user.fullName,
     stay: stay.name,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
