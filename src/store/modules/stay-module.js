@@ -22,6 +22,9 @@ export default {
     },
     getStayToOrder({stayToOrder}) {
       return stayToOrder
+    },
+    getFilterBy({filterBy}){
+      return filterBy
     }
   },
   actions: {
@@ -61,12 +64,22 @@ export default {
 
     async setFilter({ commit }, { filterBy }) {
       try {
+        console.log('filter by - in the store',filterBy )
         const stays = await stayService.query(filterBy)
+        console.log('hello')
         commit({ type: "setStays", stays })
       } catch {
         console.log('failed to get filtered stays')
       }
     },
+    // async LabelFilter({ commit }, { filterBy }) {
+    //   try {
+    //     const stays = await stayService.query(filterBy)
+    //     // commit({ type: "setStays", stays })
+    //   } catch {
+    //     console.log('failed to get filtered stays')
+    //   }
+    // },
     setStayToOrder({ commit }, { date, guests }) {
       commit({ type: "setStayToOrder", date, guests})
     }
