@@ -1,14 +1,4 @@
 <template>
-  <!-- <div :class="{ active: isCalendarShown }" class="calendar-modal">
-    <calender-spread
-      @dateChange="dateUpdate"
-      @click.stop
-      is-expanded
-    ></calender-spread>
-  </div>
-  <div class="guests-modal" :class="{ active: isGuestModalShown }">
-    <guests-picker />
-  </div> -->
   <app-header-details />
   <div class="line-layout"></div>
   <section class="stay-details details-layout">
