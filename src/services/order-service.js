@@ -1,4 +1,6 @@
 import { storageService } from "./storage-service.js";
+import { httpService } from './http.service';
+
 
 export const ordersService = {
   query,
@@ -7,6 +9,7 @@ export const ordersService = {
   getDays,
   getTotal,
   getdate,
+  addOrder,
 };
 
 const order_key = "orderDB";
@@ -42,7 +45,7 @@ function getOrders() {
 function makeOrder(stay, reservation,user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-    guestName: user,
+    guestName: JSON.parse(JSON.stringify(user)),
     stay: stay.name,
     stayPlace:stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
@@ -58,7 +61,7 @@ function makeOrder(stay, reservation,user) {
       ),
     status: "Pending",
     action: "Cancel",
-    host:stay.host,
+    host: JSON.parse(JSON.stringify(stay.host)),
     type:stay.roomType,
 
   };
@@ -80,4 +83,11 @@ function getTotal(nights, price) {
 
 function getdate(date, formated) {
   return date.toLocaleDateString();
+}
+
+async function addOrder(order) {
+  console.log("user from service",order)
+  user = await httpService.post(`order/`, order)
+  saveLocalUser(order)
+  return order
 }

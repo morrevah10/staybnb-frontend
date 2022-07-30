@@ -21,7 +21,7 @@
         <!-- <h2>{{trip.date}}</h2> -->
           <ul class="trips-line flex">
             <li>{{ trip.date }}</li>
-            <li>{{ trip.host }}</li>
+            <li>{{ trip.host.fullname }}</li>
             <li class="ellipsis">{{ trip.stay }}</li>
             <li>{{ trip.checkIn }}-{{trip.checkOut}}</li>
             <li>{{ trip.nights }}</li>

@@ -1,3 +1,4 @@
+import { httpService } from "../../services/http.service.js"
 import { ordersService } from "../../services/order-service.js"
 
 export default {
@@ -25,13 +26,14 @@ export default {
         })
     },
     sendReservation({ commit }, { stay, reservation, user }) {
-      console.log("from order module-sendReservation", stay, reservation, user)
+      // console.log("from order module-sendReservation", stay, reservation, user)
       let currOrder = ordersService.makeOrder(stay, reservation, user)
-      console.log("from order module", currOrder)
-      console.log("from order module", user)
+      // console.log("from order module", currOrder)
+      // console.log("from order module", user)
 
       // let copyUser = JSON.parse(JSON.stringify(user))
-      commit({ type: "addOrderToTrip", currOrder, user })
+      commit({ type: "addOrderToTrip", currOrder})
+      commit({type:"addOrder"},currOrder)
       commit({ type: "setOrder", currOrder })
     },
   },
@@ -39,5 +41,9 @@ export default {
     setOrder(state, { currOrder }) {
       state.currOrder = currOrder
     },
+    addOrder({currOrder}){
+      console.log("add order from user module",currOrder)
+      ordersService.addOrder(currOrder)
+    }
   },
 }

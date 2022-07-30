@@ -29,13 +29,13 @@ export default {
     },
   },
   mutations: {
-    addOrderToTrip(state ,{currOrder }) {
+    addOrderToTrip(state ,{currOrder}) {
       console.log("from order store",currOrder);
       
       state.loggedinUser.trips.push(currOrder)
       console.log("order and user after clike from order stor",state.loggedinUser )
-      let user = JSON.parse(JSON.stringify(state.loggedinUser)) 
-      userService.update(user)
+      // let user = state.loggedinUser
+      userService.update(state.loggedinUser)
     },
     setLoggedinUser(state, { user }) {
       state.loggedinUser = user ? { ...user } : null
