@@ -21,8 +21,8 @@ import horizontalLine from "../components/horizontal-line.cmp.vue";
 export default {
   template: ``,
   components: {
-    stayList,
     appHeader,
+    stayList,
     appFooter,
     labelList,
     horizontalLine,

@@ -6,10 +6,7 @@
         <h1 class="logo-text">Staybnb</h1>
       </div>
     </router-link>
-    <stay-filter
-      class="filter-header"
-      @open-large-modal="(isOpen) => openLarge(isOpen)"
-    />
+    <stay-filter @open-large-modal="(isOpen) => openLarge(isOpen)" />
     <section class="user-actions flex align-items space-between">
       <div class="host">
         <router-link :to="'/host'" class="host-header link"
@@ -55,7 +52,7 @@ import stayFilter from "./stay-filter.vue";
 import mainFilterLarge from "./main-filter-large.cmp.vue";
 import userModal from "./user-modal.vue";
 export default {
-  props: ["className"],
+  props: ["className", "class"],
   components: {
     userModal,
     stayFilter,

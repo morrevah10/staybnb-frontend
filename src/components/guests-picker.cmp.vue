@@ -1,23 +1,10 @@
 <template>
-  <div class="guest-picker" v-click-outside="closeModal">
-    <num-input
-      class="guest-adults"
-      @updateItemsNum="updateAdults"
-      title="Adults"
-      subtitle="Ages 13 or over"
-    />
-    <num-input
-      class="guest-children"
-      @updateItemsNum="updateKids"
-      title="Children"
-      subtitle="Ages 2-12"
-    />
-    <num-input
-      class="guest-Infants"
-      @updateItemsNum="updateInfants"
-      title="Infants"
-      subtitle="under 2"
-    />
+  <div v-if="guests" class="guest-picker" v-click-outside="closeModal">
+    <num-input :initialValue="guests.adults" class="guest-adults" @updateItemsNum="updateAdults" title="Adults"
+      subtitle="Ages 13 or over" />
+    <num-input :initialValue="guests.children" class="guest-children" @updateItemsNum="updateChildren" title="Children"
+      subtitle="Ages 2-12" />
+
     <div>
       <button class="x-btn" @click.prevent="$emit('closeGuestsModal')">
         Close
@@ -34,43 +21,35 @@ export default {
   },
   data() {
     return {
-      guests: {
-        adults: 0,
-        kids: 0,
-        infants: 0,
-        total: 0,
-      },
+      guests: null,
     };
   },
   methods: {
     sumGuests() {
-      this.guests.total =
-        this.guests.adults + this.guests.kids + this.guests.infants;
-      this.$emit("guestsUpdate", this.guests);
+      this.guests.total = this.guests.adults + this.guests.children
+      this.$store.dispatch({type:'updateGuests', guests:this.guests})
     },
     updateAdults(num) {
       this.guests.adults = num;
       this.sumGuests();
     },
-    updateKids(num) {
-      this.guests.kids = num;
-      this.sumGuests();
-    },
-    updateInfants(num) {
-      this.guests.infants = num;
+    updateChildren(num) {
+      this.guests.children = num;
       this.sumGuests();
     },
     closeModal() {
       this.$emit("closeGuestsModal");
     },
-     handleScroll (event) {
-         this.$emit("closeGuestsModal");
+    handleScroll(event) {
+      this.$emit("closeGuestsModal");
     }
   },
-  created () {
-    window.addEventListener('scroll', this.handleScroll);
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+    const copyGuests = JSON.parse(JSON.stringify(this.$store.getters.getGuests))
+    this.guests = copyGuests
   },
-  destroyed () {
+  unmounted() {
     window.removeEventListener('scroll', this.handleScroll);
   },
 };

@@ -1,10 +1,11 @@
 <template>
   <div class="small-nav">
-    <buttom
+   
+   <div
       class="options"
       @click="isActiveState()"
       :class="{ 'option-active': isActive }"
-      >Stays</buttom
+      >Stays</div
     >
   </div>
 </template>

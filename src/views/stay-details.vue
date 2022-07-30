@@ -51,8 +51,7 @@ export default {
 
       guests: {
         adults: 0,
-        kids: 0,
-        infants: 0,
+        children: 0,
         total: 0,
       },
 
@@ -80,25 +79,21 @@ export default {
     },
     sumGuests() {
       this.guests.total =
-        this.guests.adults + this.guests.kids + this.guests.infants;
+        this.guests.adults + this.guests.children 
     },
     updateAdults(num) {
       this.guests.adults = num;
       this.sumGuests();
     },
-    updateKids(num) {
-      this.guests.kids = num;
+    updateChildren(num) {
+      this.guests.children = num;
       this.sumGuests();
     },
-    updateInfants(num) {
-      this.guests.infants = num;
-      this.sumGuests();
-    },
+
     dateUpdate(date) {
       this.date = date;
     },
     reserve() {
-      // console.log("from stay det after click", this.stayToOrder);
       this.$store.dispatch({
         type: "sendReservation",
         stay: this.stay,
@@ -115,19 +110,19 @@ export default {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
     totalGuests() {
@@ -150,6 +145,6 @@ export default {
     this.loggedinUser = user;
     console.log("user created", user);
   },
-  unmounted() {},
+  unmounted() { },
 };
 </script>
