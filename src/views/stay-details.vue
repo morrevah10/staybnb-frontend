@@ -16,8 +16,8 @@
 </template>
 <script>
 import { stayService } from "../services/stay-service";
-import miniFilter from "../components/main-filter-mini.cmp.vue";
 import appHeaderDetails from "../components/app-header-details.vue";
+import miniFilter from "../components/main-filter-mini.cmp.vue";
 import appFooterDetails from "../components/app-footer-details.vue";
 import detailsHeader from "../components/details-header.vue";
 import detailsInfo from "../components/details-info.vue";
@@ -31,15 +31,15 @@ export default {
   props: [],
   components: {
     appHeaderDetails,
-    appFooterDetails,
+    miniFilter,
     detailsHeader,
     detailsInfo,
     detailsModal,
     detailsReviews,
+    appFooterDetails,
     calenderSpread,
     guestsPicker,
     fancyBtn,
-    miniFilter,
   },
   data() {
     return {

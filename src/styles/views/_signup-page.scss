@@ -1,6 +1,6 @@
 .signup-container {
   padding-top: 15px;
-  height: 79vh;
+  height: 70vh;
 }
 
 .signup-section {
@@ -25,8 +25,8 @@
 .signup-form-header h2 {
   display: block;
   font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
@@ -75,4 +75,11 @@
   font-size: 1rem;
   cursor: pointer;
   font-family: airbnb-regular, sans-serif;
+}
+
+.signup-form-body h1 {
+  font-size: 1.5em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  text-align: center;
 }
