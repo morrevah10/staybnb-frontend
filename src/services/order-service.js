@@ -4,6 +4,7 @@ import { httpService } from './http.service';
 
 export const ordersService = {
   query,
+  getOrder,
   getOrders,
   makeOrder,
   getDays,
@@ -13,14 +14,13 @@ export const ordersService = {
 };
 
 const order_key = "orderDB";
-const orders=getOrders();
 
-getOrders();
 
 function query() {
   return storageService.query(order_key);
 }
-function getOrders() {
+
+function getOrder() {
    let orders = JSON.parse(localStorage.getItem(order_key));
   if (!orders || !orders.length) {
     orders = [
@@ -86,8 +86,12 @@ function getdate(date, formated) {
 }
 
 async function addOrder(order) {
-  console.log("user from service",order)
-  user = await httpService.post(`order/`, order)
-  saveLocalUser(order)
+  console.log("user from service",JSON.parse(JSON.stringify(order)) )
+  order = await httpService.post('/order', order)
   return order
+}
+
+async function getOrders(){
+  let orders = await httpService.get('/orders')
+  return orders
 }
