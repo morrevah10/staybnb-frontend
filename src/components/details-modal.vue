@@ -109,6 +109,9 @@ export default {
   props: {
     stay: Object,
   },
+  emits: [
+    "makeReservation"
+  ],
   components: {
     guestsPicker,
     calenderSpread,

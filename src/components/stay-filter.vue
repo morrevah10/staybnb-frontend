@@ -1,6 +1,6 @@
 <template>
   <main-filter-small v-if="!defaultDisplay" @openLarge="openLargeFilter" />
-  <Small-nav-bar v-else @toggelModal="openLargeFilter" />
+  <small-nav-bar v-else @toggelModal="openLargeFilter" />
   <div class="open-modal">
     <div :class="{ 'large-search-modal': defaultDisplay }">
       <main-filter-large class="large-search" />
@@ -15,6 +15,7 @@ import smallNavBar from "./small-nav-bar.vue";
 import SmallNavBar from "./small-nav-bar.vue";
 
 export default {
+  props:["class"],
   components: {
     mainFilterLarge,
     mainFilterSmall,

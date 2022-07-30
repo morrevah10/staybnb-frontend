@@ -8,6 +8,8 @@ import 'element-plus/dist/index.css'
 import { SetupCalendar } from 'v-calendar';
 import 'v-calendar/dist/style.css'
 import {clickOutsideDirective} from './directives'
+// import {pageScrollDirective} from './directives'
+
 
 const app = createApp(App);
 
@@ -18,6 +20,7 @@ app.use(ElementPlus)
 
 
 app.directive('click-outside', clickOutsideDirective)
+// app.directive('page-scroll', pageScrollDirective)
 
 app.config.globalProperties.$filters = {
     capitalizeFirstLetter(string) {

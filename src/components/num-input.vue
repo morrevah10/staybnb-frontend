@@ -19,7 +19,8 @@ export default {
     name: 'plusMinusInput',
     props:{
       title:String,
-      subtitle: String
+      subtitle: String,
+      initialValue: Number
     },
     data(){
         return {
@@ -37,6 +38,7 @@ export default {
     created(){
         this.title = this.$props.title
         this.subtitle = this.$props.subtitle
+        this.numOfItems = this.$props.initialValue
     }
 }
 </script>

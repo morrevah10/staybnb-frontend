@@ -1,17 +1,17 @@
 <template>
   <div class="header-search">
-    <button value="destination" @click="openSearch('destination')">
+    <button value="destination" @click="openSearch">
       Anywhere
     </button>
     <span class="separator-line"></span>
-    <button @click="openSearch('date')">Any week</button>
+    <button @click="openSearch">Any week</button>
     <span class="separator-line"></span>
 
     <div class="add-container flex">
       <button
         value="guests"
         class="search-header font flex add-btn"
-        @click="openSearch('guests')"
+        @click="openSearch"
       >
         Add guests
       </button>
@@ -32,8 +32,8 @@ export default {
   },
   created() {},
   methods: {
-    openSearch(mode) {
-      this.$emit("openLarge", mode);
+    openSearch() {
+      this.$emit("openLarge");
       console.log("hello");
     },
   },

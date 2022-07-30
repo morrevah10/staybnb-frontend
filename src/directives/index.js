@@ -25,3 +25,13 @@ export const clickOutsideDirective = {
       document.removeEventListener('click', el.clickOutside)
     },
   }
+
+
+// export const pageScrollDirective = {
+//   mounted (el) {
+//     window.addEventListener('scroll', el.handleScroll);
+//   },
+//   unmounted (el) {
+//     window.removeEventListener('scroll', el.handleScroll);
+//   },
+// }

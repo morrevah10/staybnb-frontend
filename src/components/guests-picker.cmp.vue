@@ -1,22 +1,24 @@
 <template>
-  <div class="guest-picker" v-click-outside="closeModal">
+  <div class="guest-picker" v-click-outside="closeModal" >
     <num-input
-      class="guest-adults"
+     :initialValue ="guests.adults"
       @updateItemsNum="updateAdults"
       title="Adults"
       subtitle="Ages 13 or over"
     />
     <num-input
-      class="guest-children"
+      :initialValue ="guests.kids"
       @updateItemsNum="updateKids"
       title="Children"
       subtitle="Ages 2-12"
+   
     />
     <num-input
-      class="guest-Infants"
+     :initialValue ="guests.infants"
       @updateItemsNum="updateInfants"
       title="Infants"
       subtitle="under 2"
+  
     />
     <div>
       <button class="x-btn" @click.prevent="$emit('closeGuestsModal')">
@@ -68,7 +70,10 @@ export default {
     }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
+  
+      this.guests = this.$store.getters.getGuests
+    
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);

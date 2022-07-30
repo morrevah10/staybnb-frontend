@@ -74,9 +74,9 @@ import guestsPicker from "./guests-picker.cmp.vue";
 import calenderSpread from "./calender-spread.vue";
 
 export default {
-  props: {
-    mode: String,
-  },
+  // props: {
+  //   mode: String,
+  // },
   components: {
     guestsPicker,
     calenderSpread,
@@ -100,7 +100,7 @@ export default {
 
       isCalendarShown: false,
       isGuestModalShown: false,
-      mode: "destination",
+      // mode: "destination",
     };
   },
   methods: {

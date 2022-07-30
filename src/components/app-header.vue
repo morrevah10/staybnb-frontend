@@ -46,7 +46,7 @@ import stayFilter from "./stay-filter.vue";
 import mainFilterLarge from "./main-filter-large.cmp.vue";
 import userModal from "./user-modal.vue";
 export default {
-  props: ["className"],
+  props: ["className", "class"],
   components: {
     userModal,
     stayFilter,

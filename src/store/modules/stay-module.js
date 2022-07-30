@@ -25,6 +25,9 @@ export default {
     },
     getFilterBy({filterBy}){
       return filterBy
+    },
+    getGuests({guests}){
+      return guests
     }
   },
   actions: {
