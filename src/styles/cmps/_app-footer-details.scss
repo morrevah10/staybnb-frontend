@@ -1,0 +1,19 @@
+.footer-details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #484848;
+  font-size: 0.9rem;
+  z-index: 15;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-block: 10px;
+}
+
+.details-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}

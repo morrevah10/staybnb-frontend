@@ -21,13 +21,22 @@
           <img class="menu-img" src="../styles/icons/menu-icon.svg" alt="" />
         </button>
         <button class="user-btn btn">
-          <img v-if="loggedinUser" class="user-img" :src="loggedinUser.imgUrl" alt="" />
-          <img v-else class="user-img" src="../styles/icons/user-icon.png" alt="" />
+          <img
+            v-if="loggedinUser"
+            class="user-img"
+            :src="loggedinUser.imgUrl"
+            alt=""
+          />
+          <img
+            v-else
+            class="user-img"
+            src="../styles/icons/user-icon.png"
+            alt=""
+          />
         </button>
       </section>
     </section>
   </header>
-  <div class="line-layout"></div>
   <section class="search-modal">
     <div class="open-modal">
       <div>
@@ -69,9 +78,9 @@ export default {
     },
   },
   computed: {
-    loggedinUser(){
-      return this.$store.getters.loggedinUser
-    }
+    loggedinUser() {
+      return this.$store.getters.loggedinUser;
+    },
   },
   created() {},
   unmounted() {},

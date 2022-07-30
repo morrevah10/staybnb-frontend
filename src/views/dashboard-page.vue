@@ -115,16 +115,17 @@ export default {
   },
   data() {
     return {
-      orders: null,
+      loggedinUser: null,
+
     };
   },
   methods: {},
   computed: {},
   created() {
-    this.$store.dispatch({ type: "loadOrders"});
-    console.log("dash created orders",this.orders)
-    let orders = this.$store.state.getters.getOrder
-    console.log(orders)
+    let user = this.$store.getters.loggedinUser
+    console.log("from dash user", user)
+    this.loggedinUser = user
+    console.log("from dash loggedin user", this.loggedinUser)
   
   },
   unmounted() {},

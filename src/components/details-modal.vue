@@ -80,6 +80,7 @@
   </div>
   <transition>
     <calender-spread
+      class="calender-container"
       @closeCalendar="isCalendarShown = false"
       @dateChange="dateUpdate"
       @click.prevent

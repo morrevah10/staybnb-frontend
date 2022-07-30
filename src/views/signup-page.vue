@@ -7,6 +7,7 @@
           <h2>Sign Up</h2>
         </div>
         <div class="signup-form-body">
+          <h1>Welcome To Staybnb</h1>
           <input
             type="text"
             name="fullname"
@@ -51,8 +52,6 @@ import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
 import fancyBtn from "../components/fancy-btn.cmp.vue";
 
-
-
 export default {
   components: {
     appHeader,
@@ -60,14 +59,11 @@ export default {
     fancyBtn,
   },
   data() {
-    return {
-          };
+    return {};
   },
   methods: {},
   computed: {},
-  created() {
-
-  },
+  created() {},
   unmounted() {},
 };
 </script>

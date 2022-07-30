@@ -7,6 +7,7 @@
           <h2>Sign In</h2>
         </div>
         <div class="login-form-body">
+          <h1>Welcome Back</h1>
           <input
             v-model="logedInUser.username"
             type="text"
@@ -21,8 +22,10 @@
             placeholder="Password"
             class="login-input"
           />
-          {{this.logedInUser}}
-          <fancy-btn class="login-btn" @click.prevent="checkLogIn">Login In</fancy-btn>
+          {{ this.logedInUser }}
+          <fancy-btn class="login-btn" @click.prevent="checkLogIn"
+            >Login In</fancy-btn
+          >
           <div class="signup-move">
             <router-link :to="'/signup'">
               <button type="button" class="signup-btn-move">Sign Up</button>
@@ -36,10 +39,10 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue"
-import appFooter from "../components/app-footer.vue"
-import fancyBtn from "../components/fancy-btn.cmp.vue"
-import { userService } from "../services/user-service.js"
+import appHeader from "../components/app-header.vue";
+import appFooter from "../components/app-footer.vue";
+import fancyBtn from "../components/fancy-btn.cmp.vue";
+import { userService } from "../services/user-service.js";
 
 export default {
   components: {
@@ -53,24 +56,27 @@ export default {
         username: "",
         password: "",
       },
-      msg:''
-    }
+      msg: "",
+    };
   },
   methods: {
     async checkLogIn() {
-      console.log('check')
+      console.log("check");
       if (!this.logedInUser.username) {
-        this.msg = "Please enter username/password"
-        return
+        this.msg = "Please enter username/password";
+        return;
       }
       try {
-         console.log("try from log in cmp ",this.logedInUser)
-        await this.$store.dispatch({ type: "login", userCred: this.logedInUser })
+        console.log("try from log in cmp ", this.logedInUser);
+        await this.$store.dispatch({
+          type: "login",
+          userCred: this.logedInUser,
+        });
 
-        this.$router.push("/")
+        this.$router.push("/");
       } catch (err) {
-        console.log(err)
-        this.msg = "Failed to login"
+        console.log(err);
+        this.msg = "Failed to login";
       }
     },
   },
@@ -80,5 +86,5 @@ export default {
     // console.log("log in from login page created",this.users)
   },
   unmounted() {},
-}
+};
 </script>

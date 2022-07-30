@@ -7,9 +7,9 @@
   border: 0.5px solid $clr9;
   color: var(clr1);
   height: rem(48px);
-  box-shadow: none;
+  box-shadow: 1px 1px 3px 1px $clr9;
   &:hover {
-    box-shadow: 1px 1px 3px 1px $clr9;
+    box-shadow: 2px 2px 4px 2px $clr9;
   }
 
   .header-separator {
@@ -191,6 +191,16 @@
 }
 
 .vc-container {
+  height: 268px !important;
+  width: 500px !important;
+  top: 160px !important;
+  position: fixed !important;
+  left: 400px !important;
+}
+
+.calender-container {
+  width: 500px;
+  height: 268px;
   height: 268px !important;
   width: 500px !important;
   top: 160px !important;

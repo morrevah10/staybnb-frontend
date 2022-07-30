@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 40px;
@@ -12,6 +11,11 @@
   font-size: 14px;
   text-indent: 5px;
   cursor: pointer;
+  margin: 1rem auto;
+  box-shadow: 1px 1px 3px 1px $clr9;
+  &:hover {
+    box-shadow: 2px 2px 4px 2px $clr9;
+  }
 }
 
 .filter-search-icon {

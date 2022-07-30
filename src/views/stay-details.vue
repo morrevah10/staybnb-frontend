@@ -1,17 +1,7 @@
 <template>
-  <!-- <div :class="{ active: isCalendarShown }" class="calendar-modal">
-    <calender-spread
-      @dateChange="dateUpdate"
-      @click.stop
-      is-expanded
-    ></calender-spread>
-  </div>
-  <div class="guests-modal" :class="{ active: isGuestModalShown }">
-    <guests-picker />
-  </div> -->
-  <app-header className="details-layout relative" />
-  <!-- <mini-filter /> -->
-  <section class="stay-details details-wrapper details-layout">
+  <app-header-details />
+  <div class="line-layout"></div>
+  <section class="stay-details details-layout">
     <section class="details-wrapper" v-if="stay">
       <details-header :stay="stay" />
       <section class="stay-display flex">
@@ -21,13 +11,14 @@
       <details-reviews :stay="stay" />
     </section>
   </section>
-  <app-footer class="details-layout relative" />
+  <div class="line-layout"></div>
+  <app-footer-details />
 </template>
 <script>
 import { stayService } from "../services/stay-service";
+import appHeaderDetails from "../components/app-header-details.vue";
 import miniFilter from "../components/main-filter-mini.cmp.vue";
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
+import appFooterDetails from "../components/app-footer-details.vue";
 import detailsHeader from "../components/details-header.vue";
 import detailsInfo from "../components/details-info.vue";
 import detailsModal from "../components/details-modal.vue";
@@ -39,16 +30,16 @@ import fancyBtn from "../components/fancy-btn.cmp.vue";
 export default {
   props: [],
   components: {
-    appHeader,
-    appFooter,
+    appHeaderDetails,
+    miniFilter,
     detailsHeader,
     detailsInfo,
     detailsModal,
     detailsReviews,
+    appFooterDetails,
     calenderSpread,
     guestsPicker,
     fancyBtn,
-    miniFilter,
   },
   data() {
     return {

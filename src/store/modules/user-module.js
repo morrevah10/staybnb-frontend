@@ -11,8 +11,8 @@ import { userService } from "../../services/user-service.js"
 export default {
   state: {
     loggedinUser: null,
-    users: [],
-    watchedUser: null,
+    // users: [],
+    // watchedUser: null,
   },
   getters: {
     users({ users }) {
@@ -21,11 +21,22 @@ export default {
     loggedinUser({ loggedinUser }) {
       return loggedinUser
     },
+    getTrips({loggedinUser}){
+      return loggedinUser.trips
+    },
     watchedUser({ watchedUser }) {
       return watchedUser
     },
   },
   mutations: {
+    addOrderToTrip(state ,{currOrder }) {
+      console.log("from order store",currOrder);
+      
+      state.loggedinUser.trips.push(currOrder)
+      console.log("order and user after clike from order stor",state.loggedinUser )
+      let user = JSON.parse(JSON.stringify(state.loggedinUser)) 
+      userService.update(user)
+    },
     setLoggedinUser(state, { user }) {
       state.loggedinUser = user ? { ...user } : null
     },
@@ -38,9 +49,9 @@ export default {
     removeUser(state, { userId }) {
       state.users = state.users.filter((user) => user._id !== userId)
     },
-    setUserScore(state, { score }) {
-      state.loggedinUser.score = score
-    },
+    // setUserScore(state, { score }) {
+    //   state.loggedinUser.score = score
+    // },
   },
   actions: {
     async login({ commit }, { userCred }) {
@@ -103,6 +114,7 @@ export default {
     },
     async updateUser({ commit }, { user }) {
       try {
+        console.log("user from action ",user)
         user = await userService.update(user)
         commit({ type: "setUser", user })
       } catch (err) {
