@@ -6,13 +6,24 @@ export default {
     stays: null,
     currStay: null,
     filterBy: null,
+    date: {
+      start: new Date(),
+      end: new Date(Date.now()+ 86400000) 
+    },
+    guests: {
+      adults: 1,
+      children: 0,
+      total: 1
+    },
     stayToOrder: {
       date: {
         start: new Date(),
         end: new Date(Date.now()+ 86400000) 
       },
       guests: {
-        adults: 1
+        adults: 1,
+        children: 0,
+        total: 1
       }
     }
   },
@@ -28,7 +39,11 @@ export default {
     },
     getGuests({guests}){
       return guests
+    },
+    getDate({date}){
+      return date
     }
+
   },
   actions: {
     loadStays({ commit }) {
@@ -85,12 +100,20 @@ export default {
     // },
     setStayToOrder({ commit }, { date, guests }) {
       commit({ type: "setStayToOrder", date, guests})
-    }
+    },
+     updateGuests({commit},{guests}) { 
+        // console.log('in the action -', guests )
+        commit({type: "updateGuests", guests})
+     }
   },
   mutations: {
     setStays(state, { stays }) {
       state.stays = stays;
     },
+    updateGuests(state, { guests }){
+      console.log("mutation",  guests)
+      state.guests = JSON.parse(JSON.stringify(guests))
+    }, 
     updateStay(state, { stay }) {
       const idx = state.stays.findIndex((t) => t._id === stay._id);
       state.stays.splice(idx, 1, stay);

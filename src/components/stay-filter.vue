@@ -6,7 +6,7 @@
       <main-filter-large class="large-search" />
     </div>
   </div>
-  <!-- </main-filter-small> -->
+
 </template>
 <script>
 import mainFilterLarge from "./main-filter-large.cmp.vue";

@@ -1,7 +1,7 @@
 <template>
   <div class="stay-app">
     <app-header  class="main-layout" />
-    <label-list class="main-layout" @setLabelFilter="setLabelFilter"/>
+    <label-list :labels="labels" class="main-layout" @setLabelFilter="setLabelFilter"/>
 
     <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
     <app-footer class="footer main-layout" />
@@ -18,8 +18,8 @@ import horizontalLine from "../components/horizontal-line.cmp.vue";
 export default {
   template: ``,
   components: {
-    stayList,
     appHeader,
+    stayList,
     appFooter,
     labelList,
     horizontalLine,

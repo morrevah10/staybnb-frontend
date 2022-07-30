@@ -1,12 +1,13 @@
 <template>
   <div v-click-outside="closeCalendar">
-    <!-- <button class="x-btn" @click.prevent="$emit('closeCalendar')">x</button> -->
+
     <DatePicker :columns="2" v-model="date" is-range update-on-input />
   </div>
 </template>
 
     <script>
     import { Calendar, DatePicker } from 'v-calendar';
+
     
     
     export default {
@@ -16,19 +17,20 @@
         DatePicker,
       },
       props: {
-        // startDate: Object
+        startDate: Object
       },
       data() {
         return {
           date: null,
         }
       },
-       created () {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
+      created() {
+        window.addEventListener('scroll', this.handleScroll);
+ 
+      },
+      unmounted() {
+        window.removeEventListener('scroll', this.handleScroll);
+      },
       watch: {
         date() {
           this.$emit('dateChange', this.date)
@@ -38,10 +40,10 @@
         closeCalendar() {
           this.$emit('closeCalendar')
         },
-          handleScroll (event) {
-         this.$emit("closeCalendar");
-    }
-
+        handleScroll(event) {
+          this.$emit("closeCalendar");
+        }
+    
       },
     }
     </script>

@@ -1,32 +1,31 @@
 <template>
-<section class="num-input-cmp">
-   <div class="item-label">
-       <span class="title">{{title}}</span>
-       <br>
-    <span class="sub-title">{{subtitle}}</span>
-   </div>
-    <div class="plus-minus-btn">
-        <button @click.prevent="updateNumOfItems(-1)" :disabled="numOfItems === 0">-</button>
-        <input type="number" v-model="numOfItems">
-        <button @click.prevent="updateNumOfItems(1)">+</button>
-    </div>
-        </section>
+    <section class="num-input-cmp">
+        <div class="item-label">
+            <span class="title">{{ $filters.capitalizeFirstLetter(title) }}</span>
+            <br>
+            <span class="sub-title">{{ $filters.capitalizeFirstLetter(subtitle) }}</span>
+        </div>
+        <div class="plus-minus-btn">
+            <button @click.prevent="updateNumOfItems(-1)" :disabled="numOfItems === 0">-</button>
+            <input type="number" v-model="numOfItems">
+            <button @click.prevent="updateNumOfItems(1)">+</button>
+        </div>
+    </section>
 
-        
+
 </template>
 <script>
 export default {
     name: 'plusMinusInput',
-    props:{
-      title:String,
-      subtitle: String,
-      initialValue: Number
+    props: {
+        title: String,
+        subtitle: String,
+        initialValue: Number
     },
-    data(){
+    data() {
         return {
             numOfItems: 0,
-            title: "",
-            subtitle: ""
+
         }
     },
     methods: {
@@ -35,10 +34,10 @@ export default {
             this.$emit('updateItemsNum', this.numOfItems)
         }
     },
-    created(){
-        this.title = this.$props.title
-        this.subtitle = this.$props.subtitle
-        this.numOfItems = this.$props.initialValue
+    created() {
+      
+        this.numOfItems = +this.$props.initialValue
+  
     }
 }
 </script>

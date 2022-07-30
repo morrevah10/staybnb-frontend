@@ -92,9 +92,8 @@ export default {
         end: null,
       },
       guests: {
-        adults: 0,
-        kids: 0,
-        infants: 0,
+        adults: 1,
+        children: 0,
         total: 0,
       },
 
@@ -122,8 +121,10 @@ export default {
     dateUpdate(newDate) {
       this.date = newDate;
     },
-    updateGuests(NewGuests) {
-      this.guests = NewGuests;
+    updateGuests(newGuests) {
+      console.log('NewGuests', newGuests)
+      this.guests = newGuests
+      this.$store.dispatch({type: "updateGuests" , guests: this.guests})
       this.filterBy.numOfGuests = this.guests.total;
     },
   },
@@ -149,7 +150,8 @@ export default {
         : "Add dates";
     },
     totalGuests() {
-      switch (this.guests.total) {
+      const {total} = this.$store.getters.getGuests
+      switch (total) {
         case 0:
           return "Add guests";
           break;
@@ -157,7 +159,7 @@ export default {
           return "1 guest";
           break;
         default:
-          return `${this.guests.total} guests`;
+          return `${total} guests`;
       }
     },
   },

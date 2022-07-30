@@ -63,15 +63,15 @@
             <p>You won't be charged yet</p>
             <p>
               <span>Price</span>
-              <span>${{ $filters.formatNumber(stay.price) }}</span>
+              <span>${{ $filters.formatNumber(stayPrice) }}</span>
             </p>
             <p>
               <span>Service fee</span>
-              <span>$25</span>
+              <span>{{stay.cleaningFee}}</span>
             </p>
             <p>
               <span>Total</span>
-              <span>${{ $filters.formatNumber(stay.price + 25) }}</span>
+              <span>${{ $filters.formatNumber(totalFair) }}</span>
             </p>
           </div>
         </form>
@@ -127,8 +127,8 @@ export default {
 
       guests: {
         adults: 0,
-        kids: 0,
-        infants: 0,
+        children: 0,
+     
         total: 0,
       },
       isCalendarShown: false,
@@ -138,18 +138,14 @@ export default {
   methods: {
     sumGuests() {
       this.guests.total =
-        this.guests.adults + this.guests.kids + this.guests.infants;
+        this.guests.adults + this.guests.children;
     },
     updateAdults(num) {
       this.guests.adults = num;
       this.sumGuests();
     },
-    updateKids(num) {
-      this.guests.kids = num;
-      this.sumGuests();
-    },
-    updateInfants(num) {
-      this.guests.infants = num;
+    updateChildren(num) {
+      this.guests.children = num;
       this.sumGuests();
     },
     dateUpdate(date) {
@@ -157,8 +153,6 @@ export default {
     },
     reservation() {
       this.$emit("makeReservation");
-
-      // console.log("modal open",this.isReserveModal)
     },
   },
   computed: {
@@ -185,13 +179,27 @@ export default {
       return this.guests.total > 0 ? this.guests.total : "1 guest";
     },
     totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
+      const {total} = this.$store.getters.getGuests
+      return total > 0 ? `${total} guests` : "1 guest";
     },
+    stayPrice(){
+      const nightFee = this.$props.stay.price
+      const totalNights = (this.date.end - this.date.start)/86400000
+      console.log('totalNights', totalNights)
+      return nightFee*totalNights 
+    },
+    totalFair(){
+      const nightFee = this.$props.stay.price
+      const totalNights = (this.date.end - this.date.start)/86400000
+      console.log('totalNights', totalNights)
+      return nightFee*totalNights + this.$props.stay.cleaningFee
+    }
   },
   created() {
-    let stayToOrder = this.$store.getters.getStayToOrder;
-    this.date = stayToOrder.date;
-    this.guests = stayToOrder.guests;
+    // let stayToOrder = this.$store.getters.getStayToOrder;
+    this.date = this.$store.getters.getDate
+    this.guests = this.$store.getters.getGuests;
+    // console.log('stayToOrder', stayToOrder)
   },
   unmounted() {},
 };
