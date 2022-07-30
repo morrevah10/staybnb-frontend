@@ -42,8 +42,9 @@ function getOrders() {
 function makeOrder(stay, reservation,user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-    guestName: user.fullName,
+    guestName: user,
     stay: stay.name,
+    stayPlace:stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
     nights: getDays(reservation.date.start, reservation.date.end),
@@ -56,12 +57,15 @@ function makeOrder(stay, reservation,user) {
         stay.price
       ),
     status: "Pending",
-    action: "",
-    host:stay.host.fullname,
-  };
-  // user.trips.push(order)
+    action: "Cancel",
+    host:stay.host,
+    type:stay.roomType,
 
-  return order,user;
+  };
+  
+console.log(order)
+
+  return order;
 }
 
 function getDays(d1, d2) {
