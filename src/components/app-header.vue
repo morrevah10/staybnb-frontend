@@ -70,12 +70,9 @@ export default {
   methods: {
     openLarge(isOpen) {
       this.isLargeOpen = isOpen;
-      // this.isLargeOpen=!this.isLargeOpen
-      console.log("from header", this.isLargeOpen);
     },
     openUserModal() {
       this.isUserModal = !this.isUserModal;
-      console.log("user modal open", this.isUserModal);
     },
   },
   computed: {

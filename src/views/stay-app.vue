@@ -1,8 +1,11 @@
 <template>
   <div class="stay-app">
-    <app-header  class="main-layout" />
-    <label-list :labels="labels" class="main-layout" @setLabelFilter="setLabelFilter"/>
-
+    <app-header class="main-layout" />
+    <label-list
+      :labels="labels"
+      class="main-layout"
+      @setLabelFilter="setLabelFilter"
+    />
     <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
     <app-footer class="footer main-layout" />
   </div>
@@ -34,11 +37,11 @@ export default {
     removeStay(stayId) {
       this.$store.dispatch({ type: "removeStay", stayId });
     },
-    setLabelFilter(filterBy){
+    setLabelFilter(filterBy) {
       // console.log("filterBy - in the stay app", filterBy)
       const copyFilter = JSON.parse(JSON.stringify(filterBy));
       this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
-    }
+    },
   },
   computed: {
     stays() {
@@ -47,8 +50,6 @@ export default {
     // loggedinUser(){
     //   return this.$store.getters.loggedinUser
     // }
-
- 
   },
   created() {
     this.$store.dispatch({ type: "loadStays" });
