@@ -4,20 +4,22 @@
     <section class="reservation-page">
       <div class="reservation-header">
         <h1 class="reservation-title">Reservation Successfully!</h1>
-        <h3 class="reservation-subtitle">Reservation Details:</h3>
+        <img class="success-img" src="../styles/icons/v-icon.jpg" />
       </div>
+      <h3 class="reservation-subtitle">Order Details:</h3>
       <div class="reservation-details">
         <p>Name: {{ loggedinUser.fullName }}</p>
-        <p>Where to: {{ currOrder.stayPlace }}</p>
-        <p>Type: {{ currOrder.stay }} , {{ currOrder.type }}</p>
-        <p>Dates: {{ currOrder.checkIn }} - {{ currOrder.checkOut }}</p>
+        <p>Location: {{ currOrder.stayPlace }}</p>
+        <p>{{ currOrder.stay }} • {{ currOrder.type }}</p>
+        <p>Check-in: {{ currOrder.checkIn }}</p>
+        <p>Check-out: {{ currOrder.checkOut }}</p>
         <p>Guests: {{ currOrder.guests }}</p>
-        <p>Price: {{ currOrder.total }}</p>
+        <p>Total Price: {{ currOrder.total }}</p>
       </div>
       <router-link :to="'/trips'">
         <button class="trips-btn">Your Trips</button>
       </router-link>
-      <p class="final-line">Thank you for choosing Staybnb</p>
+      <p class="final-line bold">Thank you for choosing Staybnb</p>
     </section>
   </main>
   <app-footer class="footer main-layout" />
