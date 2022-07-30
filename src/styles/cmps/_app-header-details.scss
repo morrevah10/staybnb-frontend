@@ -1,0 +1,16 @@
+.header-details {
+  position: relative;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: $clr3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}

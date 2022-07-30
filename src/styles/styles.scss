@@ -10,8 +10,10 @@
 @import "basics/layout";
 
 // Components
-@import "cmps/app-footer";
 @import "cmps/app-header";
+@import "cmps/app-header-details";
+@import "cmps/app-footer";
+@import "cmps/app-footer-details";
 @import "cmps/stay-filter";
 @import "cmps/stay-list";
 @import "cmps/stay-preview";
