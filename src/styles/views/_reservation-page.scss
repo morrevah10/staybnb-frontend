@@ -1,16 +1,47 @@
 .reservation-container {
-  padding-top: 15px;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reservation-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 0 0 #000;
+  border-radius: 13px;
+  width: 40vw;
+  height: 70vh;
 }
 
 .reservation-subtitle {
   padding-top: 10px;
   text-align: center;
+}
+
+.reservation-details {
+  padding-top: 10px;
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.reservation-header {
+  display: flex;
+}
+
+.reservation-title {
+  margin-top: 15px;
+}
+
+.success-img {
+  margin-left: 5px;
+  margin-top: 15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
 }
 
 .trips-btn {

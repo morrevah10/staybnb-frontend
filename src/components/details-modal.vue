@@ -67,7 +67,7 @@
             </p>
             <p>
               <span>Service fee</span>
-              <span>{{stay.cleaningFee}}</span>
+              <span>${{ stay.cleaningFee }}</span>
             </p>
             <p>
               <span>Total</span>
@@ -92,6 +92,7 @@
 
   <transition>
     <guests-picker
+      class="guest-pick"
       v-if="isGuestModalShown"
       @guestsUpdate="updateGuests"
       @closeGuestsModal="isGuestModalShown = false"
@@ -110,9 +111,7 @@ export default {
   props: {
     stay: Object,
   },
-  emits: [
-    "makeReservation"
-  ],
+  emits: ["makeReservation"],
   components: {
     guestsPicker,
     calenderSpread,
@@ -129,7 +128,7 @@ export default {
       guests: {
         adults: 0,
         children: 0,
-     
+
         total: 0,
       },
       isCalendarShown: false,
@@ -138,8 +137,7 @@ export default {
   },
   methods: {
     sumGuests() {
-      this.guests.total =
-        this.guests.adults + this.guests.children;
+      this.guests.total = this.guests.adults + this.guests.children;
     },
     updateAdults(num) {
       this.guests.adults = num;
@@ -180,25 +178,25 @@ export default {
       return this.guests.total > 0 ? this.guests.total : "1 guest";
     },
     totalGuests() {
-      const {total} = this.$store.getters.getGuests
+      const { total } = this.$store.getters.getGuests;
       return total > 0 ? `${total} guests` : "1 guest";
     },
-    stayPrice(){
-      const nightFee = this.$props.stay.price
-      const totalNights = (this.date.end - this.date.start)/86400000
-      console.log('totalNights', totalNights)
-      return nightFee*totalNights 
+    stayPrice() {
+      const nightFee = this.$props.stay.price;
+      const totalNights = (this.date.end - this.date.start) / 86400000;
+      console.log("totalNights", totalNights);
+      return nightFee * totalNights;
     },
-    totalFair(){
-      const nightFee = this.$props.stay.price
-      const totalNights = (this.date.end - this.date.start)/86400000
-      console.log('totalNights', totalNights)
-      return nightFee*totalNights + this.$props.stay.cleaningFee
-    }
+    totalFair() {
+      const nightFee = this.$props.stay.price;
+      const totalNights = (this.date.end - this.date.start) / 86400000;
+      console.log("totalNights", totalNights);
+      return nightFee * totalNights + this.$props.stay.cleaningFee;
+    },
   },
   created() {
     // let stayToOrder = this.$store.getters.getStayToOrder;
-    this.date = this.$store.getters.getDate
+    this.date = this.$store.getters.getDate;
     this.guests = this.$store.getters.getGuests;
     // console.log('stayToOrder', stayToOrder)
   },

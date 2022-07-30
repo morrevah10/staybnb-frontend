@@ -191,20 +191,18 @@
 }
 
 .vc-container {
+  position: fixed !important;
   height: 268px !important;
   width: 500px !important;
   top: 160px !important;
-  position: fixed !important;
   left: 400px !important;
 }
 
 .calender-container {
-  width: 500px;
-  height: 268px;
-  height: 268px !important;
-  width: 500px !important;
-  top: 160px !important;
   position: fixed !important;
+  height: 268px;
+  width: 500px;
+  top: 160px !important;
   left: 400px !important;
 }
 
@@ -219,6 +217,11 @@
   right: 250px;
   border-radius: 32px;
   padding: 16px 32px;
+}
+
+.guest-pick {
+  top: 213px !important;
+  right: 120px !important;
 }
 
 .num-input-cmp {

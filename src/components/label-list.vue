@@ -15,9 +15,9 @@
       </div>
     </section>
     <div class="filters-btn">
-      <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
+      <!-- <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
         <img src="/lable-img/filter-icon.png" class="filter-img" />Filters
-      </button>
+      </button> -->
     </div>
   </section>
 </template>
