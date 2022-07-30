@@ -93,7 +93,7 @@
       <ul class="amenities-list flex">
         <li class="amenitie-container flex" v-for="amenitie in amenities">
           <img
-            :src="`/staybnb/src/styles/icons/details-icons/${amenitie.imgUrl}`"
+            :src="`/src/styles/icons/details-icons/${amenitie.imgUrl}`"
             class="amenitie-img"
           />
           {{ amenitie.name }}

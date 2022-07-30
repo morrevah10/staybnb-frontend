@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: 78px;
+  top: 80px;
   z-index: 2;
   background-color: white;
 }
@@ -49,9 +49,13 @@
 }
 
 .labels-list {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.labels-container:last-child {
+  margin-right: 24px;
 }
 
 .labels-container:hover {

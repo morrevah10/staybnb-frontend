@@ -83,9 +83,12 @@
     </div>
     <div class="review-list">
       <ul class="reviews-list-container clean-list">
-        <li v-for="(review, idx) in stay.reviews" :key="idx" class="review-preview clean-list">
-        <!-- <h2>{{review}}</h2> -->
-      <StayReviewCmp :review="review"></StayReviewCmp>
+        <li
+          v-for="(review, idx) in stay.reviews"
+          :key="idx"
+          class="review-preview clean-list"
+        >
+          <StayReviewCmp :review="review"></StayReviewCmp>
         </li>
       </ul>
     </div>
@@ -93,12 +96,12 @@
 </template>
 
 <script>
-import stayReview from './stay-review.cmp.vue'
-import StayReviewCmp from './stay-review.cmp.vue'
+import stayReview from "./stay-review.cmp.vue";
+import StayReviewCmp from "./stay-review.cmp.vue";
 
 export default {
   components: {
-    stayReview
+    stayReview,
   },
   props: {
     stay: Object,
@@ -109,7 +112,7 @@ export default {
   },
   methods: {},
   computed: {},
-  created() { },
-  unmounted() { },
+  created() {},
+  unmounted() {},
 };
 </script>

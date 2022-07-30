@@ -15,7 +15,7 @@
         <p class="host-filter">Become a Host</p>
       </router-link>
     </div>
-    <div class="footer-details flex">
+    <div class="footer-info flex">
       <router-link :to="'/trips'" class="link">
         <p>Trips</p>
       </router-link>
