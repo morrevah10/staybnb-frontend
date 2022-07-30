@@ -5,25 +5,24 @@
         class="labels-container"
         v-for="(label, idx) in labels"
         :key="idx"
-        @click="onLabelClick(label)">
-        <img class="label-img" :src="`${label.src}`"  />
-        <p class="label-name">{{ $filters.capitalizeFirstLetter(label.name)}}</p>
+        :class="{ active: activeLabel === `${label.name}` }"
+        @click="onLabelClick(label)"
+      >
+        <img class="label-img" :src="`${label.src}`" />
+        <p class="label-name">
+          {{ $filters.capitalizeFirstLetter(label.name) }}
+        </p>
       </div>
     </section>
     <div class="filters-btn">
       <button class="labels-filter-btn btn flex" @click.stop="$emit('filters')">
-        <img
-          src="/lable-img/filter-icon.png"
-          
-          class="filter-img"
-        />Filters
+        <img src="/lable-img/filter-icon.png" class="filter-img" />Filters
       </button>
     </div>
   </section>
 </template>
 
 <script>
-// import { labelService } from "../services/label-service.js";
 export default {
   name: "label-filter",
   components: {},
@@ -65,18 +64,16 @@ export default {
       ],
       activeLabel: "",
       filterBy: {
-      label:""
-      }
+        label: "",
+      },
     };
   },
   methods: {
-    onLabelClick(label){
-    this.activeLabel = label.name
-    this.filterBy.label = label.name
-    // console.log('in the label list:', this.filterBy)
-    this.$emit('setLabelFilter', this.filterBy)
-    
-  },
+    onLabelClick(label) {
+      this.activeLabel = label.name;
+      this.filterBy.label = label.name;
+      this.$emit("setLabelFilter", this.filterBy);
+    },
   },
   created() {},
   unmounted() {},

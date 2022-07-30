@@ -57,10 +57,11 @@ function makeOrder(stay, reservation,user) {
       ),
     status: "Pending",
     action: "",
+    host:stay.host.fullname,
   };
-  orders.push(order)
-  localStorage.setItem(order_key, JSON.stringify(orders));
-  return order;
+  // user.trips.push(order)
+
+  return order,user;
 }
 
 function getDays(d1, d2) {

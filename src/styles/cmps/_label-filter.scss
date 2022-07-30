@@ -66,6 +66,18 @@
   }
 }
 
+.active {
+  border-bottom: 2px solid rgb(0, 0, 0);
+
+  .label-name {
+    color: black;
+  }
+  .label-img {
+    filter: invert(0%) sepia(18%) saturate(3285%) hue-rotate(260deg)
+      brightness(100%) contrast(109%);
+  }
+}
+
 .label-img {
   height: 25px;
   width: 25px;
