@@ -69,7 +69,7 @@
     </div>
 
     <div class="dash-table">
-      <section v-if="orders" class="order-list">
+      <section v-if="loggedinUser" class="order-list">
         <ul class="dash-table-title">
           <li>Date</li>
           <li>Host</li>
@@ -83,10 +83,11 @@
           <li>Actions</li>
         </ul>
 
-        <div class="orders-container" v-for="order in orders" :key="order._id">
+        <div class="orders-container" v-for="order in loggedinUser.trips">
+        <!-- key="order._id" -->
           <ul class="order-line">
             <li>{{ order.date }}</li>
-            <li>{{ order.guestName }}</li>
+            <li>{{ order.host.fullname }}</li>
             <li class="ellipsis">{{ order.stay }}</li>
             <li>{{ order.checkIn }} - {{ order.checkOut }}</li>
             <li>{{ order.nights }}</li>

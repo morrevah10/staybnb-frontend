@@ -32,18 +32,22 @@ export default {
       // console.log("from order module", user)
 
       // let copyUser = JSON.parse(JSON.stringify(user))
-      commit({ type: "addOrderToTrip", currOrder})
-      commit({type:"addOrder"},currOrder)
+      console.log("currOrder from module",currOrder)
+      // commit({ type: "addOrderToTrip", currOrder})
       commit({ type: "setOrder", currOrder })
+      commit({type:"addOrder"},currOrder)
     },
   },
   mutations: {
     setOrder(state, { currOrder }) {
+      console.log("set order from user module",currOrder)
       state.currOrder = currOrder
+      console.log("set order from user module",state.currOrder)
+
     },
-    addOrder({currOrder}){
-      console.log("add order from user module",currOrder)
-      ordersService.addOrder(currOrder)
+    addOrder(state){
+      console.log("add order from user module",state.currOrder)
+      ordersService.addOrder(state.currOrder)
     }
   },
 }
