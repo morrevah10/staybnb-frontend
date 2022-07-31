@@ -9,8 +9,8 @@
           :autoplay="false"
           :loop="false"
         >
-          <el-carousel-item v-for="img in stay.imgUrls">
-            <img class="carousel-img" :src="`../../img/${img}`" />
+          <el-carousel-item v-for="imgUrl in stay.imgUrls">
+            <img class="carousel-img"  :src="`../../img/${imgUrl}`"/>
           </el-carousel-item>
         </el-carousel>
         <img class="heart-icon" src="../styles/icons/heart_icon.svg" alt="" />

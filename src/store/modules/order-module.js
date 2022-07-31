@@ -1,5 +1,5 @@
-import { httpService } from "../../services/http.service.js"
-import { ordersService } from "../../services/order-service.js"
+import { httpService } from "../../services/http.service.js";
+import { ordersService } from "../../services/order-service.js";
 
 export default {
   state: {
@@ -26,14 +26,11 @@ export default {
           return orders
         })
         .catch((err) => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     },
     sendReservation({ commit }, { stay, reservation, user }) {
-      // console.log("from order module-sendReservation", stay, reservation, user)
-      let currOrder = ordersService.makeOrder(stay, reservation, user)
-      // console.log("from order module", currOrder)
-      // console.log("from order module", user)
+      let currOrder = ordersService.makeOrder(stay, reservation, user);
 
       // let copyUser = JSON.parse(JSON.stringify(user))
       console.log("currOrder from module", currOrder)
@@ -59,4 +56,4 @@ export default {
       ordersService.addOrder(state.currOrder)
     },
   },
-}
+};

@@ -2,7 +2,6 @@
   <app-header class="header main-layout" />
   <section class="dash main-layout">
     <h1 class="dash-title">My Dashboard</h1>
-
     <div class="dash-data">
       <div class="container">
         <p class="dash-data-title">Total Rate</p>
@@ -120,6 +119,7 @@ export default {
       orders:null
     }
   },
+  mutations: {},
   methods: {},
   computed: {
   },

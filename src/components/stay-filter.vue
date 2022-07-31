@@ -35,9 +35,10 @@ export default {
     openLargeFilter() {
       this.defaultDisplay = !this.defaultDisplay;
       let isOpen = this.defaultDisplay;
-      this.$emit("openLargeModal", isOpen);
+      this.$emit("openLargeModal", isOpen); 
     },
   },
+  
   computed: {},
   unmounted() {},
 };

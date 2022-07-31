@@ -55,8 +55,7 @@ export default {
     };
   },
   methods: {},
-  computed: {
-  },
+  computed: {},
   created() {
     // let user = this.$store.getters.loggedinUser
     // console.log("from trips user", user)

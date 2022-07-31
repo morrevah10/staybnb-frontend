@@ -104,6 +104,10 @@ export default {
      updateGuests({commit},{guests}) { 
         // console.log('in the action -', guests )
         commit({type: "updateGuests", guests})
+     },
+     updateDate({commit},{date}) { 
+        console.log('in the action -', date )
+        commit({type: "updateDate", date})
      }
   },
   mutations: {
@@ -113,6 +117,15 @@ export default {
     updateGuests(state, { guests }){
       console.log("mutation",  guests)
       state.guests = JSON.parse(JSON.stringify(guests))
+    }, 
+    updateDate(state, { date }){
+      console.log("mutation",  date)
+      state.date = JSON.parse(JSON.stringify(date))
+      state.date ={
+        start: new Date(state.date.start),
+        end: new Date(state.date.end)
+      } 
+      console.log('state.date', state.date)
     }, 
     updateStay(state, { stay }) {
       const idx = state.stays.findIndex((t) => t._id === stay._id);

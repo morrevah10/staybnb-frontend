@@ -33,6 +33,7 @@
       },
       watch: {
         date() {
+          console.log("from the date component", this.date)
           this.$emit('dateChange', this.date)
         }
       },

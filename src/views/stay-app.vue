@@ -1,6 +1,6 @@
 <template>
   <div class="stay-app">
-    <app-header class="main-layout" />
+    <app-header class="main-layout"  @openBackdrop="isBackdrop = true"/>
     <label-list
       :labels="labels"
       class="main-layout"
@@ -8,6 +8,7 @@
     />
     <stay-list @removeStay="removeStay" :stays="stays" class="main-layout" />
     <app-footer class="footer main-layout" />
+    <div v-if = "isBackdrop" class = "backdrop"  @click.prevent="isBackdrop = false"></div>  
   </div>
 </template>
 
@@ -30,6 +31,7 @@ export default {
   data() {
     return {
       filterBy: null,
+      isBackdrop: false
       // loggedinUser:null,
     };
   },
