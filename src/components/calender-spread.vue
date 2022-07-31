@@ -1,7 +1,8 @@
 <template>
   <div v-click-outside="closeCalendar">
 
-    <DatePicker :columns="2" v-model="date" is-range update-on-input />
+    <DatePicker :columns="2" v-model="date" is-range update-on-input
+     />
   </div>
 </template>
 
@@ -26,7 +27,9 @@
       },
       created() {
         window.addEventListener('scroll', this.handleScroll);
- 
+        this.date = this.$store.getters.getDate
+
+
       },
       unmounted() {
         window.removeEventListener('scroll', this.handleScroll);
@@ -36,6 +39,7 @@
           this.$emit('dateChange', this.date)
         }
       },
+    
       methods: {
         closeCalendar() {
           this.$emit('closeCalendar')

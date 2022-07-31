@@ -60,10 +60,10 @@ export default {
       isCalendarShown: false,
       isReserveModal: false,
 
-      stayToOrder: {
-        date: null,
-        guests: null,
-      },
+      // stayToOrder: {
+      //   date: null,
+      //   guests: null,
+      // },
     };
   },
   methods: {
@@ -79,7 +79,7 @@ export default {
     },
     sumGuests() {
       this.guests.total =
-        this.guests.adults + this.guests.children 
+      this.guests.adults + this.guests.children 
     },
     updateAdults(num) {
       this.guests.adults = num;
@@ -94,11 +94,16 @@ export default {
       this.date = date;
     },
     reserve() {
+      let user = JSON.parse(JSON.stringify(this.$store.getters.loggedinUser))
       this.$store.dispatch({
         type: "sendReservation",
         stay: this.stay,
-        reservation: this.stayToOrder,
-        user: this.loggedinUser,
+        reservation: {
+          date: this.$store.getters.getDate,
+          guests: this.$store.getters.getGuests,
+        },
+        user: user
+       
       });
       this.isReserveModal = true;
     },
@@ -134,16 +139,16 @@ export default {
   },
   created() {
     const { stayId } = this.$route.params;
-    stayService.getById(stayId).then((displayed) => {
+    stayService.getById(stayId).then((displayed) => {  //how to write async?
       this.stay = displayed;
     });
     let info = this.$store.getters.getStayToOrder;
-    this.stayToOrder.date = info.date;
-    this.stayToOrder.guests = info.guests;
-    console.log("from stay det created", this.stayToOrder);
-    let user = this.$store.getters.loggedinUser;
-    this.loggedinUser = user;
-    console.log("user created", user);
+    // this.stayToOrder.date = this.$store.getters.getDates;
+    // this.stayToOrder.guests = this.$store.getters.getGuests;
+    // console.log("from stay det created", this.stayToOrder);
+    this.loggedinUser = this.$store.getters.loggedinUser;
+  
+    console.log("user created", this.loggedinUser);
   },
   unmounted() { },
 };

@@ -93,7 +93,7 @@
       <ul class="amenities-list flex">
         <li class="amenitie-container flex" v-for="amenitie in amenities">
           <img
-            :src="`/src/styles/icons/details-icons/${amenitie.imgUrl}`"
+            :src="`../../details-icons/${amenitie.imgUrl}`"
             class="amenitie-img"
           />
           {{ amenitie.name }}
@@ -142,7 +142,7 @@ export default {
   methods: {},
   computed: {},
   created() {
-    console.log(this.stay);
+ 
   },
   unmounted() {},
 };

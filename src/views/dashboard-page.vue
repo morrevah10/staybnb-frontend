@@ -115,7 +115,6 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
-import { orderBy } from "lodash";
 export default {
   props: {},
   components: {
@@ -136,8 +135,14 @@ export default {
   methods: {},
   computed: {},
   created() {
-    let user = this.$store.getters.loggedinUser;
-    this.loggedinUser = user;
+    let orders = this.$store.getters.getOrders;
+    this.orders = orders;
+    // console.log("from dashhh",this.orders)
+
+    // let user = this.$store.getters.loggedinUser
+    // console.log("from dash user", user)
+    // this.loggedinUser = user
+    // console.log("from dash loggedin user", this.loggedinUser)
   },
   unmounted() {},
 };

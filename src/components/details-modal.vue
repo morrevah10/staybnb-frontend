@@ -22,7 +22,7 @@
             <div class="date-picker-container-left">
               <button
                 class="check-in"
-                @click.stop="isCalendarShown = !isCalendarShown"
+                @click.prevent="isCalendarShown = !isCalendarShown"
               >
                 <div class="order-button">CHECK-IN</div>
                 <span class="calender-pick">{{ checkInDate }}</span>
@@ -31,7 +31,7 @@
             <div class="date-picker-container-right">
               <button
                 class="check-out"
-                @click.stop="isCalendarShown = !isCalendarShown"
+                @click.prevent="isCalendarShown = !isCalendarShown"
               >
                 <div class="order-button">CHECKOUT</div>
                 <span class="calender-pick">{{ checkOutDate }}</span>
@@ -40,7 +40,7 @@
           </div>
           <div class="guest-input">
             <button
-              @click.stop="isGuestModalShown = !isGuestModalShown"
+              @click.prevent="isGuestModalShown = !isGuestModalShown"
               class="guests"
             >
               <label class="order-button">GUESTS</label>
@@ -55,7 +55,7 @@
             <div></div>
           </div>
           <router-link to="/reservation">
-            <fancy-btn class="reserve-btn" @click="reservation"
+            <fancy-btn class="reserve-btn" @click.prevent="reservation"
               >Reserve</fancy-btn
             >
           </router-link>
@@ -184,13 +184,11 @@ export default {
     stayPrice() {
       const nightFee = this.$props.stay.price;
       const totalNights = (this.date.end - this.date.start) / 86400000;
-      console.log("totalNights", totalNights);
       return nightFee * totalNights;
     },
     totalFair() {
       const nightFee = this.$props.stay.price;
       const totalNights = (this.date.end - this.date.start) / 86400000;
-      console.log("totalNights", totalNights);
       return nightFee * totalNights + this.$props.stay.cleaningFee;
     },
   },
@@ -198,7 +196,6 @@ export default {
     // let stayToOrder = this.$store.getters.getStayToOrder;
     this.date = this.$store.getters.getDate;
     this.guests = this.$store.getters.getGuests;
-    // console.log('stayToOrder', stayToOrder)
   },
   unmounted() {},
 };
