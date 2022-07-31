@@ -5,15 +5,11 @@
     <section class="dashboard-stats">
       <div class="cards-dashboard-container">
         <div class="stats-card">
-          <h1>Revenue per month</h1>
+          <h1>Reviews</h1>
           <div class="details">
             <div class="rev-stat">
-              <span>Average</span>
+              <span>Ratings average</span>
               <span>4.3</span>
-            </div>
-            <div class="rev-stat">
-              <span>Reviews</span>
-              <span>17</span>
             </div>
             <div class="rev-stat">
               <span>Reviews</span>
@@ -22,18 +18,18 @@
           </div>
         </div>
         <div class="stats-card">
-          <h1>Total Revenue</h1>
+          <h1>Total revenue</h1>
           <div class="details">
             <div class="rev-stat">
-              <span class="stat-head">This Month</span>
+              <span class="stat-head">Month</span>
               <span>$302</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">This Year</span>
+              <span class="stat-head">Year</span>
               <span>$1,553</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">Total Income</span>
+              <span class="stat-head">Total</span>
               <span>$1,553</span>
             </div>
           </div>
@@ -48,7 +44,7 @@
               <span class="canceled-stat">7.7%</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">Average order revenue</span>
+              <span class="stat-head">Average revenue</span>
               <span class="total-stat">$2,295</span>
             </div>
             <div class="rev-stat">
@@ -75,13 +71,12 @@
       </div>
     </section>
 
-    <section v-if="loggedinUser" class="main-layout-homepage">
+    <section v-if="orders" class="main-layout-homepage">
       <div class="dashboard-order-container bold">
         <div class="dashboard-title date">Date</div>
         <div class="dashboard-title booker">Booker</div>
         <div class="dashboard-title stay">Stay</div>
         <div class="dashboard-title dates">Dates</div>
-        <div class="dashboard-title nights">Nights</div>
         <div class="dashboard-title guests">Guests</div>
         <div class="dashboard-title price">Price / night</div>
         <div class="dashboard-title total">Total</div>
@@ -89,15 +84,11 @@
         <div class="dashboard-title actions">Actions</div>
       </div>
 
-      <section
-        class="dashboard-order-container"
-        v-for="order in loggedinUser.trips"
-      >
+      <section class="dashboard-order-container" v-for="order in orders">
         <div class="date">{{ order.date }}</div>
-        <div class="booker">{{ order.host.fullname }}</div>
+        <div class="booker ellipsis">{{ order.host.fullname }}</div>
         <div class="stay ellipsis">{{ order.stay }}</div>
         <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
-        <div class="nights">{{ order.nights }}</div>
         <div class="guests">{{ order.guests }}</div>
         <div class="price">{{ order.price }}</div>
         <div class="total">{{ order.total }}</div>
@@ -125,6 +116,7 @@ export default {
     return {
       loggedinUser: null,
       status: "Pending",
+      order: null,
     };
   },
   mutations: {

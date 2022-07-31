@@ -1,7 +1,7 @@
 <template>
   <app-header class="header main-layout" />
-  <h1 class="trips-header">My Trips</h1>
-  <section v-if="loggedinUser" class="main-layout-homepage">
+  <h1 class="trips-header main-layout">My Trips</h1>
+  <section v-if="orders" class="main-layout-homepage main-layout">
     <div class="trip-order-container bold">
       <div class="trip-title date">Date</div>
       <div class="trip-title booker">Host</div>
@@ -15,9 +15,9 @@
       <div class="trip-title actions">Actions</div>
     </div>
 
-    <section class="trip-order-container" v-for="order in loggedinUser.trips">
+    <section class="trip-order-container main-layout" v-for="order in orders">
       <div class="date">{{ order.date }}</div>
-      <div class="booker">{{ order.host.fullname }}</div>
+      <div class="booker ellipsis">{{ order.host.fullname }}</div>
       <div class="stay ellipsis">{{ order.stay }}</div>
       <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
       <div class="nights">{{ order.nights }}</div>
