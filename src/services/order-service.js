@@ -49,9 +49,6 @@ function getOrder() {
   return orders;
 }
 
-
-
-
 function makeOrder(stay, reservation, user) {
   let order = {
     date: Date.now(),
@@ -76,7 +73,6 @@ function makeOrder(stay, reservation, user) {
     type: stay.roomType,
   };
 
-
   return order;
 }
 
@@ -84,12 +80,18 @@ function getDays(d1, d2) {
   var t2 = d2.getTime();
   var t1 = d1.getTime();
   let total = Math.floor((t2 - t1) / (24 * 3600 * 1000));
-  return total 
+  return total;
 }
 
 function getTotal(nights, price) {
   return nights * price;
 }
 
+<<<<<<< HEAD
 
 
+=======
+function getdate(date, formated) {
+  return date.toLocaleDateString();
+}
+>>>>>>> b67089585920a131a0de95ecdafca10b1a49d035

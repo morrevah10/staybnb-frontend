@@ -135,6 +135,6 @@ export default {
     // this.loggedinUser = user
     // console.log("from dash loggedin user", this.loggedinUser)
   },
-  unmounted() { },
+  unmounted() {},
 };
 </script>

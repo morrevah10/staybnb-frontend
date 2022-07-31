@@ -39,7 +39,7 @@
 
       <div class="guest-container btn-container flex">
         <button @click.prevent="isGuestModalShown = !isGuestModalShown">
-          <div class="button-title">Who</div>
+          <div class="button-title margin">Who</div>
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
         <div @click.prevent="runSearch" class="filter-search">
@@ -119,15 +119,14 @@ export default {
     },
 
     dateUpdate(newDate) {
-      this.date = newDate
-      console.log("in the main filter",this.date)
-      this.$store.dispatch({type: "updateDate" , date: this.date})
-
-},
+      this.date = newDate;
+      console.log("in the main filter", this.date);
+      this.$store.dispatch({ type: "updateDate", date: this.date });
+    },
     updateGuests(newGuests) {
-      console.log('NewGuests', newGuests)
-      this.guests = newGuests
-      this.$store.dispatch({type: "updateGuests" , guests: this.guests})
+      console.log("NewGuests", newGuests);
+      this.guests = newGuests;
+      this.$store.dispatch({ type: "updateGuests", guests: this.guests });
       this.filterBy.numOfGuests = this.guests.total;
     },
   },
@@ -153,7 +152,7 @@ export default {
         : "Add dates";
     },
     totalGuests() {
-      const {total} = this.$store.getters.getGuests
+      const { total } = this.$store.getters.getGuests;
       switch (total) {
         case 0:
           return "Add guests";
