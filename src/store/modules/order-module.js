@@ -7,6 +7,7 @@ export default {
 
     status: "Approved",
     orders: null,
+    currOrder: null
 
 
   },
@@ -18,6 +19,10 @@ export default {
     getStatus({ status }) {
       return status;
     },
+    getCurrOrder({ currOrder }){
+      return currOrder
+    }
+
   },
   actions: {
     async loadOrders({ commit }) {
@@ -40,7 +45,7 @@ export default {
       const newOrder = await ordersService.addOrder(currOrder)
       // let copyUser = JSON.parse(JSON.stringify(user))
       console.log("currOrder from module", newOrder)
-      // commit({ type: "setOrder"}, newOrder )
+      commit({ type: "setOrder", newOrder })
       commit({ type: "addOrder", newOrder})
     },
   },
@@ -50,11 +55,11 @@ export default {
       state.orders = orders
       console.log("set order from user module", state.orders)
     },
-    // setOrder(state, { currOrder }) {
-    //   console.log("set order from user module", currOrder)
-    //   state.currOrder = currOrder
-    //   console.log("set order from user module", state.currOrder)
-    // },
+    setOrder(state, { newOrder }) {
+      console.log("set order from user module", newOrder)
+      state.currOrder = newOrder
+      console.log("set order from user module", state.currOrder)
+    },
     addOrder({ orders }, { newOrder }) {
       console.log('new order', newOrder)
       orders.unshift(newOrder)
