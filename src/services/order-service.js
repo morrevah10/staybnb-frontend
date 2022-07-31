@@ -51,12 +51,12 @@ function getOrder() {
 }
 
 function makeOrder(stay, reservation, user) {
-  console.log("makeOrder ", stay, reservation, user);
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
     guestName: user,
-    stay: stay.name,
+    stay: stay,
     stayPlace: stay.address.street,
+
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
     nights: getDays(reservation.date.start, reservation.date.end),
@@ -73,8 +73,6 @@ function makeOrder(stay, reservation, user) {
     host: JSON.parse(JSON.stringify(stay.host)),
     type: stay.roomType,
   };
-
-  // console.log(order)
 
   return order;
 }
@@ -93,27 +91,3 @@ function getTotal(nights, price) {
 function getdate(date, formated) {
   return date.toLocaleDateString();
 }
-
-// async function addOrder(order) {
-//   try{
-//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-//   const addedOrder = await httpService.post('/order', order)
-//   return addedOrder
-//   } catch {
-//     console.log("failed to add a new order")
-//   }
-// }
-
-// async function addOrder(order) {
-//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-//   order = await httpService.post('order', order)
-//   return order
-// }
-
-// reviewChannel.postMessage({type: 'addReview', review: addedReview})
-// }
-
-// function getOrders(){
-//   return httpService.get('order')
-
-// }

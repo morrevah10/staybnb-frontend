@@ -70,7 +70,6 @@
         </div>
       </div>
     </section>
-
     <section v-if="orders" class="main-layout-homepage">
       <div class="dashboard-order-container bold">
         <div class="dashboard-title date">Date</div>
@@ -102,7 +101,6 @@
   </section>
   <app-footer class="footer main-layout" />
 </template>
-
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";

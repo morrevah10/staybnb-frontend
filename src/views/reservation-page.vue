@@ -1,6 +1,6 @@
 <template>
   <app-header class="header main-layout" />
-  <main class="reservation-container">
+  <main  v-if="currOrder" class="reservation-container">
     <section class="reservation-page">
       <div class="reservation-header">
         <h1 class="reservation-title">Reservation successfull</h1>
@@ -66,21 +66,25 @@ export default {
   data() {
     return {
       loggedinUser: null,
-      currOrder: null,
+      // currOrder: null,
     };
   },
   methods: {},
-  computed: {},
+  computed: {
+    currOrder(){
+     return this.$store.getters.getCurrOrder;
+    }
+  },
   created() {
     let user = this.$store.getters.loggedinUser;
     console.log("from reservation", user);
     this.loggedinUser = user;
     console.log("from reservation", this.loggedinUser);
-    console.log("mor revah");
-    let order = this.$store.getters.getCurrOrder;
-    console.log("from reservation", order);
-    this.currOrder = order;
-    console.log("from reservation", this.currOrder);
+    // console.log("mor revah");
+    // let order = this.$store.getters.getCurrOrder;
+    // console.log("from reservation", order);
+    // this.currOrder = order;
+    // console.log("from reservation", this.currOrder);
   },
   unmounted() {},
 };

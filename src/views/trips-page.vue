@@ -46,11 +46,19 @@ export default {
     return {
       // loggedinUser: null,
       // trips:null,
-      orders: null,
+     
     };
   },
   methods: {},
-  computed: {},
+  computed: {
+    orders() {
+      // console.log(this.$store.getters.getOrders)
+      return this.$store.getters.getOrders
+      // ?.sort(((a, b) => {
+      //   return new Date(b.date) - new Date(a.date)
+      // }))
+    }
+  },
   created() {
     // let user = this.$store.getters.loggedinUser
     // console.log("from trips user", user)
@@ -60,9 +68,15 @@ export default {
     // console.log("from trips trips", trips)
     // this.trips=trips
     // console.log("from trips trips", this.trips)
-    let orders = this.$store.getters.getOrders;
-    this.orders = orders;
+    // let orders=this.$store.getters.getOrders;
+
+    // this.$store.dispatch({ type: "loadOrders" })
+
+
+
+
+
   },
-  unmounted() {},
-};
+  unmounted() { },
+}
 </script>

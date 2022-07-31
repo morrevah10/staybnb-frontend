@@ -49,6 +49,9 @@ export default {
     removeUser(state, { userId }) {
       state.users = state.users.filter((user) => user._id !== userId)
     },
+    checkLoggedIn(state){
+      state.loggedinUser = userService.getLoggedinUser() || null
+    }
     // setUserScore(state, { score }) {
     //   state.loggedinUser.score = score
     // },

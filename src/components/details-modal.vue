@@ -20,45 +20,31 @@
         <form class="order-form">
           <div class="dates-pick flex">
             <div class="date-picker-container-left">
-              <button
-                class="check-in"
-                @click.prevent="isCalendarShown = !isCalendarShown"
-              >
+              <button class="check-in" @click.prevent="isCalendarShown = !isCalendarShown">
                 <div class="order-button">CHECK-IN</div>
                 <span class="calender-pick">{{ checkInDate }}</span>
               </button>
             </div>
             <div class="date-picker-container-right">
-              <button
-                class="check-out"
-                @click.prevent="isCalendarShown = !isCalendarShown"
-              >
+              <button class="check-out" @click.prevent="isCalendarShown = !isCalendarShown">
                 <div class="order-button">CHECKOUT</div>
                 <span class="calender-pick">{{ checkOutDate }}</span>
               </button>
             </div>
           </div>
           <div class="guest-input">
-            <button
-              @click.prevent="isGuestModalShown = !isGuestModalShown"
-              class="guests"
-            >
+            <button @click.prevent="isGuestModalShown = !isGuestModalShown" class="guests">
               <label class="order-button">GUESTS</label>
               <span class="guest-num">{{ totalGuests }}</span>
               <div class="expand-btn">
-                <img
-                  src="../styles/icons/expand-more.png"
-                  class="expand-more"
-                />
+                <img src="../styles/icons/expand-more.png" class="expand-more" />
               </div>
             </button>
             <div></div>
           </div>
-          <router-link to="/reservation">
-            <fancy-btn class="reserve-btn" @click.prevent="reservation"
-              >Reserve</fancy-btn
-            >
-          </router-link>
+          <!-- <router-link to="/reservation"> -->
+          <fancy-btn class="reserve-btn" @click.prevent="reservation">Reserve</fancy-btn>
+          <!-- </router-link> -->
           <div class="pricing">
             <p>You won't be charged yet</p>
             <p>
@@ -79,24 +65,14 @@
     </div>
   </div>
   <transition>
-    <calender-spread
-      class="calender-container"
-      @closeCalendar="isCalendarShown = false"
-      @dateChange="dateUpdate"
-      @click.prevent
-      is-expanded
-      v-if="isCalendarShown"
-    >
+    <calender-spread class="calender-container" @closeCalendar="isCalendarShown = false" @dateChange="dateUpdate"
+      @click.prevent is-expanded v-if="isCalendarShown">
     </calender-spread>
   </transition>
 
   <transition>
-    <guests-picker
-      class="guest-pick"
-      v-if="isGuestModalShown"
-      @guestsUpdate="updateGuests"
-      @closeGuestsModal="isGuestModalShown = false"
-    />
+    <guests-picker class="guest-pick" v-if="isGuestModalShown" @guestsUpdate="updateGuests"
+      @closeGuestsModal="isGuestModalShown = false" />
   </transition>
 </template>
 
@@ -151,32 +127,34 @@ export default {
       this.date = date;
     },
     reservation() {
+      console.log('clicked')
       this.$emit("makeReservation");
+      this.$router.push('/reservation')
     },
   },
   computed: {
     checkInDate() {
       return this.date.start
         ? this.date.start.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
 
     checkOutDate() {
       return this.date.end
         ? this.date.end.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
         : "Add date";
     },
-    totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
-    },
+    // totalGuests() {
+    //   return this.guests.total > 0 ? this.guests.total : "1 guest";
+    // },
     totalGuests() {
       const { total } = this.$store.getters.getGuests;
       return total > 0 ? `${total} guests` : "1 guest";
@@ -197,6 +175,6 @@ export default {
     this.date = this.$store.getters.getDate;
     this.guests = this.$store.getters.getGuests;
   },
-  unmounted() {},
+  unmounted() { },
 };
 </script>
