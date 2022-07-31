@@ -56,7 +56,7 @@ function makeOrder(stay, reservation,user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
     guestName: JSON.parse(JSON.stringify(user)),
-    stay: stay.name,
+    stay: stay,
     stayPlace:stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),

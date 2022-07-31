@@ -69,7 +69,7 @@
     </div>
 
     <div class="dash-table">
-      <section v-if="loggedinUser" class="order-list">
+      <section v-if="this.orders" class="order-list">
         <ul class="dash-table-title">
           <li>Date</li>
           <li>Host</li>
@@ -83,8 +83,8 @@
           <li>Actions</li>
         </ul>
 
-        <div class="orders-container" v-for="order in loggedinUser.trips">
-        <!-- key="order._id" -->
+        <div class="orders-container" v-for="order in this.orders">
+          <!-- key="order._id" -->
           <ul class="order-line">
             <li>{{ order.date }}</li>
             <li>{{ order.host.fullname }}</li>
@@ -106,8 +106,8 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue";
-import appFooter from "../components/app-footer.vue";
+import appHeader from "../components/app-header.vue"
+import appFooter from "../components/app-footer.vue"
 export default {
   props: {},
   components: {
@@ -116,19 +116,24 @@ export default {
   },
   data() {
     return {
-      loggedinUser: null,
-
-    };
+      // loggedinUser: null,
+      orders:null
+    }
   },
   methods: {},
-  computed: {},
+  computed: {
+  },
   created() {
-    let user = this.$store.getters.loggedinUser
-    console.log("from dash user", user)
-    this.loggedinUser = user
-    console.log("from dash loggedin user", this.loggedinUser)
-  
+    let orders=this.$store.getters.getOrders;
+    this.orders =orders
+    // console.log("from dashhh",this.orders)
+
+
+    // let user = this.$store.getters.loggedinUser
+    // console.log("from dash user", user)
+    // this.loggedinUser = user
+    // console.log("from dash loggedin user", this.loggedinUser)
   },
   unmounted() {},
-};
+}
 </script>

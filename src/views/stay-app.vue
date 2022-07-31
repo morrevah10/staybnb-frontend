@@ -53,6 +53,8 @@ export default {
   },
   created() {
     this.$store.dispatch({ type: "loadStays" });
+    this.$store.dispatch({ type: "loadOrders" })
+
     // this.$store.dispatch({type: "loadLabels"}).then(()=>{});
     // this.loggedinUser =this.$store.getters.loggedinUser
     // console.log("loggedin user from stay app",this.loggedinUser);
