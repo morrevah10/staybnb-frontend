@@ -22,7 +22,7 @@
             placeholder="Password"
             class="login-input"
           />
-          {{ this.logedInUser }}
+          <!-- {{ this.logedInUser }} -->
           <fancy-btn class="login-btn" @click.prevent="checkLogIn"
             >Login In</fancy-btn
           >

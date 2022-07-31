@@ -3,36 +3,53 @@
   <main class="reservation-container">
     <section class="reservation-page">
       <div class="reservation-header">
-        <h1 class="reservation-title">Reservation Successfully!</h1>
+        <h1 class="reservation-title">Reservation successfull</h1>
         <img class="success-img" src="../styles/icons/v-icon.jpg" />
       </div>
       <h3 class="reservation-subtitle">Order Details:</h3>
-      <div class="reservation-details">
-        <div class="user-name">
-          <p class="bold">Name</p>
-          <p>{{ loggedinUser.fullName }}</p>
+      <div class="reservation-details flex">
+        <div class="details-container">
+          <div class="user-name flex">
+            <p class="bold-text">Name:</p>
+            <p>{{ loggedinUser.fullName }}</p>
+          </div>
+          <div class="location-info flex">
+            <p class="bold-text">Location:</p>
+            <p>{{ currOrder.adress }}</p>
+          </div>
+          <div class="checkin-info flex">
+            <p class="bold-text">Check-in:</p>
+            <p>{{ currOrder.checkIn }}</p>
+          </div>
+          <div class="checkout-info flex">
+            <p class="bold-text">Checkout:</p>
+            <p>{{ currOrder.checkOut }}</p>
+          </div>
+          <div class="guest-info flex">
+            <p class="bold-text">Guests:</p>
+            <p>{{ currOrder.guests }}</p>
+          </div>
+          <div class="price-info flex">
+            <p class="bold-text">Total price:</p>
+            <p>{{ currOrder.total }}</p>
+          </div>
         </div>
-        <div class="location-info">
-          <p class="bold">Location</p>
-          <p>{{ currOrder.stayPlace }}</p>
-          <p>{{ currOrder.type }}</p>
-        </div>
-        <div class="checkin-checkout">
-          <p class="bold">Check-in</p>
-          <p>{{ currOrder.checkIn }}</p>
-          <p class="bold">Checkout</p>
-          <p>{{ currOrder.checkOut }}</p>
-        </div>
-        <div class="guest-price">
-          <p class="bold">Guests</p>
-          <p>{{ currOrder.guests }}</p>
-          <p class="bold">Price/night</p>
-          <p>{{ currOrder.total }}</p>
+        <div class="img-info">
+          <img
+            class="reseravaion-img"
+            :src="`../../img/${currOrder.stay.imgUrls[0]}`"
+          />
         </div>
       </div>
-      <router-link :to="'/trips'">
-        <button class="trips-btn">Your Trips</button>
-      </router-link>
+      <div class="buttons flex">
+        <router-link class="home-router" :to="'/'">
+          <button class="home-btn">Back</button>
+        </router-link>
+        <router-link :to="'/trips'">
+          <button class="trips-btn">Your trips</button>
+        </router-link>
+      </div>
+      <h5>*Waiting for host approval</h5>
       <p class="final-line bold">Thank you for choosing Staybnb</p>
     </section>
   </main>

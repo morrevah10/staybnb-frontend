@@ -34,6 +34,21 @@
         </div>
       </section>
     </div>
+
+    <section class="trip-order-container" v-for="order in loggedinUser.trips">
+      <div class="date">{{ order.date }}</div>
+      <div class="booker">{{ order.host.fullname }}</div>
+      <div class="stay ellipsis">{{ order.stay }}</div>
+      <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
+      <div class="nights">{{ order.nights }}</div>
+      <div class="guests">{{ order.guests }}</div>
+      <div class="price">{{ order.price }}</div>
+      <div class="total">{{ order.total }}</div>
+      <div class="status bold">Pending</div>
+      <div class="detail actions actions-container">
+        <button class="reject-btn">Cancel</button>
+      </div>
+    </section>
   </section>
   <app-footer class="footer main-layout" />
 </template>

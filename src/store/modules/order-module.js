@@ -3,18 +3,21 @@ import { ordersService } from "../../services/order-service.js";
 
 export default {
   state: {
-    // currOrder: null,
+
+
+    status: "Approved",
     orders: null,
-    // currOrder:null,
-    // user: null,
+
+
   },
   getters: {
     getOrders({ orders }) {
       return orders
     },
-    // getCurrOrder({ currOrder }) {
-    //   return currOrder
-    // },
+
+    getStatus({ status }) {
+      return status;
+    },
   },
   actions: {
     async loadOrders({ commit }) {

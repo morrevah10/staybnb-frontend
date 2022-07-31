@@ -1,76 +1,131 @@
-.dash-title {
-  padding: 1rem 0;
-}
-
-.dash-data {
+.dashboard-stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.dash-data-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.main-layout-homepage {
+  padding-bottom: 45px;
 }
 
-.container {
+.dashboard-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cards-dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 65px;
+  margin-bottom: 35px;
+}
+
+.bar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 350px;
   height: 250px;
-  width: 250px;
-  border: 1px solid $clr9;
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: #0000001f 0 6px 16px;
+  border-radius: 15px;
 }
 
-.dash-data-table {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 10px 0;
-  .dash-rate {
-    display: flex;
-  }
-  p {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
+.stats-card {
+  padding: 25px;
+  width: 350px;
+  height: 200px;
+  box-shadow: #0000001f 0 6px 16px;
+  border-radius: 15px;
 }
 
-.dash-table {
-  padding-top: 1.5rem;
-}
-
-.dash-table-title {
+.dashboard-stats .cards-dashboard-container .stats-card h1 {
   text-align: center;
-  border-bottom: solid 2px lightgray;
+  padding-bottom: 30px;
+}
+
+.details {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+}
+
+.rev-stat {
+  display: flex;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  font-weight: bold;
-  li {
-    width: 10%;
-  }
+  padding-bottom: 13px;
+  font-size: 1.1428571429em;
+  font-weight: 600;
 }
 
-.order-list {
-  padding-bottom: 50px;
+.canceled-stat {
+  color: #b40000;
 }
 
-.order-line {
-  text-align: center;
+.total-stat {
+  color: #338300;
+}
+
+.pending-stat {
+  color: #0000db;
+}
+
+.dashboard-order-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  display: flex;
-  width: 100%;
-  padding: 0.7rem 0;
-  border-bottom: solid 2px lightgray;
-  li {
-    font-size: 14px;
-    width: 10%;
-  }
+  padding: 15px 0;
+  border-bottom: 1px solid #b0b0b0;
+}
+
+.dashboard-order-container div {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.dashboard-order-container .date {
+  width: 80px;
+}
+
+.dashboard-order-container .booker {
+  width: 100px;
+}
+
+.dashboard-order-container .stay {
+  width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-order-container .dates {
+  width: 165px;
+}
+
+.dashboard-order-container .nights {
+  width: 60px;
+}
+
+.dashboard-order-container .guests {
+  width: 60px;
+}
+
+.dashboard-order-container .price {
+  width: 80px;
+}
+
+.dashboard-order-container .total {
+  width: 80px;
+}
+
+.dashboard-order-container .status {
+  width: 120px;
+}
+
+.dashboard-order-container .actions {
+  width: 160px;
 }
 
 .ellipsis {
@@ -80,32 +135,27 @@
   width: 100%;
 }
 
-.order-status {
-  color: blue;
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .approve-btn {
-  background-color: green;
-  color: white;
-  width: 5%;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid #008300;
+  background-color: #008300;
 }
 
-.approve-btn:hover {
-  background-color: black;
+.reject-btn {
+  border: 1px solid #505050;
+  background-color: #242424;
 }
 
-.cancel-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  font-size: 15px;
-  border-radius: 5px;
-  width: 5%;
-}
-
-.cancel-btn:hover {
-  background-color: black;
+.actions-container button {
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1em;
+  transition: 0.1s;
+  border-radius: 7px;
+  opacity: 0.5;
 }
