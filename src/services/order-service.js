@@ -52,17 +52,12 @@ function getOrder() {
   return orders;
 }
 
-function makeOrder(stay, reservation,user) {
+function makeOrder(stay, reservation, user) {
   console.log('user', user)
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-<<<<<<< HEAD
     guestName: user,
     stay: stay.name,
-=======
-    guestName: JSON.parse(JSON.stringify(user)),
-    stay: stay,
->>>>>>> 15148125235f41b2a63e10da4d038ae9881392d1
     stayPlace:stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
@@ -82,7 +77,7 @@ function makeOrder(stay, reservation,user) {
 
   };
   
-console.log(order)
+// console.log(order)
 
   return order;
 }
@@ -90,7 +85,8 @@ console.log(order)
 function getDays(d1, d2) {
   var t2 = d2.getTime();
   var t1 = d1.getTime();
-  return Math.floor((t2 - t1) / (24 * 3600 * 1000));
+  let total = Math.floor((t2 - t1) / (24 * 3600 * 1000));
+  return total 
 }
 
 function getTotal(nights, price) {
