@@ -184,22 +184,18 @@ export default {
     stayPrice() {
       const nightFee = this.$props.stay.price;
       const totalNights = (this.date.end - this.date.start) / 86400000;
-      console.log("totalNights", totalNights);
       return nightFee * totalNights;
     },
     totalFair() {
       const nightFee = this.$props.stay.price;
       const totalNights = (this.date.end - this.date.start) / 86400000;
-      console.log("totalNights", totalNights);
       return nightFee * totalNights + this.$props.stay.cleaningFee;
     },
   },
   created() {
     // let stayToOrder = this.$store.getters.getStayToOrder;
     this.date = this.$store.getters.getDate;
-    console.log('date', this.date)
     this.guests = this.$store.getters.getGuests;
-    // console.log('stayToOrder', stayToOrder)
   },
   unmounted() {},
 };

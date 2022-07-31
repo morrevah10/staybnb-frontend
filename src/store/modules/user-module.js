@@ -36,7 +36,6 @@ export default {
       console.log("order and user after clike from order stor",state.loggedinUser )
       // let user = state.loggedinUser
       // userService.update(state.loggedinUser)
-      // console.log("order and user after clike from order stor",state.loggedinUser )
     },
     setLoggedinUser(state, { user }) {
       state.loggedinUser = user ? { ...user } : null

@@ -142,7 +142,7 @@ export default {
   methods: {},
   computed: {},
   created() {
-    console.log(this.stay);
+ 
   },
   unmounted() {},
 };
