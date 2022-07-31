@@ -27,7 +27,7 @@ export default {
     },
     sendReservation({ commit }, { stay, reservation, user }) {
       let currOrder = ordersService.makeOrder(stay, reservation, user);
-
+      
       // let copyUser = JSON.parse(JSON.stringify(user))
       console.log("currOrder from module", currOrder);
       commit({ type: "addOrderToTrip", currOrder });
