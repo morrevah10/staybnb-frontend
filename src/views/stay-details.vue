@@ -133,9 +133,9 @@ export default {
     totalGuests() {
       return this.guests.total > 0 ? this.guests.total : "1 guest";
     },
-    totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
-    },
+    // totalGuests() {
+    //   return this.guests.total > 0 ? this.guests.total : "1 guest";
+    // },
   },
   created() {
     const { stayId } = this.$route.params;

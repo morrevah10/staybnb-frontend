@@ -52,13 +52,8 @@ function getOrder() {
   return orders;
 }
 
-<<<<<<< HEAD
 function makeOrder(stay, reservation,user) {
-  console.log("makeOrder ",stay, reservation,user)
-=======
-function makeOrder(stay, reservation, user) {
-  console.log('user', user)
->>>>>>> c93ad073897d10969ae19c93c6b9841e65501218
+  // console.log("makeOrder ",stay, reservation,user)
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
     guestName: user,

@@ -19,7 +19,9 @@ export default {
   },
   methods: {},
 
-  created() {},
+  created() {
+   this.$store.commit({type: "checkLoggedIn"})
+  },
   unmounted() {},
 };
 </script>

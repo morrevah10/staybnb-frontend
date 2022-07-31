@@ -17,13 +17,13 @@
           <li>Actions</li>
         </ul>
 
-        <div class="trips-container" v-for="order in orders" >
-        <!-- <h2>{{trip.date}}</h2> -->
+        <div class="trips-container" v-for="order in orders">
+          <!-- <h2>{{trip.date}}</h2> -->
           <ul class="trips-line flex">
             <li>{{ order.date }}</li>
             <li>{{ order.host.fullname }}</li>
             <li class="ellipsis">{{ order.stay }}</li>
-            <li>{{ order.checkIn }}-{{order.checkOut}}</li>
+            <li>{{ order.checkIn }}-{{ order.checkOut }}</li>
             <li>{{ order.nights }}</li>
             <li>{{ order.guests }}</li>
             <li>{{ order.price }}</li>
@@ -49,13 +49,21 @@ export default {
   },
   data() {
     return {
-            // loggedinUser: null,
-            // trips:null,
-            orders:null,
+      // loggedinUser: null,
+      // trips:null,
+     
     };
   },
   methods: {},
-  computed: {},
+  computed: {
+    orders() {
+      console.log(this.$store.getters.getOrders)
+      return this.$store.getters.getOrders
+      // ?.sort(((a, b) => {
+      //   return new Date(b.date) - new Date(a.date)
+      // }))
+    }
+  },
   created() {
     // let user = this.$store.getters.loggedinUser
     // console.log("from trips user", user)
@@ -65,14 +73,15 @@ export default {
     // console.log("from trips trips", trips)
     // this.trips=trips
     // console.log("from trips trips", this.trips)
-    let orders=this.$store.getters.getOrders;
-    this.orders =orders
+    // let orders=this.$store.getters.getOrders;
+
+    // this.$store.dispatch({ type: "loadOrders" })
 
 
 
 
 
   },
-  unmounted() {},
-};
+  unmounted() { },
+}
 </script>
