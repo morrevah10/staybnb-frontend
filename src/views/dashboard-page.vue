@@ -1,104 +1,113 @@
 <template>
   <app-header class="header main-layout" />
   <section class="dash main-layout">
-    <h1 class="dash-title">My Dashboard</h1>
-    <div class="dash-data">
-      <div class="container">
-        <p class="dash-data-title">Total Rate</p>
-        <div class="dash-data-table">
-          <div class="dash-rate">
-            <p>Average</p>
+    <h1 class="dashboard-title">My Dashboard</h1>
+    <section class="dashboard-stats">
+      <div class="cards-dashboard-container">
+        <div class="stats-card">
+          <h1>Revenue per month</h1>
+          <div class="details">
+            <div class="rev-stat">
+              <span>Average</span>
+              <span>4.3</span>
+            </div>
+            <div class="rev-stat">
+              <span>Reviews</span>
+              <span>17</span>
+            </div>
+            <div class="rev-stat">
+              <span>Reviews</span>
+              <span>17</span>
+            </div>
           </div>
-          <p>4.2</p>
         </div>
-        <div class="dash-data-table">
-          <p>Reviews</p>
-          <p>17</p>
-        </div>
-      </div>
-      <div class="container">
-        <p class="dash-data-title">Total Revenue</p>
-        <div class="dash-data-table">
-          <p>Month</p>
-          <p>$960</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Year</p>
-          <p>$9,580</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Total</p>
-          <p>$15,254</p>
+        <div class="stats-card">
+          <h1>Total Revenue</h1>
+          <div class="details">
+            <div class="rev-stat">
+              <span class="stat-head">This Month</span>
+              <span>$302</span>
+            </div>
+            <div class="rev-stat">
+              <span class="stat-head">This Year</span>
+              <span>$1,553</span>
+            </div>
+            <div class="rev-stat">
+              <span class="stat-head">Total Income</span>
+              <span>$1,553</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <p class="dash-data-title">Orders Management</p>
-        <div class="dash-data-table">
-          <p>Total</p>
-          <p>37</p>
+      <div class="cards-dashboard-container">
+        <div class="stats-card">
+          <h1>Orders management</h1>
+          <div class="details">
+            <div class="rev-stat">
+              <span class="stat-head">Cancelations</span>
+              <span class="canceled-stat">7.7%</span>
+            </div>
+            <div class="rev-stat">
+              <span class="stat-head">Average order revenue</span>
+              <span class="total-stat">$2,295</span>
+            </div>
+            <div class="rev-stat">
+              <span class="stat-head">Pending now</span>
+              <span class="pending-stat">1 orders</span>
+            </div>
+          </div>
         </div>
-        <div class="dash-data-table">
-          <p>Pending</p>
-          <p>8</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Approved</p>
-          <p>22</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Declined</p>
-          <p>7</p>
+        <div class="stats-card">
+          <h1>Orders by nights</h1>
+          <div class="rev-stat">
+            <span>Active</span>
+            <span>1</span>
+          </div>
+          <div class="rev-stat">
+            <span>Past</span>
+            <span>3</span>
+          </div>
+          <div class="rev-stat">
+            <span>Planned</span>
+            <span>2</span>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <p class="dash-data-title">Guests</p>
-        <div class="dash-data-table">
-          <p>Active</p>
-          <p>3</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Past</p>
-          <p>34</p>
-        </div>
-        <div class="dash-data-table">
-          <p>Planned</p>
-          <p>5</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="dash-table">
-      <section v-if="loggedinUser" class="order-list">
-        <ul class="dash-table-title">
-          <li>Date</li>
-          <li>Host</li>
-          <li>Stay</li>
-          <li>Dates</li>
-          <li>Nights</li>
-          <li>Guests</li>
-          <li>Price/night</li>
-          <li>Total</li>
-          <li>Status</li>
-          <li>Actions</li>
-        </ul>
+    <section v-if="loggedinUser" class="main-layout-homepage">
+      <div class="dashboard-order-container bold">
+        <div class="dashboard-title date">Date</div>
+        <div class="dashboard-title booker">Booker</div>
+        <div class="dashboard-title stay">Stay</div>
+        <div class="dashboard-title dates">Dates</div>
+        <div class="dashboard-title nights">Nights</div>
+        <div class="dashboard-title guests">Guests</div>
+        <div class="dashboard-title price">Price / night</div>
+        <div class="dashboard-title total">Total</div>
+        <div class="dashboard-title status">Status</div>
+        <div class="dashboard-title actions">Actions</div>
+      </div>
 
-        <div class="orders-container" v-for="order in loggedinUser.trips">
-          <ul class="order-line">
-            <li>{{ order.date }}</li>
-            <li>{{ order.host.fullname }}</li>
-            <li class="ellipsis">{{ order.stay }}</li>
-            <li>{{ order.checkIn }} - {{ order.checkOut }}</li>
-            <li>{{ order.nights }}</li>
-            <li>{{ order.guests }}</li>
-            <li>{{ order.price }}</li>
-            <li>{{ order.total }}</li>
-            <li class="order-status">{{ order.status }}</li>
-            <button class="approve-btn">Approve</button>
-            <button class="cancel-btn">Cancel</button>
-          </ul>
+      <section
+        class="dashboard-order-container"
+        v-for="order in loggedinUser.trips"
+      >
+        <div class="date">{{ order.date }}</div>
+        <div class="booker">{{ order.host.fullname }}</div>
+        <div class="stay ellipsis">{{ order.stay }}</div>
+        <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
+        <div class="nights">{{ order.nights }}</div>
+        <div class="guests">{{ order.guests }}</div>
+        <div class="price">{{ order.price }}</div>
+        <div class="total">{{ order.total }}</div>
+        <div class="status">{{ this.status }}</div>
+        <div class="detail actions actions-container">
+          <button class="approve-btn" @click="changeStatus()">Approve</button>
+          <button class="reject-btn">Reject</button>
         </div>
       </section>
-    </div>
+    </section>
   </section>
   <app-footer class="footer main-layout" />
 </template>
@@ -116,9 +125,14 @@ export default {
   data() {
     return {
       loggedinUser: null,
+      status: "Pending",
     };
   },
-  mutations: {},
+  mutations: {
+    changeStatus() {
+      this.status = this.$store.getters.getStatus;
+    },
+  },
   methods: {},
   computed: {},
   created() {

@@ -4,12 +4,16 @@ import { ordersService } from "../../services/order-service.js";
 export default {
   state: {
     currOrder: null,
+    status: "Approved",
     // currOrder:null,
     // user: null,
   },
   getters: {
     getCurrOrder({ currOrder }) {
       return currOrder;
+    },
+    getStatus({ status }) {
+      return status;
     },
   },
   actions: {
