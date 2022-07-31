@@ -67,6 +67,7 @@ export default {
   methods: {
     openLarge(isOpen) {
       this.isLargeOpen = isOpen;
+      this.$emit("openBackdrop") 
     },
     openUserModal() {
       this.isUserModal = !this.isUserModal;

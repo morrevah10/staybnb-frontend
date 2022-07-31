@@ -119,8 +119,11 @@ export default {
     },
 
     dateUpdate(newDate) {
-      this.date = newDate;
-    },
+      this.date = newDate
+      console.log("in the main filter",this.date)
+      this.$store.dispatch({type: "updateDate" , date: this.date})
+
+},
     updateGuests(newGuests) {
       console.log('NewGuests', newGuests)
       this.guests = newGuests

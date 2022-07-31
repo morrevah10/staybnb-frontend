@@ -86,9 +86,13 @@ function getdate(date, formated) {
 }
 
 async function addOrder(order) {
+  try{
   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-  order = await httpService.post('/order', order)
-  return order
+  const addedOrder = await httpService.post('/order', order)
+  return addedOrder
+  } catch {
+    console.log("failed to add a new order")
+  }
 }
 
 async function getOrders(){

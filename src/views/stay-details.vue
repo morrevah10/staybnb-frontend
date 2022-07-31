@@ -138,8 +138,8 @@ export default {
       this.stay = displayed;
     });
     let info = this.$store.getters.getStayToOrder;
-    this.stayToOrder.date = info.date;
-    this.stayToOrder.guests = info.guests;
+    this.stayToOrder.date = this.$store.getters.getDates;
+    this.stayToOrder.guests = this.$store.getters.getGuests;
     console.log("from stay det created", this.stayToOrder);
     let user = this.$store.getters.loggedinUser;
     this.loggedinUser = user;
