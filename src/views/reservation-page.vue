@@ -34,12 +34,12 @@
             <p>{{ currOrder.total }}</p>
           </div>
         </div>
-        <div class="img-info">
+        <!-- <div class="img-info">
           <img
             class="reseravaion-img"
             :src="`../../img/${currOrder.stay.imgUrls[0]}`"
           />
-        </div>
+        </div> -->
       </div>
       <div class="buttons flex">
         <router-link class="home-router" :to="'/'">

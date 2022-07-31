@@ -50,27 +50,13 @@ function getOrder() {
   return orders;
 }
 
-<<<<<<< HEAD
 function makeOrder(stay, reservation, user) {
-  let order = {
-    date: getdate(new Date(), "mm/dd/yy"),
-    guestName: JSON.parse(JSON.stringify(user)),
-    stay: stay,
-    stayPlace: stay.address.street,
-=======
-<<<<<<< HEAD
-function makeOrder(stay, reservation,user) {
-  console.log("makeOrder ",stay, reservation,user)
-=======
-function makeOrder(stay, reservation, user) {
-  console.log('user', user)
->>>>>>> c93ad073897d10969ae19c93c6b9841e65501218
+  console.log("makeOrder ", stay, reservation, user);
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
     guestName: user,
     stay: stay.name,
-    stayPlace:stay.address.street,
->>>>>>> 38a715e2c347aec23d97ac16c965c137d1c961ab
+    stayPlace: stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
     nights: getDays(reservation.date.start, reservation.date.end),
@@ -87,13 +73,8 @@ function makeOrder(stay, reservation, user) {
     host: JSON.parse(JSON.stringify(stay.host)),
     type: stay.roomType,
   };
-<<<<<<< HEAD
 
-  console.log(order);
-=======
-  
-// console.log(order)
->>>>>>> 38a715e2c347aec23d97ac16c965c137d1c961ab
+  // console.log(order)
 
   return order;
 }
@@ -102,7 +83,7 @@ function getDays(d1, d2) {
   var t2 = d2.getTime();
   var t1 = d1.getTime();
   let total = Math.floor((t2 - t1) / (24 * 3600 * 1000));
-  return total 
+  return total;
 }
 
 function getTotal(nights, price) {
@@ -113,8 +94,6 @@ function getdate(date, formated) {
   return date.toLocaleDateString();
 }
 
-<<<<<<< HEAD
-=======
 // async function addOrder(order) {
 //   try{
 //   console.log("user from service",JSON.parse(JSON.stringify(order)) )
@@ -125,7 +104,6 @@ function getdate(date, formated) {
 //   }
 // }
 
->>>>>>> 38a715e2c347aec23d97ac16c965c137d1c961ab
 // async function addOrder(order) {
 //   console.log("user from service",JSON.parse(JSON.stringify(order)) )
 //   order = await httpService.post('order', order)

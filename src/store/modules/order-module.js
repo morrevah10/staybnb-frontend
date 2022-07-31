@@ -4,20 +4,16 @@ import { ordersService } from "../../services/order-service.js";
 export default {
   state: {
     currOrder: null,
-<<<<<<< HEAD
     status: "Approved",
-=======
-    orders: null,
->>>>>>> 38a715e2c347aec23d97ac16c965c137d1c961ab
     // currOrder:null,
     // user: null,
   },
   getters: {
-    getOrders({orders}){
-      return orders
+    getOrders({ orders }) {
+      return orders;
     },
     getCurrOrder({ currOrder }) {
-      return currOrder
+      return currOrder;
     },
     getStatus({ status }) {
       return status;
@@ -28,9 +24,9 @@ export default {
       ordersService
         .getOrders()
         .then((orders) => {
-          commit({ type: "setOrders", orders })
-          console.log("load from stor", orders)
-          return orders
+          commit({ type: "setOrders", orders });
+          console.log("load from stor", orders);
+          return orders;
         })
         .catch((err) => {
           console.log(err);
@@ -38,29 +34,29 @@ export default {
     },
     sendReservation({ commit }, { stay, reservation, user }) {
       let currOrder = ordersService.makeOrder(stay, reservation, user);
-      
+
       // let copyUser = JSON.parse(JSON.stringify(user))
-      console.log("currOrder from module", currOrder)
+      console.log("currOrder from module", currOrder);
       // commit({ type: "addOrderToTrip", currOrder})
-      commit({ type: "setOrder", currOrder })
-      commit({ type: "addOrder" }, currOrder)
+      commit({ type: "setOrder", currOrder });
+      commit({ type: "addOrder" }, currOrder);
     },
   },
   mutations: {
     setOrders(state, { orders }) {
-      console.log("set orders from user module", orders)
-      state.orders = orders
-      console.log("set order from user module", state.orders)
+      console.log("set orders from user module", orders);
+      state.orders = orders;
+      console.log("set order from user module", state.orders);
     },
 
     setOrder(state, { currOrder }) {
-      console.log("set order from user module", currOrder)
-      state.currOrder = currOrder
-      console.log("set order from user module", state.currOrder)
+      console.log("set order from user module", currOrder);
+      state.currOrder = currOrder;
+      console.log("set order from user module", state.currOrder);
     },
     addOrder(state) {
-      console.log("add order from user module", state.currOrder)
-      ordersService.addOrder(state.currOrder)
+      console.log("add order from user module", state.currOrder);
+      ordersService.addOrder(state.currOrder);
     },
   },
 };
