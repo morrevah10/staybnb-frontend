@@ -26,7 +26,7 @@
         <div class="guest-price">
           <p class="bold">Guests</p>
           <p>{{ currOrder.guests }}</p>
-          <p class="bold">Total Price</p>
+          <p class="bold">Price/night</p>
           <p>{{ currOrder.total }}</p>
         </div>
       </div>

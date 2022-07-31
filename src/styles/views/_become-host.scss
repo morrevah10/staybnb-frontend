@@ -10,7 +10,7 @@
 .become-host-img {
   width: 50%;
   object-fit: cover;
-  height: 85vh;
+  height: 82vh;
 }
 
 .become-host-info {
@@ -44,4 +44,8 @@
   padding: 8px 16px;
   font-size: 18px;
   font-family: inherit;
+}
+
+.hosting-btn {
+  align-self: center;
 }

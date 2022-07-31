@@ -4,9 +4,11 @@
     <img src="../../img/become-host.jpg" class="become-host-img" />
     <div class="become-host-info">
       <h1>Open your door to hosting</h1>
-      <button>
-        <h3>Try hosting</h3>
-      </button>
+      <router-link class="hosting-btn" to="/login">
+        <button>
+          <h3>Try hosting</h3>
+        </button>
+      </router-link>
     </div>
   </section>
   <app-footer class="footer main-layout" />

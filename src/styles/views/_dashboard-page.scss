@@ -28,10 +28,14 @@
 .dash-data-table {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 10px 0;
   .dash-rate {
     display: flex;
+  }
+  p {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
