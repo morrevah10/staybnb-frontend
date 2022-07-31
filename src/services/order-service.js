@@ -17,8 +17,18 @@ const order_key = "orderDB";
 
 
 function query() {
-  return storageService.query(order_key);
+    return storageService.query(order_key);
 }
+
+function getOrders() {
+  return httpService.get('order')
+}
+
+async function addOrder(order) {
+  console.log("add orderrrrrrrrrrrrr",order)
+  const addedOreder = await httpService.post('order', order)
+  return addedOreder
+  }
 
 function getOrder() {
    let orders = JSON.parse(localStorage.getItem(order_key));
@@ -95,7 +105,16 @@ async function addOrder(order) {
   }
 }
 
-async function getOrders(){
-  let orders = await httpService.get('/orders')
-  return orders
-}
+// async function addOrder(order) {
+//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
+//   order = await httpService.post('order', order)
+//   return order
+// }
+
+  // reviewChannel.postMessage({type: 'addReview', review: addedReview})
+// }
+
+// function getOrders(){
+//   return httpService.get('order')
+
+// }

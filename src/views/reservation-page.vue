@@ -8,13 +8,27 @@
       </div>
       <h3 class="reservation-subtitle">Order Details:</h3>
       <div class="reservation-details">
-        <p>Name: {{ loggedinUser.fullName }}</p>
-        <p>Location: {{ currOrder.stayPlace }}</p>
-        <p>{{ currOrder.stay }} • {{ currOrder.type }}</p>
-        <p>Check-in: {{ currOrder.checkIn }}</p>
-        <p>Check-out: {{ currOrder.checkOut }}</p>
-        <p>Guests: {{ currOrder.guests }}</p>
-        <p>Total Price: {{ currOrder.total }}</p>
+        <div class="user-name">
+          <p class="bold">Name</p>
+          <p>{{ loggedinUser.fullName }}</p>
+        </div>
+        <div class="location-info">
+          <p class="bold">Location</p>
+          <p>{{ currOrder.stayPlace }}</p>
+          <p>{{ currOrder.type }}</p>
+        </div>
+        <div class="checkin-checkout">
+          <p class="bold">Check-in</p>
+          <p>{{ currOrder.checkIn }}</p>
+          <p class="bold">Checkout</p>
+          <p>{{ currOrder.checkOut }}</p>
+        </div>
+        <div class="guest-price">
+          <p class="bold">Guests</p>
+          <p>{{ currOrder.guests }}</p>
+          <p class="bold">Price/night</p>
+          <p>{{ currOrder.total }}</p>
+        </div>
       </div>
       <router-link :to="'/trips'">
         <button class="trips-btn">Your Trips</button>

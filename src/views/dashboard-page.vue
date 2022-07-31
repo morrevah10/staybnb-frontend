@@ -2,7 +2,6 @@
   <app-header class="header main-layout" />
   <section class="dash main-layout">
     <h1 class="dash-title">My Dashboard</h1>
-
     <div class="dash-data">
       <div class="container">
         <p class="dash-data-title">Total Rate</p>
@@ -69,7 +68,7 @@
     </div>
 
     <div class="dash-table">
-      <section v-if="orders" class="order-list">
+      <section v-if="loggedinUser" class="order-list">
         <ul class="dash-table-title">
           <li>Date</li>
           <li>Host</li>
@@ -83,10 +82,10 @@
           <li>Actions</li>
         </ul>
 
-        <div class="orders-container" v-for="order in orders" :key="order._id">
+        <div class="orders-container" v-for="order in loggedinUser.trips">
           <ul class="order-line">
             <li>{{ order.date }}</li>
-            <li>{{ order.guestName }}</li>
+            <li>{{ order.host.fullname }}</li>
             <li class="ellipsis">{{ order.stay }}</li>
             <li>{{ order.checkIn }} - {{ order.checkOut }}</li>
             <li>{{ order.nights }}</li>
@@ -107,6 +106,7 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import { orderBy } from "lodash";
 export default {
   props: {},
   components: {
@@ -116,17 +116,14 @@ export default {
   data() {
     return {
       loggedinUser: null,
-
     };
   },
+  mutations: {},
   methods: {},
   computed: {},
   created() {
-    let user = this.$store.getters.loggedinUser
-    console.log("from dash user", user)
-    this.loggedinUser = user
-    console.log("from dash loggedin user", this.loggedinUser)
-  
+    let user = this.$store.getters.loggedinUser;
+    this.loggedinUser = user;
   },
   unmounted() {},
 };
