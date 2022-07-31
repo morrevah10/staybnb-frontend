@@ -77,6 +77,7 @@ function makeOrder(stay, reservation, user) {
     type: stay.roomType,
   };
 
+
   return order;
 }
 
@@ -95,17 +96,3 @@ function getdate(date, formated) {
   return date.toLocaleDateString();
 }
 
-
-// async function addOrder(order) {
-//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-//   order = await httpService.post('order', order)
-//   return order
-// }
-
-// reviewChannel.postMessage({type: 'addReview', review: addedReview})
-// }
-
-// function getOrders(){
-//   return httpService.get('order')
-
-// }
