@@ -124,7 +124,9 @@ export default {
       this.sumGuests();
     },
     dateUpdate(date) {
+      console.log('date', this.date)
       this.date = date;
+      this.$store.dispatch({type: "updateDate" , date: this.date})
     },
     reservation() {
       console.log('clicked')

@@ -16,7 +16,7 @@
     </div>
 
     <section class="trip-order-container main-layout" v-for="order in orders">
-      <div class="date">{{ order.date }}</div>
+      <div class="date">{{ new Date(order.date).toLocaleDateString('en-GB') }}</div>
       <div class="booker ellipsis">{{ order.host.fullname }}</div>
       <div class="stay ellipsis">{{ order.stay }}</div>
       <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>

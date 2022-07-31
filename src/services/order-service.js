@@ -8,7 +8,6 @@ export const ordersService = {
   makeOrder,
   getDays,
   getTotal,
-  getdate,
   addOrder,
 };
 
@@ -55,7 +54,7 @@ function getOrder() {
 
 function makeOrder(stay, reservation, user) {
   let order = {
-    date: getdate(new Date(), "mm/dd/yy"),
+    date: Date.now(),
     guestName: user,
     stay: stay,
     stayPlace: stay.address.street,
@@ -92,7 +91,5 @@ function getTotal(nights, price) {
   return nights * price;
 }
 
-function getdate(date, formated) {
-  return date.toLocaleDateString();
-}
+
 

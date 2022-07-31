@@ -60,7 +60,7 @@ async function login(userCred) {
   // console.log("from service",userCred)
     // const users = await storageService.query('user')
     // const user = users.find(user => user.username === userCred.username)
-    const user = await httpService.post('auth/login', userCred)
+    const user = await httpService.post('auth/login',userCred)    
     console.log(user)
     if (user) {
         // socketService.login(user._id)
