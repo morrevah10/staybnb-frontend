@@ -53,6 +53,7 @@ function getOrder() {
 }
 
 function makeOrder(stay, reservation,user) {
+  console.log("makeOrder ",stay, reservation,user)
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
     guestName: JSON.parse(JSON.stringify(user)),
@@ -95,15 +96,15 @@ function getdate(date, formated) {
   return date.toLocaleDateString();
 }
 
-async function addOrder(order) {
-  try{
-  console.log("user from service",JSON.parse(JSON.stringify(order)) )
-  const addedOrder = await httpService.post('/order', order)
-  return addedOrder
-  } catch {
-    console.log("failed to add a new order")
-  }
-}
+// async function addOrder(order) {
+//   try{
+//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
+//   const addedOrder = await httpService.post('/order', order)
+//   return addedOrder
+//   } catch {
+//     console.log("failed to add a new order")
+//   }
+// }
 
 // async function addOrder(order) {
 //   console.log("user from service",JSON.parse(JSON.stringify(order)) )
