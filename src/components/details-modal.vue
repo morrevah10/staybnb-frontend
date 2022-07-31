@@ -174,9 +174,9 @@ export default {
           })
         : "Add date";
     },
-    totalGuests() {
-      return this.guests.total > 0 ? this.guests.total : "1 guest";
-    },
+    // totalGuests() {
+    //   return this.guests.total > 0 ? this.guests.total : "1 guest";
+    // },
     totalGuests() {
       const { total } = this.$store.getters.getGuests;
       return total > 0 ? `${total} guests` : "1 guest";
