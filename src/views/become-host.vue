@@ -4,7 +4,7 @@
     <img src="@/img/become-host.jpg" class="become-host-img" />
     <div class="become-host-info">
       <h1>Open your door to hosting</h1>
-      <router-link class="hosting-btn" to="/login">
+      <router-link class="hosting-btn" to="/dashboard">
         <button>
           <h3>Try hosting</h3>
         </button>

@@ -1,55 +1,63 @@
-.trips-table {
-  padding-top: 1.5rem;
+.trips-header {
+  padding-top: 15px;
 }
 
-.my-trips {
-  padding-bottom: 60px;
-}
-
-.trips-table-title {
-  text-align: center;
-  border-bottom: solid 2px lightgray;
+.trip-order-container {
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  padding: 0.75rem 0;
-  font-weight: bold;
-  li {
-    width: 10%;
-  }
-}
-
-.trips-line {
-  text-align: center;
   align-items: center;
-  display: flex;
-  width: 100%;
-  padding: 0.7rem 0;
-  border-bottom: solid 2px lightgray;
-  li {
-    font-size: 14px;
-    width: 10%;
-  }
+  padding: 15px 0;
+  border-bottom: 1px solid #b0b0b0;
 }
 
-.trips-container button {
-  font-size: 15px;
-  border: none;
-  color: white;
-  border-radius: 5px;
+.trip-order-container div {
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
 }
 
-.trips-container button:hover {
-  background-color: black;
+.trip-order-container .date {
+  width: 80px;
 }
 
-.trip-status {
-  color: blue;
+.trip-order-container .booker {
+  width: 100px;
 }
 
-.cancel {
-  background-color: red;
-  width: 10%;
+.trip-order-container .stay {
+  width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trip-order-container .dates {
+  width: 165px;
+}
+
+.trip-order-container .nights {
+  width: 60px;
+}
+
+.trip-order-container .guests {
+  width: 60px;
+}
+
+.trip-order-container .price {
+  width: 80px;
+}
+
+.trip-order-container .total {
+  width: 80px;
+}
+
+.trip-order-container .status {
+  width: 120px;
+}
+
+.trip-order-container .actions {
+  justify-content: center;
+  width: 100px;
 }
 
 .ellipsis {
@@ -57,4 +65,22 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+}
+
+.actions-container {
+  display: flex;
+}
+
+.reject-btn {
+  border: 1px solid #505050;
+  background-color: #242424;
+}
+
+.actions-container button {
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1em;
+  transition: 0.1s;
+  border-radius: 7px;
+  opacity: 0.5;
 }

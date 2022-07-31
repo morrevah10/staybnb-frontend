@@ -1,6 +1,5 @@
 import { storageService } from "./storage-service.js";
-import { httpService } from './http.service';
-
+import { httpService } from "./http.service";
 
 export const ordersService = {
   query,
@@ -15,23 +14,22 @@ export const ordersService = {
 
 const order_key = "orderDB";
 
-
 function query() {
-    return storageService.query(order_key);
+  return storageService.query(order_key);
 }
 
 function getOrders() {
-  return httpService.get('order')
+  return httpService.get("order");
 }
 
 async function addOrder(order) {
-  console.log("add orderrrrrrrrrrrrr",order)
-  const addedOreder = await httpService.post('order', order)
-  return addedOreder
-  }
+  console.log("add orderrrrrrrrrrrrr", order);
+  const addedOreder = await httpService.post("order", order);
+  return addedOreder;
+}
 
 function getOrder() {
-   let orders = JSON.parse(localStorage.getItem(order_key));
+  let orders = JSON.parse(localStorage.getItem(order_key));
   if (!orders || !orders.length) {
     orders = [
       {
@@ -52,13 +50,13 @@ function getOrder() {
   return orders;
 }
 
-function makeOrder(stay, reservation,user) {
-  console.log("makeOrder ",stay, reservation,user)
+
+function makeOrder(stay, reservation, user) {
   let order = {
     date: getdate(new Date(), "mm/dd/yy"),
-    guestName: user,
-    stay: stay.name,
-    stayPlace:stay.address.street,
+    guestName: JSON.parse(JSON.stringify(user)),
+    stay: stay,
+    stayPlace: stay.address.street,
     checkIn: reservation.date.start.toLocaleDateString(),
     checkOut: reservation.date.end.toLocaleDateString(),
     nights: getDays(reservation.date.start, reservation.date.end),
@@ -73,11 +71,9 @@ function makeOrder(stay, reservation,user) {
     status: "Pending",
     action: "Cancel",
     host: JSON.parse(JSON.stringify(stay.host)),
-    type:stay.roomType,
-
+    type: stay.roomType,
   };
-  
-// console.log(order)
+
 
   return order;
 }
@@ -96,27 +92,3 @@ function getTotal(nights, price) {
 function getdate(date, formated) {
   return date.toLocaleDateString();
 }
-
-// async function addOrder(order) {
-//   try{
-//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-//   const addedOrder = await httpService.post('/order', order)
-//   return addedOrder
-//   } catch {
-//     console.log("failed to add a new order")
-//   }
-// }
-
-// async function addOrder(order) {
-//   console.log("user from service",JSON.parse(JSON.stringify(order)) )
-//   order = await httpService.post('order', order)
-//   return order
-// }
-
-  // reviewChannel.postMessage({type: 'addReview', review: addedReview})
-// }
-
-// function getOrders(){
-//   return httpService.get('order')
-
-// }
