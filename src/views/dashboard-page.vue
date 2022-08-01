@@ -114,7 +114,7 @@ export default {
     return {
       loggedinUser: null,
       status: "Pending",
-      order: null,
+      // order: null,
     };
   },
   mutations: {
@@ -123,11 +123,19 @@ export default {
     },
   },
   methods: {},
-  computed: {}
+  computed: {
+      orders() {
+      // console.log(this.$store.getters.getOrders)
+      return this.$store.getters.getOrders
+      // ?.sort(((a, b) => {
+      //   return new Date(b.date) - new Date(a.date)
+      // }))
+    }
+  }
  ,
   created() {
-    let orders = this.$store.getters.getOrders;
-    this.orders = orders;
+    // let orders = this.$store.getters.getOrders;
+    // this.orders = orders;
     // console.log("from dashhh",this.orders)
 
     // let user = this.$store.getters.loggedinUser
