@@ -150,8 +150,8 @@ export default {
       this.$emit('openBackdrop')
     },
     clickedOutSIde(){
-      this.isFilterOn = false
-      this.activatedBtn=""
+      // this.isFilterOn = false
+      // this.activatedBtn=""
       // this.$emit('closeBackdrop')
 
     },
