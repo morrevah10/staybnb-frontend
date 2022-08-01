@@ -104,7 +104,7 @@ export default {
         // labels: ["", "", ""],
         datasets: [
           {
-            data: [1, 3, 2],
+            data: [1, 2, 3],
             backgroundColor: ["#355764", "#5A8F7B", "#81CACF"],
           },
         ],
@@ -131,15 +131,10 @@ export default {
       },
     };
   },
-  mutations: {
-    // changeStatus() {
-    //   console.log('trilili')
-    //   // this.status = this.$store.getters.getStatus;
-    // },
-  },
   methods: {
     approve(order){
       console.log(order._id)
+      order
     }
   },
   computed: {},
