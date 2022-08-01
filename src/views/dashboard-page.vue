@@ -101,11 +101,11 @@ export default {
       status: "Pending",
       order: null,
       testData: {
-        labels: ["1 night", "2 nights", "more then 2 nights"],
+        // labels: ["", "", ""],
         datasets: [
           {
             data: [1, 3, 2],
-            backgroundColor: ["#00811e", "#9d0001", "navy"],
+            backgroundColor: ["#355764", "#5A8F7B", "#81CACF"],
           },
         ],
         options: {
@@ -118,6 +118,7 @@ export default {
         labels: ["May", "Jun", "Jul", "Aug"],
         datasets: [
           {
+            label: "local reservations",
             data: [302, 550, 420, 220],
             backgroundColor: ["gray", "gray", "gray", "gray"],
           },

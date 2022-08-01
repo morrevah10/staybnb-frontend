@@ -6,7 +6,9 @@
       <details-header :stay="stay" />
       <section class="stay-display flex">
         <details-info :stay="stay" />
+
         <details-modal :stay="stay" @makeReservation="reserve" />
+        
       </section>
       <details-reviews :stay="stay" />
     </section>
