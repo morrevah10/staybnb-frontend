@@ -101,13 +101,14 @@ export default {
       status: "Pending",
       order: null,
       testData: {
-        // labels: ["", "", ""],
+        labels: ["1 night", "2 nights", "more then 2 nights"],
         datasets: [
           {
             data: [1, 3, 2],
             backgroundColor: ["#355764", "#5A8F7B", "#81CACF"],
           },
         ],
+        responsive: true,
         options: {
           legend: {
             display: false,
@@ -118,11 +119,12 @@ export default {
         labels: ["May", "Jun", "Jul", "Aug"],
         datasets: [
           {
-            label: "local reservations",
+            label: "Reservations",
             data: [302, 550, 420, 220],
-            backgroundColor: ["gray", "gray", "gray", "gray"],
+            backgroundColor: ["#909399", "#909399", "#909399", "#909399"],
           },
         ],
+        responsive: true,
         options: {
           legend: {
             display: false,
