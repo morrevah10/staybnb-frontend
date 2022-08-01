@@ -8,6 +8,7 @@ import "element-plus/dist/index.css";
 import { SetupCalendar } from "v-calendar";
 import "v-calendar/dist/style.css";
 import { clickOutsideDirective } from "./directives";
+import VueApexCharts from "vue3-apexcharts";
 
 const app = createApp(App);
 
@@ -15,6 +16,7 @@ app.use(SetupCalendar, {});
 app.use(router);
 app.use(store);
 app.use(ElementPlus);
+app.use(VueApexCharts);
 
 app.directive("click-outside", clickOutsideDirective);
 

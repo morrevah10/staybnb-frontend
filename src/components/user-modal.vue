@@ -2,11 +2,11 @@
   <section class="user-modal-active">
     <div class="user-nav">
       <div class="small-line">
-        <router-link :to="'/signup'" class="link">
+        <!-- <router-link :to="'/signup'" class="link">
           <p class="signup-menu gray">Sign up</p>
-        </router-link>
-        <router-link :to="'/login'" class="link">
-          <p class="login-menu">Log in</p>
+        </router-link> -->
+        <router-link :to="'/'" class="link">
+          <p class="login-menu">Logout</p>
         </router-link>
       </div>
       <div class="small-line">

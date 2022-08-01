@@ -8,7 +8,6 @@ export const ordersService = {
   makeOrder,
   getDays,
   getTotal,
-  getdate,
   addOrder,
 };
 
@@ -50,13 +49,10 @@ function getOrder() {
   return orders;
 }
 
-
-
-
 function makeOrder(stay, reservation, user) {
   let order = {
-    date: getdate(new Date(), "mm/dd/yy"),
-    guestName: user,
+    date: Date.now(),
+    guestName: user.fullName,
     stay: stay,
     stayPlace: stay.address.street,
 
@@ -77,7 +73,6 @@ function makeOrder(stay, reservation, user) {
     type: stay.roomType,
   };
 
-
   return order;
 }
 
@@ -85,14 +80,9 @@ function getDays(d1, d2) {
   var t2 = d2.getTime();
   var t1 = d1.getTime();
   let total = Math.floor((t2 - t1) / (24 * 3600 * 1000));
-  return total 
+  return total;
 }
 
 function getTotal(nights, price) {
   return nights * price;
 }
-
-function getdate(date, formated) {
-  return date.toLocaleDateString();
-}
-

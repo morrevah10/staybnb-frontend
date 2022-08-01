@@ -24,7 +24,7 @@
           />
           <!-- {{ this.logedInUser }} -->
           <fancy-btn class="login-btn" @click.prevent="checkLogIn"
-            >Login In</fancy-btn
+            >Login</fancy-btn
           >
           <div class="signup-move">
             <router-link :to="'/signup'">

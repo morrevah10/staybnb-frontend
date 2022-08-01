@@ -114,6 +114,11 @@
     color: rgb(113, 113, 113);
   }
 }
+
+.margin {
+  padding-top: 5px;
+}
+
 .filter-search {
   letter-spacing: normal;
   cursor: pointer;
@@ -245,7 +250,7 @@
   background-color: transparent;
   border: 0.2rem solid transparent;
   color: $clr5;
-
+  padding-top: 6px;
   &:hover {
     color: $clr2;
   }
@@ -288,6 +293,7 @@
   font-size: 14px !important;
   min-width: rem(75px);
   color: rgb(113, 113, 113);
+  background-color: $clr3;
 }
 
 .guests-sum {
@@ -296,11 +302,23 @@
   color: rgb(113, 113, 113);
 }
 
-.backdrop{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background-color:rgba(0,0,0,0.5);
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.activated {
+  background-color: $clr3 !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px;
+}
+
+.filterOn {
+  background-color: $clr7;
+}
+.host {
+  opacity: 0;
 }

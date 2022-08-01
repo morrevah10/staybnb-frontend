@@ -38,6 +38,7 @@
     <div class="open-modal">
       <div>
         <main-filter-large
+          @closeBackdrop="this.$emit('closeBackdrop')"
           :class="isLargeOpen ? 'large-search-modal' : 'large-search'"
         />
       </div>
@@ -72,6 +73,9 @@ export default {
     openUserModal() {
       this.isUserModal = !this.isUserModal;
     },
+  },
+  closeBackdrop(){
+      this.$emit("closeBackdrop") 
   },
   computed: {
     loggedinUser() {

@@ -4,25 +4,12 @@
     <h1 class="dashboard-title">My Dashboard</h1>
     <section class="dashboard-stats">
       <div class="cards-dashboard-container">
-        <div class="stats-card">
+        <div class="bar-container">
           <h1>Revenue per month</h1>
-          <div class="details">
-            <div class="rev-stat">
-              <span>Average</span>
-              <span>4.3</span>
-            </div>
-            <div class="rev-stat">
-              <span>Reviews</span>
-              <span>17</span>
-            </div>
-            <div class="rev-stat">
-              <span>Reviews</span>
-              <span>17</span>
-            </div>
-          </div>
+          <bar-chart :chartData="chartData"></bar-chart>
         </div>
         <div class="stats-card">
-          <h1>Total Revenue</h1>
+          <h1>Total revenue</h1>
           <div class="details">
             <div class="rev-stat">
               <span class="stat-head">This Month</span>
@@ -38,8 +25,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="cards-dashboard-container">
         <div class="stats-card">
           <h1>Orders management</h1>
           <div class="details">
@@ -48,7 +33,7 @@
               <span class="canceled-stat">7.7%</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">Average order revenue</span>
+              <span class="stat-head">Average revenue</span>
               <span class="total-stat">$2,295</span>
             </div>
             <div class="rev-stat">
@@ -57,31 +42,18 @@
             </div>
           </div>
         </div>
-        <div class="stats-card">
+        <div class="pie-container">
           <h1>Orders by nights</h1>
-          <div class="rev-stat">
-            <span>Active</span>
-            <span>1</span>
-          </div>
-          <div class="rev-stat">
-            <span>Past</span>
-            <span>3</span>
-          </div>
-          <div class="rev-stat">
-            <span>Planned</span>
-            <span>2</span>
-          </div>
+          <awesome-chart :testData="testData"></awesome-chart>
         </div>
       </div>
     </section>
-
-    <section v-if="loggedinUser" class="main-layout-homepage">
+    <section v-if="orders" class="main-layout-homepage">
       <div class="dashboard-order-container bold">
         <div class="dashboard-title date">Date</div>
         <div class="dashboard-title booker">Booker</div>
         <div class="dashboard-title stay">Stay</div>
         <div class="dashboard-title dates">Dates</div>
-        <div class="dashboard-title nights">Nights</div>
         <div class="dashboard-title guests">Guests</div>
         <div class="dashboard-title price">Price / night</div>
         <div class="dashboard-title total">Total</div>
@@ -89,15 +61,13 @@
         <div class="dashboard-title actions">Actions</div>
       </div>
 
-      <section
-        class="dashboard-order-container"
-        v-for="order in loggedinUser.trips"
-      >
-        <div class="date">{{ order.date }}</div>
-        <div class="booker">{{ order.host.fullname }}</div>
-        <div class="stay ellipsis">{{ order.stay }}</div>
+      <section class="dashboard-order-container" v-for="order in orders">
+        <div class="date">
+          {{ new Date(order.date).toLocaleDateString("en-GB") }}
+        </div>
+        <div class="booker ellipsis">{{ order.guestName }}</div>
+        <div class="stay ellipsis">{{ order.stay.name }}</div>
         <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
-        <div class="nights">{{ order.nights }}</div>
         <div class="guests">{{ order.guests }}</div>
         <div class="price">{{ order.price }}</div>
         <div class="total">{{ order.total }}</div>
@@ -111,20 +81,53 @@
   </section>
   <app-footer class="footer main-layout" />
 </template>
-
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import awesomeChart from "../components/awesome-chart.vue";
+import { BarChart } from "vue-chart-3";
+
 export default {
   props: {},
   components: {
+    awesomeChart,
     appHeader,
     appFooter,
+    BarChart,
   },
   data() {
     return {
       loggedinUser: null,
       status: "Pending",
+      order: null,
+      testData: {
+        labels: ["Active", "Past", "Planned"],
+        datasets: [
+          {
+            data: [1, 3, 2],
+            backgroundColor: ["#00811e", "#9d0001", "navy"],
+          },
+        ],
+        options: {
+          legend: {
+            display: false,
+          },
+        },
+      },
+      chartData: {
+        labels: ["May", "Jun", "Jul", "Aug"],
+        datasets: [
+          {
+            data: [302, 550, 420, 220],
+            backgroundColor: ["gray", "gray", "gray", "gray"],
+          },
+        ],
+        options: {
+          legend: {
+            display: false,
+          },
+        },
+      },
     };
   },
   mutations: {
@@ -135,8 +138,8 @@ export default {
   methods: {},
   computed: {},
   created() {
-    let orders = this.$store.getters.getOrders;
-    this.orders = orders;
+    // let orders = this.$store.getters.getOrders;
+    // this.orders = orders;
     // console.log("from dashhh",this.orders)
 
     // let user = this.$store.getters.loggedinUser

@@ -1,5 +1,4 @@
 .dashboard-stats {
-  display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
@@ -18,7 +17,7 @@
 .cards-dashboard-container {
   display: flex;
   justify-content: space-between;
-  gap: 65px;
+  gap: 25px;
   margin-bottom: 35px;
 }
 
@@ -36,7 +35,6 @@
 .stats-card {
   padding: 25px;
   width: 350px;
-  height: 200px;
   box-shadow: #0000001f 0 6px 16px;
   border-radius: 15px;
 }
@@ -54,21 +52,21 @@
 .rev-stat {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 13px;
+  padding-bottom: 25px;
   font-size: 1.1428571429em;
   font-weight: 600;
 }
 
 .canceled-stat {
-  color: #b40000;
+  color: #9d0001;
 }
 
 .total-stat {
-  color: #338300;
+  color: #00811e;
 }
 
 .pending-stat {
-  color: #0000db;
+  color: navy;
 }
 
 .dashboard-order-container {
@@ -80,7 +78,7 @@
 }
 
 .dashboard-order-container div {
-  text-align: center;
+  text-align: left;
   padding: 5px;
   font-size: 14px;
 }
@@ -101,7 +99,7 @@
 }
 
 .dashboard-order-container .dates {
-  width: 165px;
+  width: 150px;
 }
 
 .dashboard-order-container .nights {
@@ -113,19 +111,35 @@
 }
 
 .dashboard-order-container .price {
-  width: 80px;
+  width: 60px;
 }
 
 .dashboard-order-container .total {
-  width: 80px;
+  width: 60px;
 }
 
 .dashboard-order-container .status {
-  width: 120px;
+  width: 60px;
 }
 
 .dashboard-order-container .actions {
   width: 160px;
+}
+
+.pie-container {
+  box-shadow: #0000001f 0 6px 16px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 350px;
+}
+
+canvas {
+  height: 180px;
+  width: 307px;
 }
 
 .ellipsis {

@@ -1,4 +1,5 @@
 .trips-header {
+  font-size: 24px;
   padding-top: 15px;
 }
 
@@ -11,7 +12,7 @@
 }
 
 .trip-order-container div {
-  text-align: center;
+  text-align: left;
   padding: 5px;
   font-size: 14px;
 }
@@ -32,7 +33,7 @@
 }
 
 .trip-order-container .dates {
-  width: 165px;
+  width: 150px;
 }
 
 .trip-order-container .nights {
@@ -44,20 +45,20 @@
 }
 
 .trip-order-container .price {
-  width: 80px;
+  width: 60px;
 }
 
 .trip-order-container .total {
-  width: 80px;
+  width: 60px;
 }
 
 .trip-order-container .status {
-  width: 120px;
+  width: 60px;
 }
 
 .trip-order-container .actions {
   justify-content: center;
-  width: 100px;
+  width: 60px;
 }
 
 .ellipsis {
