@@ -8,6 +8,7 @@
   color: var(clr1);
   height: rem(48px);
   box-shadow: 1px 1px 3px 1px $clr9;
+
   &:hover {
     box-shadow: 2px 2px 4px 2px $clr9;
   }
@@ -79,6 +80,7 @@
   height: 64px;
   width: 850px;
   justify-content: space-evenly;
+
   button {
     width: 100%;
     display: block;
@@ -100,6 +102,7 @@
       background-color: $clr7;
     }
   }
+
   .button-title {
     padding-bottom: 2px;
     padding-left: 2px;
@@ -108,6 +111,7 @@
     letter-spacing: 0.48px;
     line-height: 1rem;
   }
+
   .button-sub {
     font-size: 14px;
     min-width: rem(75px);
@@ -135,9 +139,11 @@
   display: inline-flex;
   color: rgb(255, 255, 255);
   background-color: $clr1;
+
   span {
     padding-inline-start: 0.5rem;
   }
+
   img {
     margin-inline-end: 0;
     width: 1rem;
@@ -148,6 +154,7 @@
     align-items: center;
     justify-content: center;
   }
+
   &:hover {
     cursor: pointer;
   }
@@ -160,12 +167,15 @@
 
   input {
     border: hidden;
+
     &:focus {
       outline: none;
     }
+
     &:hover {
       cursor: pointer;
     }
+
     padding-bottom: 2px;
     background-clip: padding-box;
     border: 1px solid transparent;
@@ -259,13 +269,16 @@
 .guest-container {
   width: 100%;
   flex-direction: row;
+
   &:hover {
     &:hover {
       background-color: $clr7;
       cursor: pointer;
     }
   }
+
   border-radius: 2rem;
+
   .buttom-sub-gest {
     width: 100px;
   }
@@ -311,15 +324,28 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.activated{
-  background-color: $clr3 !important;
+.activated {
+  background-color: $clr3  !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px
-
 }
 
-.filterOn{
+.filterOn {
   background-color: $clr7;
 }
-.host{
+
+.host {
   opacity: 0;
 }
+
+// .vc-highlight {
+//   border-color: $clr7  !important;
+//   background-color: $clr5  !important;
+
+// }
+
+// .vc-focusable {
+//   color: $clr10;
+//   // &:focus{
+//   //   color: $clr3;
+//   // } ;
+// }
