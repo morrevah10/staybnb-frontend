@@ -31,7 +31,8 @@
           <div class="button-title margin">Who</div>
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
-        <div @click.prevent="runSearch" class="filter-search">
+        <div @click.prevent="runSearch" 
+        class="filter-search">
           <img src="../styles/icons/search_white.png" alt="" />
         </div>
       </div>
@@ -100,6 +101,7 @@ export default {
       // }
     },
     runSearch() {
+      this.$emit("showResults")
       this.$emit('closeBackdrop')
       this.$emit('closeLarg')
       this.isFilterOn = false

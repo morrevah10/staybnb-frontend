@@ -61,6 +61,31 @@ export default {
           name: "surfing",
           src: "/lable-img/surfing.jpg",
         },
+        {
+          name: "desert",
+          src: "/lable-img/desert.jpg",
+        },
+        {
+          name: "golf",
+          src: "/lable-img/golf.jpg",
+        },
+        {
+          name: "skiing",
+          src: "/lable-img/skiing.jpg",
+        },
+        {
+          name: "grand-pianos",
+          src: "/lable-img/grand-pianos.jpg",
+        },
+        {
+          name: "luxe",
+          src: "/lable-img/luxe.jpg",
+        },
+        {
+          name: "trulli",
+          src: "/lable-img/trulli.jpg",
+        },
+        
       ],
       activeLabel: "",
       filterBy: {

@@ -6,7 +6,7 @@
         <h1 class="logo-text">Staybnb</h1>
       </div>
     </router-link>
-    <stay-filter  @open-large-modal="(isOpen) => openLarge(isOpen)" />
+    <stay-filter @open-large-modal="(isOpen) => openLarge(isOpen)" />
     <section class="user-actions flex align-items space-between">
       <div class="host">
         <router-link :to="'/host'" class="host-header link"
@@ -40,6 +40,8 @@
         <main-filter-large
           @closeBackdrop="this.$emit('closeBackdrop')"
           @closeLarg="closeLargFilter"
+          @showResults="searchResult"
+
           :class="isLargeOpen ? 'large-search-modal' : 'large-search'"
         />
       </div>
@@ -67,6 +69,9 @@ export default {
     };
   },
   methods: {
+    searchResult(){
+      this.$emit("result")
+    },
 
     closeLargFilter(){
       console.log("close filterrrrrr")

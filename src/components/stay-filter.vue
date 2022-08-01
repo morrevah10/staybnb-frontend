@@ -17,6 +17,7 @@ import SmallNavBar from "./small-nav-bar.vue";
 
 export default {
   props:["class"],
+
   components: {
     mainFilterLarge,
     mainFilterSmall,
@@ -31,24 +32,19 @@ export default {
       defaultDisplay: false,
     };
   },
-  created() {},
+  created() {
+    
+  },
   methods: {
     openLargeFilter() {
-      console.log("clicked on search");
+      // console.log("clicked on search");
 
       this.defaultDisplay = !this.defaultDisplay;
-      console.log("large filter ",this.defaultDisplay)
+      // console.log("large filter ",this.defaultDisplay)
       let isOpen = this.defaultDisplay;
       this.$emit("openLargeModal", isOpen); 
     },
-    closeLargeFilter(){
-      console.log("clicked on search");
-      let isOpen = !this.defaultDisplay;
-      this.$emit("openLargeModal", isOpen);
-      // this.defaultDisplay=!isSearchOpen;
-      // let isOpen = this.defaultDisplay;
-      // this.$emit("openLargeModal", isOpen); 
-    }
+   
 
 
   },

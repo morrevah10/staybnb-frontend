@@ -4,6 +4,7 @@ import { stayService } from "../../services/stay-service.js";
 export default {
   state: {
     stays: null,
+    result:null,
     currStay: null,
     filterBy: null,
     date: {
@@ -26,8 +27,13 @@ export default {
         total: 1
       }
     }
+
+
   },
   getters: {
+    getResult({result}){
+      return result;
+    },
     staysToDisplay({stays}) {
       return stays;
     },
@@ -116,6 +122,8 @@ export default {
   },
   mutations: {
     setStays(state, { stays }) {
+      state.result = stays.length
+      console.log("result from stor ",state.result)
       state.stays = stays;
     },
     updateGuests(state, { guests }){
