@@ -309,3 +309,13 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.activated{
+  background-color: $clr3 !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px
+
+}
+
+.filterOn{
+  background-color: $clr7;
+}

@@ -1,6 +1,6 @@
 <template>
   <div class="stay-app">
-    <app-header class="main-layout"  @openBackdrop="isBackdrop = true"/>
+    <app-header class="main-layout"  @openBackdrop="isBackdrop = true" @closeBackdrop="isBackdrop = false"/>
     <label-list
       :labels="labels"
       class="main-layout"
