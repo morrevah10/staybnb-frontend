@@ -10,33 +10,51 @@
 }
 
 .dashboard-title {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 
 .cards-dashboard-container {
-  display: flex;
   justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 20px;
 }
 
 .bar-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  height: 250px;
   box-shadow: #0000001f 0 6px 16px;
   border-radius: 15px;
+  padding: 25px;
+  width: 350px;
+}
+
+.pie-container {
+  box-shadow: #0000001f 0 6px 16px;
+  border-radius: 15px;
+  padding: 25px;
+  width: 350px;
 }
 
 .stats-card {
-  padding: 25px;
-  width: 350px;
   box-shadow: #0000001f 0 6px 16px;
   border-radius: 15px;
+  padding: 25px;
+  width: 350px;
+}
+
+.bar-header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.pie-header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+canvas {
+  height: 180px;
+  width: 307px;
 }
 
 .dashboard-stats .cards-dashboard-container .stats-card h1 {
@@ -124,22 +142,6 @@
 
 .dashboard-order-container .actions {
   width: 160px;
-}
-
-.pie-container {
-  box-shadow: #0000001f 0 6px 16px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-  width: 350px;
-}
-
-canvas {
-  height: 180px;
-  width: 307px;
 }
 
 .ellipsis {

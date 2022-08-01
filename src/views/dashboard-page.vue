@@ -5,7 +5,7 @@
     <section class="dashboard-stats">
       <div class="cards-dashboard-container">
         <div class="bar-container">
-          <h1>Revenue per month</h1>
+          <h1 class="bar-header">Revenue per month</h1>
           <bar-chart :chartData="chartData"></bar-chart>
         </div>
         <div class="stats-card">
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="pie-container">
-          <h1>Orders by nights</h1>
+          <h1 class="pie-header">Orders by nights</h1>
           <awesome-chart :testData="testData"></awesome-chart>
         </div>
       </div>
@@ -141,7 +141,6 @@ export default {
     // let orders = this.$store.getters.getOrders;
     // this.orders = orders;
     // console.log("from dashhh",this.orders)
-
     // let user = this.$store.getters.loggedinUser
     // console.log("from dash user", user)
     // this.loggedinUser = user
