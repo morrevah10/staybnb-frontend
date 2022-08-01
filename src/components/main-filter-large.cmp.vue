@@ -43,7 +43,7 @@
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
         <div @click.prevent="runSearch" class="filter-search">
-          <img src="../styles/icons/search_white.png" alt="" />
+          <img src="../styles/icons/search_white.png" alt="" @click.prevent="isActiveState()"/>
         </div>
       </div>
     </form>
@@ -70,8 +70,8 @@
 </template>
 
 <script>
-import guestsPicker from "./guests-picker.cmp.vue";
-import calenderSpread from "./calender-spread.vue";
+import guestsPicker from "./guests-picker.cmp.vue"
+import calenderSpread from "./calender-spread.vue"
 
 export default {
   // props: {
@@ -99,36 +99,43 @@ export default {
 
       isCalendarShown: false,
       isGuestModalShown: false,
+      isSearchOpen: true,
       // mode: "destination",
-    };
+    }
   },
   methods: {
     clickedButton() {
-      console.log("clicked");
+      console.log("clicked")
     },
     runSearch() {
-      if (!this.filterBy.destination.length) return;
-      if (this.guests.total === 0) this.filterBy.numOfGuests = 1;
-      const copyFilter = JSON.parse(JSON.stringify(this.filterBy));
-      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
+      // this.$emit("closeLargeModal")
+      if (!this.filterBy.destination.length) return
+      if (this.guests.total === 0) this.filterBy.numOfGuests = 1
+      const copyFilter = JSON.parse(JSON.stringify(this.filterBy))
+      this.$store.dispatch({ type: "setFilter", filterBy: copyFilter })
       this.$store.dispatch({
         type: "setStayToOrder",
         date: this.date,
         guests: this.guests,
-      });
+      })
+      console.log("run search")
+    },
+
+    closeSearch() {
+      this.$emit("closeLargeModal")
+      console.log("emit close modal")
     },
 
     dateUpdate(newDate) {
       this.date = newDate
-      console.log("in the main filter",this.date)
-      this.$store.dispatch({type: "updateDate" , date: this.date})
-
-},
+      console.log("in the main filter", this.date)
+      this.$store.dispatch({ type: "updateDate", date: this.date })
+    },
     updateGuests(newGuests) {
-      console.log('NewGuests', newGuests)
+      console.log("NewGuests", newGuests)
       this.guests = newGuests
-      this.$store.dispatch({type: "updateGuests" , guests: this.guests})
-      this.filterBy.numOfGuests = this.guests.total;
+      this.$store.dispatch({ type: "updateGuests", guests: this.guests })
+      this.filterBy.numOfGuests = this.guests.total
     },
   },
   actions: {},
@@ -140,7 +147,7 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add dates";
+        : "Add dates"
     },
 
     checkOutDate() {
@@ -150,24 +157,24 @@ export default {
             month: "2-digit",
             day: "2-digit",
           })
-        : "Add dates";
+        : "Add dates"
     },
     totalGuests() {
-      const {total} = this.$store.getters.getGuests
+      const { total } = this.$store.getters.getGuests
       switch (total) {
         case 0:
-          return "Add guests";
-          break;
+          return "Add guests"
+          break
         case 1:
-          return "1 guest";
-          break;
+          return "1 guest"
+          break
         default:
-          return `${total} guests`;
+          return `${total} guests`
       }
     },
   },
   watch: {},
   created() {},
   unmounted() {},
-};
+}
 </script>

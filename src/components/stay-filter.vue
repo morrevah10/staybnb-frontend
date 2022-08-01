@@ -3,7 +3,8 @@
   <small-nav-bar v-else @toggelModal="openLargeFilter" />
   <div class="open-modal">
     <div :class="{ 'large-search-modal': defaultDisplay }">
-      <main-filter-large class="large-search" />
+      <main-filter-large class="large-search"  @closeLargeModal=" closeLargeFilter"/>
+       <!-- @close-large-modal="(isSearchOpen) => closeLargeFilter(isSearchOpen)" -->
     </div>
   </div>
 
@@ -33,10 +34,23 @@ export default {
   created() {},
   methods: {
     openLargeFilter() {
+      console.log("clicked on search");
+
       this.defaultDisplay = !this.defaultDisplay;
+      console.log("large filter ",this.defaultDisplay)
       let isOpen = this.defaultDisplay;
       this.$emit("openLargeModal", isOpen); 
     },
+    closeLargeFilter(){
+      console.log("clicked on search");
+      let isOpen = !this.defaultDisplay;
+      this.$emit("openLargeModal", isOpen);
+      // this.defaultDisplay=!isSearchOpen;
+      // let isOpen = this.defaultDisplay;
+      // this.$emit("openLargeModal", isOpen); 
+    }
+
+
   },
   
   computed: {},
