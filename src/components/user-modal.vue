@@ -5,19 +5,19 @@
         <!-- <router-link :to="'/signup'" class="link">
           <p class="signup-menu gray">Sign up</p>
         </router-link> -->
-        <router-link :to="'/'" class="link">
-          <p class="login-menu">Logout</p>
+        <router-link :to="'/dashboard'" class="link">
+          <p class="dashboard-menu">Dashboard</p>
+        </router-link>
+        <router-link :to="'/trips'" class="link">
+          <p class="trips-menu">Trips</p>
         </router-link>
       </div>
       <div class="small-line">
         <router-link :to="'/host'" class="link">
           <p class="host-menu">Host your home</p>
         </router-link>
-        <router-link :to="'/dashboard'" class="link">
-          <p class="dashboard-menu">Dashboard</p>
-        </router-link>
-        <router-link :to="'/trips'" class="link">
-          <p class="trips-menu">Trips</p>
+        <router-link :to="'/'" class="link">
+          <p class="logout-menu">Logout</p>
         </router-link>
       </div>
     </div>
