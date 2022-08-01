@@ -4,32 +4,27 @@
     <h1 class="dashboard-title">My Dashboard</h1>
     <section class="dashboard-stats">
       <div class="cards-dashboard-container">
-        <div class="stats-card">
-          <h1>Reviews</h1>
-          <div class="details">
-            <div class="rev-stat">
-              <span>Ratings average</span>
-              <span>4.3</span>
-            </div>
-            <div class="rev-stat">
-              <span>Reviews</span>
-              <span>17</span>
-            </div>
-          </div>
+        <div class="bar-container">
+          <h1>Revenue per month</h1>
+          <bar-chart
+            width="330"
+            height="170"
+            :chartData="chartData"
+          ></bar-chart>
         </div>
         <div class="stats-card">
           <h1>Total revenue</h1>
           <div class="details">
             <div class="rev-stat">
-              <span class="stat-head">Month</span>
+              <span class="stat-head">This Month</span>
               <span>$302</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">Year</span>
+              <span class="stat-head">This Year</span>
               <span>$1,553</span>
             </div>
             <div class="rev-stat">
-              <span class="stat-head">Total</span>
+              <span class="stat-head">Total Income</span>
               <span>$1,553</span>
             </div>
           </div>
@@ -53,20 +48,9 @@
             </div>
           </div>
         </div>
-        <div class="stats-card">
+        <div class="pie-container">
           <h1>Orders by nights</h1>
-          <div class="rev-stat">
-            <span>Active</span>
-            <span>1</span>
-          </div>
-          <div class="rev-stat">
-            <span>Past</span>
-            <span>3</span>
-          </div>
-          <div class="rev-stat">
-            <span>Planned</span>
-            <span>2</span>
-          </div>
+          <awesome-chart :testData="testData"></awesome-chart>
         </div>
       </div>
     </section>
@@ -84,9 +68,11 @@
       </div>
 
       <section class="dashboard-order-container" v-for="order in orders">
-        <div class="date">{{ new Date(order.date).toLocaleDateString('en-GB') }}</div>
-        <div class="booker ellipsis">{{ order.host.fullname }}</div>
-        <div class="stay ellipsis">{{ order.stay }}</div>
+        <div class="date">
+          {{ new Date(order.date).toLocaleDateString("en-GB") }}
+        </div>
+        <div class="booker ellipsis">{{ order.guestName }}</div>
+        <div class="stay ellipsis">{{ order.stay.name }}</div>
         <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
         <div class="guests">{{ order.guests }}</div>
         <div class="price">{{ order.price }}</div>
@@ -104,17 +90,40 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import appFooter from "../components/app-footer.vue";
+import awesomeChart from "../components/awesome-chart.vue";
+import { BarChart } from "vue-chart-3";
+
 export default {
   props: {},
   components: {
+    awesomeChart,
     appHeader,
     appFooter,
+    BarChart,
   },
   data() {
     return {
       loggedinUser: null,
       status: "Pending",
       order: null,
+      testData: {
+        labels: ["Active", "Past", "Planned"],
+        datasets: [
+          {
+            data: [1, 3, 2],
+            backgroundColor: ["green", "red", "blue"],
+          },
+        ],
+      },
+      chartData: {
+        labels: ["May", "Jun", "Jul", "Aug"],
+        datasets: [
+          {
+            data: [302, 550, 420, 220],
+            backgroundColor: ["red", "red", "red", "red"],
+          },
+        ],
+      },
     };
   },
   mutations: {
@@ -123,8 +132,7 @@ export default {
     },
   },
   methods: {},
-  computed: {}
- ,
+  computed: {},
   created() {
     let orders = this.$store.getters.getOrders;
     this.orders = orders;

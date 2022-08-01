@@ -1,54 +1,71 @@
 .reservation-container {
-  padding-top: 35px;
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .reservation-page {
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 0 #000;
   border-radius: 13px;
   justify-content: space-between;
 }
 
 .reseravaion-img {
   object-fit: cover;
-  margin-right: 70px;
-  height: 180px;
-  width: 250px;
+  height: 220px;
+  width: 300px;
+  border-radius: 5px;
 }
 
-.reservation-details {
-  margin-left: 70px;
-}
-
-.reservation-subtitle {
-  text-align: center;
+.img-info {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: #0000001f 0 6px 16px;
 }
 
 .reservation-details {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-shadow: inset 0 -0.5px 0 0 rgb(185, 185, 185);
   p {
-    padding-bottom: 10px;
+    padding-bottom: 3px;
   }
 }
 
-.reservation-header {
-  justify-content: center;
+.dates-info {
+  padding-bottom: 8px;
+}
+
+.guest-info {
+  padding-bottom: 8px;
+}
+
+.user-message {
+  padding-top: 10px;
   width: 100%;
-  border-bottom: 1px solid #dbdbdb;
+}
+
+.reservation-header {
+  box-shadow: inset 0 -0.5px 0 0 rgb(185, 185, 185);
+  width: 100%;
   display: flex;
   padding-bottom: 10px;
 }
 
 .reservation-title {
   padding-top: 10px;
+}
+
+.sub-title {
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .success-img {
@@ -67,13 +84,13 @@
   color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
-  width: 100%;
   padding: 15px 10px;
   font-family: airbnb-regular, sans-serif;
   font-size: 1rem;
 }
 
 .home-btn {
+  justify-content: center;
   border: none;
   background-color: #535353;
   margin: 20px 0;
@@ -81,19 +98,9 @@
   color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
-  width: 100%;
   padding: 15px 10px;
   font-family: airbnb-regular, sans-serif;
   font-size: 1rem;
-}
-
-.final-line {
-  padding-top: 10px;
-  border-top: 1px solid #dbdbdb;
-  padding-bottom: 10px;
-  bottom: 0px;
-  width: 100%;
-  text-align: center;
 }
 
 .bold-text {
@@ -102,5 +109,5 @@
 }
 
 .home-router {
-  margin-right: 5px;
+  margin-right: 20px;
 }

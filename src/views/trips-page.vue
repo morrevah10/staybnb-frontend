@@ -16,9 +16,11 @@
     </div>
 
     <section class="trip-order-container main-layout" v-for="order in orders">
-      <div class="date">{{ new Date(order.date).toLocaleDateString('en-GB') }}</div>
+      <div class="date">
+        {{ new Date(order.date).toLocaleDateString("en-GB") }}
+      </div>
       <div class="booker ellipsis">{{ order.host.fullname }}</div>
-      <div class="stay ellipsis">{{ order.stay }}</div>
+      <div class="stay ellipsis">{{ order.stay.name }}</div>
       <div class="dates">{{ order.checkIn }} - {{ order.checkOut }}</div>
       <div class="nights">{{ order.nights }}</div>
       <div class="guests">{{ order.guests }}</div>
@@ -46,18 +48,17 @@ export default {
     return {
       // loggedinUser: null,
       // trips:null,
-     
     };
   },
   methods: {},
   computed: {
     orders() {
       // console.log(this.$store.getters.getOrders)
-      return this.$store.getters.getOrders
+      return this.$store.getters.getOrders;
       // ?.sort(((a, b) => {
       //   return new Date(b.date) - new Date(a.date)
       // }))
-    }
+    },
   },
   created() {
     // let user = this.$store.getters.loggedinUser
@@ -69,14 +70,8 @@ export default {
     // this.trips=trips
     // console.log("from trips trips", this.trips)
     // let orders=this.$store.getters.getOrders;
-
     // this.$store.dispatch({ type: "loadOrders" })
-
-
-
-
-
   },
-  unmounted() { },
-}
+  unmounted() {},
+};
 </script>
