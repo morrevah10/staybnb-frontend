@@ -71,9 +71,9 @@
         <div class="guests">{{ order.guests }}</div>
         <div class="price">{{ order.price }}</div>
         <div class="total">{{ order.total }}</div>
-        <div class="status">{{ this.status }}</div>
+        <div class="status">{{order.status }}</div>
         <div class="detail actions actions-container">
-          <button class="approve-btn" @click="changeStatus()">Approve</button>
+          <button class="approve-btn" @click="approve(order)" >Approve</button>
           <button class="reject-btn">Reject</button>
         </div>
       </section>
@@ -132,11 +132,16 @@ export default {
     };
   },
   mutations: {
-    changeStatus() {
-      this.status = this.$store.getters.getStatus;
-    },
+    // changeStatus() {
+    //   console.log('trilili')
+    //   // this.status = this.$store.getters.getStatus;
+    // },
   },
-  methods: {},
+  methods: {
+    approve(order){
+      console.log(order._id)
+    }
+  },
   computed: {},
   created() {
     let orders = this.$store.getters.getOrders;
