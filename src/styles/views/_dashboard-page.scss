@@ -36,7 +36,6 @@
 .stats-card {
   padding: 25px;
   width: 350px;
-  height: 200px;
   box-shadow: #0000001f 0 6px 16px;
   border-radius: 15px;
 }
@@ -54,7 +53,7 @@
 .rev-stat {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 13px;
+  padding-bottom: 25px;
   font-size: 1.1428571429em;
   font-weight: 600;
 }
@@ -126,6 +125,22 @@
 
 .dashboard-order-container .actions {
   width: 160px;
+}
+
+.pie-container {
+  box-shadow: #0000001f 0 6px 16px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 350px;
+}
+
+canvas {
+  height: 180px !important;
+  width: 307px !important;
 }
 
 .ellipsis {

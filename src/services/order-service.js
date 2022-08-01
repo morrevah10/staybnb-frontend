@@ -52,7 +52,7 @@ function getOrder() {
 function makeOrder(stay, reservation, user) {
   let order = {
     date: Date.now(),
-    guestName: user,
+    guestName: user.fullName,
     stay: stay,
     stayPlace: stay.address.street,
 
@@ -87,5 +87,11 @@ function getTotal(nights, price) {
   return nights * price;
 }
 
+<<<<<<< HEAD
+function getdate(date, formated) {
+  return date.toLocaleDateString();
+}
+=======
 
 
+>>>>>>> 1cdcc1eb9c4f5ed87eca55ee07efe9e4486f8dce
