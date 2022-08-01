@@ -138,8 +138,8 @@ export default {
   methods: {},
   computed: {},
   created() {
-    let orders = this.$store.getters.getOrders;
-    this.orders = orders;
+    // let orders = this.$store.getters.getOrders;
+    // this.orders = orders;
     // console.log("from dashhh",this.orders)
 
     // let user = this.$store.getters.loggedinUser

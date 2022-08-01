@@ -86,7 +86,3 @@ function getDays(d1, d2) {
 function getTotal(nights, price) {
   return nights * price;
 }
-
-function getdate(date, formated) {
-  return date.toLocaleDateString();
-}
