@@ -6,7 +6,7 @@
       <div class="cards-dashboard-container">
         <div class="bar-container">
           <h1 class="bar-header">Revenue per month</h1>
-          <bar-chart :chartData="chartData"></bar-chart>
+          <bar-chart :options="options" :chartData="chartData"></bar-chart>
         </div>
         <div class="stats-card">
           <h1>Total revenue</h1>
@@ -44,7 +44,7 @@
         </div>
         <div class="pie-container">
           <h1 class="pie-header">Orders by nights</h1>
-          <awesome-chart :testData="testData"></awesome-chart>
+          <awesome-chart :options="options" :testData="testData"></awesome-chart>
         </div>
       </div>
     </section>
@@ -71,9 +71,9 @@
         <div class="guests">{{ order.guests }}</div>
         <div class="price">{{ order.price }}</div>
         <div class="total">{{ order.total }}</div>
-        <div class="status">{{order.status }}</div>
+        <div class="status">{{ order.status }}</div>
         <div class="detail actions actions-container">
-          <button class="approve-btn" @click="approve(order)" >Approve</button>
+          <button class="approve-btn" @click="approve(order)">Approve</button>
           <button class="reject-btn">Reject</button>
         </div>
       </section>
@@ -121,20 +121,22 @@ export default {
           {
             label: "Reservations",
             data: [302, 550, 420, 220],
-            backgroundColor: ["#909399", "#909399", "#909399", "#909399"],
+            backgroundColor: ["#ff385c", "#ff385c", "#ff385c", "#ff385c"],
           },
         ],
-        responsive: true,
+      },
         options: {
-          legend: {
-            display: false,
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
           },
         },
-      },
     };
   },
   methods: {
-    approve(order){
+    approve(order) {
       console.log(order._id)
       order
     }
@@ -149,6 +151,6 @@ export default {
     // this.loggedinUser = user
     // console.log("from dash loggedin user", this.loggedinUser)
   },
-  unmounted() {},
+  unmounted() { },
 };
 </script>
