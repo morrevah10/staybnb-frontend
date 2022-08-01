@@ -32,7 +32,7 @@
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
         <div @click.prevent="runSearch" class="filter-search">
-          <img src="../styles/icons/search_white.png" alt="" @click.prevent="isActiveState()"/>
+          <img src="../styles/icons/search_white.png" alt="" />
         </div>
       </div>
     </form>
@@ -101,6 +101,7 @@ export default {
     },
     runSearch() {
       this.$emit('closeBackdrop')
+      this.$emit('closeLarg')
       this.isFilterOn = false
       this.activatedBtn=""
       if (!this.filterBy.destination.length) return;
