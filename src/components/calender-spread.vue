@@ -1,8 +1,14 @@
 <template>
   <div v-click-outside="closeCalendar">
-
-    <DatePicker :columns="2" v-model="date" is-range update-on-input
-     />
+  <DatePicker
+  :value="null"
+  color="gray"
+  :columns="2" v-model="date"
+  is-range
+  update-on-input
+  />
+    <!-- <DatePicker :columns="2" v-model="date" is-range update-on-input
+     /> -->
   </div>
 </template>
 

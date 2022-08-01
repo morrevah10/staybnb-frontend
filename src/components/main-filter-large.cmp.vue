@@ -32,7 +32,7 @@
           <span class="guests-sum">{{ totalGuests }}</span>
         </button>
         <div @click.prevent="runSearch" class="filter-search">
-          <img src="../styles/icons/search_white.png" alt="" />
+          <img src="../styles/icons/search_white.png" alt="" @click.prevent="isActiveState()"/>
         </div>
       </div>
     </form>
@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import guestsPicker from "./guests-picker.cmp.vue";
-import calenderSpread from "./calender-spread.vue";
+import guestsPicker from "./guests-picker.cmp.vue"
+import calenderSpread from "./calender-spread.vue"
 
 export default {
   // props: {
@@ -79,10 +79,11 @@ export default {
 
       isCalendarShown: false,
       isGuestModalShown: false,
+      isSearchOpen: true,
       activatedBtn: "",
       isFilterOn: false
       // mode: "destination",
-    };
+    }
   },
   methods: {
     clickedButton() {
@@ -188,13 +189,13 @@ export default {
       const { total } = this.$store.getters.getGuests;
       switch (total) {
         case 0:
-          return "Add guests";
-          break;
+          return "Add guests"
+          break
         case 1:
-          return "1 guest";
-          break;
+          return "1 guest"
+          break
         default:
-          return `${total} guests`;
+          return `${total} guests`
       }
     },
   },

@@ -101,7 +101,7 @@ export default {
       status: "Pending",
       order: null,
       testData: {
-        labels: ["Active", "Past", "Planned"],
+        labels: ["1 night", "2 nights", "more then 2 nights"],
         datasets: [
           {
             data: [1, 3, 2],
@@ -138,8 +138,8 @@ export default {
   methods: {},
   computed: {},
   created() {
-    // let orders = this.$store.getters.getOrders;
-    // this.orders = orders;
+    let orders = this.$store.getters.getOrders;
+    this.orders = orders;
     // console.log("from dashhh",this.orders)
     // let user = this.$store.getters.loggedinUser
     // console.log("from dash user", user)

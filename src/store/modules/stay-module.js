@@ -51,6 +51,8 @@ export default {
         .query()
         .then((stays) => {
           commit({ type: "setStays", stays });
+          const result = stays.length
+          console.log("result from search",result)
           return stays;
         })
         .catch((err) => {
@@ -84,6 +86,8 @@ export default {
       try {
         console.log('filter by - in the store',filterBy )
         const stays = await stayService.query(filterBy)
+        const result = stays.length
+        console.log("result from filter",result)
         console.log('hello')
         commit({ type: "setStays", stays })
       } catch {
