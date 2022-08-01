@@ -260,7 +260,7 @@
   background-color: transparent;
   border: 0.2rem solid transparent;
   color: $clr5;
-
+  padding-top: 6px;
   &:hover {
     color: $clr2;
   }
@@ -332,7 +332,6 @@
 .filterOn {
   background-color: $clr7;
 }
-
 .host {
   opacity: 0;
 }

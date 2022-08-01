@@ -6,11 +6,7 @@
       <div class="cards-dashboard-container">
         <div class="bar-container">
           <h1>Revenue per month</h1>
-          <bar-chart
-            width="330"
-            height="170"
-            :chartData="chartData"
-          ></bar-chart>
+          <bar-chart :chartData="chartData"></bar-chart>
         </div>
         <div class="stats-card">
           <h1>Total revenue</h1>
@@ -29,8 +25,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="cards-dashboard-container">
         <div class="stats-card">
           <h1>Orders management</h1>
           <div class="details">
@@ -111,18 +105,28 @@ export default {
         datasets: [
           {
             data: [1, 3, 2],
-            backgroundColor: ["green", "red", "blue"],
+            backgroundColor: ["#00811e", "#9d0001", "navy"],
           },
         ],
+        options: {
+          legend: {
+            display: false,
+          },
+        },
       },
       chartData: {
         labels: ["May", "Jun", "Jul", "Aug"],
         datasets: [
           {
             data: [302, 550, 420, 220],
-            backgroundColor: ["red", "red", "red", "red"],
+            backgroundColor: ["gray", "gray", "gray", "gray"],
           },
         ],
+        options: {
+          legend: {
+            display: false,
+          },
+        },
       },
     };
   },
