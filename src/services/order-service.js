@@ -87,11 +87,5 @@ function getTotal(nights, price) {
   return nights * price;
 }
 
-<<<<<<< HEAD
-function getdate(date, formated) {
-  return date.toLocaleDateString();
-}
-=======
 
 
->>>>>>> 1cdcc1eb9c4f5ed87eca55ee07efe9e4486f8dce

@@ -105,9 +105,6 @@ export default {
     return {
       loggedinUser: null,
       status: "Pending",
-<<<<<<< HEAD
-      // order: null,
-=======
       order: null,
       testData: {
         labels: ["Active", "Past", "Planned"],
@@ -127,7 +124,6 @@ export default {
           },
         ],
       },
->>>>>>> 2c076e4f53590e02c95da05f06225bf1a2ae44a2
     };
   },
   mutations: {
@@ -136,20 +132,7 @@ export default {
     },
   },
   methods: {},
-<<<<<<< HEAD
-  computed: {
-      orders() {
-      // console.log(this.$store.getters.getOrders)
-      return this.$store.getters.getOrders
-      // ?.sort(((a, b) => {
-      //   return new Date(b.date) - new Date(a.date)
-      // }))
-    }
-  }
- ,
-=======
   computed: {},
->>>>>>> 2c076e4f53590e02c95da05f06225bf1a2ae44a2
   created() {
     // let orders = this.$store.getters.getOrders;
     // this.orders = orders;
