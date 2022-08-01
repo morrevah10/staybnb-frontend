@@ -1,6 +1,6 @@
 <template>
   <div class="stay-app">
-    <app-header class="main-layout"  @openBackdrop="isBackdrop = true"/>
+    <app-header class="main-layout"  @openBackdrop="openBackdrop" @closeBackdrop="isBackdrop = false"/>
     <label-list
       :labels="labels"
       class="main-layout"
@@ -44,6 +44,11 @@ export default {
       const copyFilter = JSON.parse(JSON.stringify(filterBy));
       this.$store.dispatch({ type: "setFilter", filterBy: copyFilter });
     },
+    openBackdrop(){
+      if (!this.isBackdrop) {
+        this.isBackdrop = true
+      }
+    }
   },
   computed: {
     stays() {
