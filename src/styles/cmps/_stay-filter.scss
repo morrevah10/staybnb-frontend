@@ -250,7 +250,7 @@
   background-color: transparent;
   border: 0.2rem solid transparent;
   color: $clr5;
-
+  padding-top: 6px;
   &:hover {
     color: $clr2;
   }
@@ -310,15 +310,14 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.activated{
+.activated {
   background-color: $clr3 !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px
-
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px 0px;
 }
 
-.filterOn{
+.filterOn {
   background-color: $clr7;
 }
-.host{
+.host {
   opacity: 0;
 }

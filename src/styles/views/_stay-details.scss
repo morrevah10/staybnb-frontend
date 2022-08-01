@@ -226,7 +226,7 @@
 
   .order-modal {
     margin-top: 48px;
-    padding: 24px;
+    padding: 5px 22px;
     border-radius: 12px;
     border: 1px solid #ddd;
     box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
@@ -240,6 +240,7 @@
   }
 
   .order-form-header {
+    padding-top: 12px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
