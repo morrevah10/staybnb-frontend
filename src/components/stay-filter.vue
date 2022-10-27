@@ -1,13 +1,13 @@
 <template>
   <main-filter-small v-if="!defaultDisplay" @openLarge="openLargeFilter" />
   <small-nav-bar v-else @toggelModal="openLargeFilter" />
+
   <!-- <div class="open-modal"> -->
     <!-- <div :class="{ 'large-search-modal': defaultDisplay }">
       <main-filter-large class="large-search"  @closeLargeModal=" closeLargeFilter"/>
        @close-large-modal="(isSearchOpen) => closeLargeFilter(isSearchOpen)"
     </div> -->
   <!-- </div> -->
-
 </template>
 <script>
 import mainFilterLarge from "./main-filter-large.cmp.vue";
@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       defaultDisplay: false,
+      miniFilter:false,
     };
   },
   created() {
