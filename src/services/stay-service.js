@@ -7,7 +7,7 @@ var axios = Axios.create({
 function _getUrl(id = "") {
   const BASE_URL =
     process.env.NODE_ENV !== "development"
-      ? "/api/stay"
+      ? "https://staybnb-v5m5.onrender.com/api/stay"
       : "//localhost:3030/api/stay";
 
   return `${BASE_URL}/${id}`;
