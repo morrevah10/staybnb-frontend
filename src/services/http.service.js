@@ -2,7 +2,7 @@ import Axios from 'axios'
 // import { router } from '@/router'
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? 'https://staybnb-v5m5.onrender.com/api/'
+    ? 'https://staybnb-v5m5.onrender.com/'
     : '//localhost:3030/api/'
 
 
